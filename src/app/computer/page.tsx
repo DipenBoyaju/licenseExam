@@ -2,46 +2,56 @@ import SetCard from "@/components/SetCard";
 
 const sets = [
   {
-    id: 1,
-    link: ''
+    id: "1",
+    title: "Set 1",
+    description: "Covers basic computer engineering concepts.",
   },
   {
-    id: 2,
-    link: ''
+    id: "2",
+    title: "Set 2",
+    description: "Includes questions on microprocessors.",
   },
   {
-    id: 3,
-    link: ''
+    id: "3",
+    title: "Set 3",
+    description: "Focus on computer networks.",
   },
   {
-    id: 4,
-    link: ''
+    id: "4",
+    title: "Set 4",
+    description: "Operating systems concepts and questions.",
   },
   {
-    id: 5,
-    link: ''
+    id: "5",
+    title: "Set 5",
+    description: "Data structures and algorithms.",
   },
   {
-    id: 6,
-    link: ''
+    id: "6",
+    title: "Set 6",
+    description: "Database systems and queries.",
   },
   {
-    id: 7,
-    link: ''
+    id: "7",
+    title: "Set 7",
+    description: "Web technologies and applications.",
   },
   {
-    id: 8,
-    link: ''
+    id: "8",
+    title: "Set 8",
+    description: "Software engineering and SDLC.",
   },
   {
-    id: 9,
-    link: ''
+    id: "9",
+    title: "Set 9",
+    description: "Computer architecture topics.",
   },
   {
-    id: 10,
-    link: ''
+    id: "10",
+    title: "Set 10",
+    description: "Miscellaneous and advanced topics.",
   },
-]
+];
 
 export default function page() {
   return (
