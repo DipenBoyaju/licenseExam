@@ -4,7 +4,13 @@ import { FileText } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 import { useRouter } from "next/navigation";
 
-export default function SetCard({ set }: { set: any }) {
+interface SetType {
+  id: string;
+  title: string;
+  description: string;
+}
+
+export default function SetCard({ set }: { set: SetType }) {
   const router = useRouter()
   return (
     <Card className="cursor-pointer" onClick={() => router.push('/sets')}>
