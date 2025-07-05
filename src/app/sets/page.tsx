@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import questions from '../constants/question';
 
@@ -14,7 +14,22 @@ export default function Page() {
 
   const currentQuestion = questions[currentIndex];
 
-  // Countdown timer effect
+  // ✅ FIX: move handleSubmit above useEffect & wrap with useCallback
+  const handleSubmit = useCallback(() => {
+    let tempScore = 0;
+    selectedAnswers.forEach((ans, idx) => {
+      if (ans === questions[idx].answer) tempScore++;
+    });
+
+    localStorage.setItem('quizAnswers', JSON.stringify(selectedAnswers));
+    localStorage.setItem('quizScore', tempScore.toString());
+
+    setIsSubmitted(true);
+
+    router.push(`/result?score=${tempScore}`);
+  }, [selectedAnswers, router]);
+
+  // ✅ FIX: include handleSubmit in the dependencies
   useEffect(() => {
     if (isSubmitted) return;
 
@@ -28,7 +43,7 @@ export default function Page() {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [timeLeft, isSubmitted]);
+  }, [timeLeft, isSubmitted, handleSubmit]);
 
   const formatTime = (seconds: number) => {
     const hrs = Math.floor(seconds / 3600);
@@ -52,20 +67,6 @@ export default function Page() {
 
   const goToQuestion = (index: number) => {
     setCurrentIndex(index);
-  };
-
-  const handleSubmit = () => {
-    let tempScore = 0;
-    selectedAnswers.forEach((ans, idx) => {
-      if (ans === questions[idx].answer) tempScore++;
-    });
-
-    localStorage.setItem('quizAnswers', JSON.stringify(selectedAnswers));
-    localStorage.setItem('quizScore', tempScore.toString());
-
-    setIsSubmitted(true);
-
-    router.push(`/result?score=${tempScore}`);
   };
 
   return (

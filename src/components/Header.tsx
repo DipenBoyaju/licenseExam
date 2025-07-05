@@ -77,7 +77,7 @@ export default function Header() {
             <span className="sr-only">Your Logo</span>
             {/* logo */}
             <Image
-              src="/logo.jpg"
+              src="/logo.png"
               alt="Logo"
               width={100} // ← required!
               height={32} // ← required!
