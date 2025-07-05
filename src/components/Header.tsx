@@ -7,9 +7,7 @@ import { useState } from 'react'
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Department', href: '/departments' },
-  // { name: 'Marketplace', href: '#' },
-  // { name: 'Company', href: '#' },
+  { name: 'Faculty', href: '/faculty' },
 ]
 
 export default function Header() {

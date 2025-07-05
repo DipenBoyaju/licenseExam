@@ -1,18 +1,47 @@
 'use client';
 
-import { useState } from 'react';
-import questions from '../constants/question'
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import questions from '../constants/question';
 
 export default function Page() {
+  const router = useRouter();
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<(number | null)[]>(Array(questions.length).fill(null));
+  const [timeLeft, setTimeLeft] = useState(2 * 60 * 60); // 2 hours in seconds
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const currentQuestion = questions[currentIndex];
 
+  // Countdown timer effect
+  useEffect(() => {
+    if (isSubmitted) return;
+
+    if (timeLeft <= 0) {
+      handleSubmit();
+      return;
+    }
+
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => prev - 1);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [timeLeft, isSubmitted]);
+
+  const formatTime = (seconds: number) => {
+    const hrs = Math.floor(seconds / 3600);
+    const mins = Math.floor((seconds % 3600) / 60);
+    const secs = seconds % 60;
+    return `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  };
+
   const handleOptionSelect = (optionIndex: number) => {
-    const updatedAnswers = [...selectedAnswers];
-    updatedAnswers[currentIndex] = optionIndex;
-    setSelectedAnswers(updatedAnswers);
+    if (isSubmitted) return;
+    const updated = [...selectedAnswers];
+    updated[currentIndex] = optionIndex;
+    setSelectedAnswers(updated);
   };
 
   const goToNext = () => {
@@ -25,9 +54,23 @@ export default function Page() {
     setCurrentIndex(index);
   };
 
+  const handleSubmit = () => {
+    let tempScore = 0;
+    selectedAnswers.forEach((ans, idx) => {
+      if (ans === questions[idx].answer) tempScore++;
+    });
+
+    localStorage.setItem('quizAnswers', JSON.stringify(selectedAnswers));
+    localStorage.setItem('quizScore', tempScore.toString());
+
+    setIsSubmitted(true);
+
+    router.push(`/result?score=${tempScore}`);
+  };
+
   return (
-    <div className="bg-white">
-      <div className="relative isolate px-6  lg:px-18">
+    <div className="bg-white min-h-screen">
+      <div className="relative isolate px-6 lg:px-18">
         <div
           aria-hidden="true"
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -37,7 +80,7 @@ export default function Page() {
               clipPath:
                 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
             }}
-            className="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+            className="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
           />
         </div>
 
@@ -46,16 +89,16 @@ export default function Page() {
           <div className="md:col-span-1 bg-white rounded-lg p-4">
             <h2 className="text-lg font-semibold mb-4 text-gray-700">Questions</h2>
             <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-              {questions.map((q, index) => (
+              {questions.map((q, idx) => (
                 <button
                   key={q.id}
-                  onClick={() => goToQuestion(index)}
-                  className={`w-10 h-10 text-sm font-medium flex items-center justify-center border rounded-lg transition-all duration-200
-                  ${selectedAnswers[index] !== null ? 'bg-green-500 text-white' : 'bg-gray-100 text-gray-700'}
-                  ${index === currentIndex ? 'ring-2 ring-blue-500 scale-105' : ''}
-                `}
+                  onClick={() => goToQuestion(idx)}
+                  className={`w-10 h-10 text-sm font-medium flex items-center justify-center border rounded-lg
+                    ${selectedAnswers[idx] !== null ? 'bg-green-500 text-white' : 'bg-gray-100 text-gray-700'}
+                    ${idx === currentIndex ? 'ring-2 ring-blue-500 scale-105' : ''}
+                  `}
                 >
-                  {index + 1}
+                  {idx + 1}
                 </button>
               ))}
             </div>
@@ -63,7 +106,12 @@ export default function Page() {
 
           {/* Right Panel */}
           <div className="md:col-span-3 bg-white rounded-lg p-6 shadow-md space-y-6">
-            {/* Question Progress Text */}
+            {/* Timer */}
+            <div className="text-center text-lg font-semibold text-red-600">
+              Time Left: {formatTime(timeLeft)}
+            </div>
+
+            {/* Question Progress */}
             <div className="text-center text-lg font-semibold text-gray-800">
               Question {currentIndex + 1} of {questions.length}
             </div>
@@ -99,15 +147,24 @@ export default function Page() {
               })}
             </div>
 
-            {/* Navigation */}
-            <div className="flex justify-end">
+            {/* Navigation & Submit */}
+            <div className="flex flex-wrap gap-4 justify-end">
               <button
                 onClick={goToNext}
                 disabled={currentIndex === questions.length - 1}
-                className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50"
               >
                 Next
               </button>
+
+              {!isSubmitted && (
+                <button
+                  onClick={handleSubmit}
+                  className="mt-4 px-6 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
+                >
+                  Submit Quiz
+                </button>
+              )}
             </div>
           </div>
         </div>
