@@ -6,7 +6,7 @@ export default function ResultPage() {
   const { score, mistakes } = useQuizStore();
 
   return (
-    <main className="max-w-6xl mx-auto p-8 bg-white -lg rounded-lg mt-20">
+    <main className="max-w-6xl mx-auto p-8 bg-white rounded-lg mt-20">
       <h1 className="text-4xl font-extrabold mb-6 text-center text-orange-500">
         Your Score: <span className="text-orange-600">{score}</span>
       </h1>
@@ -17,7 +17,7 @@ export default function ResultPage() {
             Review Your Mistakes
           </h2>
 
-          <ul className="space-y-6 grid grid-cols-2 gap-5">
+          <ul className="space-y-6 grid grid-cols-1 md:grid-cols-2 gap-5">
             {mistakes.map((m, idx) => (
               <li
                 key={idx}
@@ -32,7 +32,7 @@ export default function ResultPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <p className="text-sm font-medium text-red-700 mb-1">Your Answer</p>
-                    <p className="bg-red-100 rounded-md p-3 text-red-900">{m.selectedAnswer}</p>
+                    <p className="bg-red-100 rounded-md p-3 text-red-900">{m.selectedAnswer ?? 'No answer'}</p>
                   </div>
                   <div>
                     <p className="text-sm font-medium text-green-700 mb-1">Correct Answer</p>

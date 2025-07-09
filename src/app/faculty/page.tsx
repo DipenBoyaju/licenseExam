@@ -4,13 +4,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { BrickWall, Laptop } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-const departments = [
-  { title: "Computer Engineering", icon: <Laptop />, desc: "Includes topics like DSA, OS, CN, DBMS, and Software Engineering." },
+const faculty = [
+  { title: "Computer Engineering", slug: "computer-engineering", icon: <Laptop />, desc: "Includes topics like DSA, OS, CN, DBMS, and Software Engineering." },
   { title: "Civil Engineering", icon: <BrickWall strokeWidth={1} />, desc: "Covers structures, fluid mechanics, surveying, soil, and more." },
   { title: "Architecture", icon: <BrickWall strokeWidth={1} />, desc: "Covers structures, fluid mechanics, surveying, soil, and more." },
 ]
 export default function Page() {
   const router = useRouter()
+
   return (
     <div className="bg-white">
       <div className="relative isolate px-6  lg:px-18">
@@ -34,8 +35,8 @@ export default function Page() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {departments.map((branch, idx) => (
-            <Card key={idx} className="cursor-pointer hover:shadow-lg transition" onClick={() => router.push('/faculty/computer-engineering')}>
+          {faculty.map((branch, idx) => (
+            <Card key={idx} className="cursor-pointer hover:shadow-lg transition" onClick={() => router.push(`/faculty/${branch.slug}`)}>
               <CardContent className="flex items-start gap-4 p-5">
                 <div className="text-white bg-orange-500 rounded-md p-2">{branch.icon}</div>
                 <div>
