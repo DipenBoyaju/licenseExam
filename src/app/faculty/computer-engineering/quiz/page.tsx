@@ -1,55 +1,96 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import questions from '../constants/question';
+import { useQuizStore } from '../../../../store/quizStore';
+import questions from '../../../constants/question';
 
 export default function Page() {
   const router = useRouter();
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedAnswers, setSelectedAnswers] = useState<(number | null)[]>(Array(questions.length).fill(null));
-  const [timeLeft, setTimeLeft] = useState(2 * 60 * 60); // 2 hours in seconds
+  const [selectedAnswers, setSelectedAnswers] = useState<(number | null)[]>(
+    Array(questions.length).fill(null)
+  );
+  const [timeLeft, setTimeLeft] = useState(2 * 60 * 60);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitEnabled, setSubmitEnabled] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
+
+  const setResult = useQuizStore((state) => state.setResult);
+
+  const selectedAnswersRef = useRef(selectedAnswers);
+  useEffect(() => {
+    selectedAnswersRef.current = selectedAnswers;
+  }, [selectedAnswers]);
 
   const currentQuestion = questions[currentIndex];
 
-  // ✅ FIX: move handleSubmit above useEffect & wrap with useCallback
+  useEffect(() => {
+    if (currentIndex === questions.length - 1) {
+      setSubmitEnabled(true);
+    }
+  }, [currentIndex]);
+
+  // ✅ FIX: useCallback so useEffect dependencies are stable
   const handleSubmit = useCallback(() => {
     let tempScore = 0;
-    selectedAnswers.forEach((ans, idx) => {
-      if (ans === questions[idx].answer) tempScore++;
+
+    // ✅ Give explicit type to mistakes
+    const mistakes: {
+      question: string;
+      correctAnswer: string;
+      selectedAnswer: string;
+    }[] = [];
+
+    selectedAnswersRef.current.forEach((ans, idx) => {
+      const q = questions[idx];
+
+      // Example for your custom marks logic:
+      const marks = idx < 20 ? 1 : 2;
+
+      if (ans === q.answer) {
+        tempScore += marks;
+      } else if (ans !== null) {
+        mistakes.push({
+          question: q.question,
+          correctAnswer: q.options[q.answer],
+          selectedAnswer: q.options[ans],
+        });
+      }
     });
 
-    localStorage.setItem('quizAnswers', JSON.stringify(selectedAnswers));
-    localStorage.setItem('quizScore', tempScore.toString());
+    setResult(tempScore, mistakes, selectedAnswersRef.current);
 
     setIsSubmitted(true);
+    setShowConfirm(false);
+    router.push('/result');
+  }, [setResult, router]);
 
-    router.push(`/result?score=${tempScore}`);
-  }, [selectedAnswers, router]);
-
-  // ✅ FIX: include handleSubmit in the dependencies
   useEffect(() => {
     if (isSubmitted) return;
 
-    if (timeLeft <= 0) {
-      handleSubmit();
-      return;
-    }
-
     const timer = setInterval(() => {
-      setTimeLeft((prev) => prev - 1);
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          handleSubmit();
+          return 0;
+        }
+        return prev - 1;
+      });
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [timeLeft, isSubmitted, handleSubmit]);
+  }, [isSubmitted, handleSubmit]);
 
   const formatTime = (seconds: number) => {
     const hrs = Math.floor(seconds / 3600);
     const mins = Math.floor((seconds % 3600) / 60);
     const secs = seconds % 60;
-    return `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    return `${hrs.toString().padStart(2, '0')}:${mins
+      .toString()
+      .padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
   const handleOptionSelect = (optionIndex: number) => {
@@ -69,6 +110,9 @@ export default function Page() {
     setCurrentIndex(index);
   };
 
+  // ✅ Example for showing marks for current question:
+  const currentMarks = currentIndex < 20 ? 1 : 2;
+
   return (
     <div className="bg-white min-h-screen">
       <div className="relative isolate px-6 lg:px-18">
@@ -85,9 +129,8 @@ export default function Page() {
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto pt-32 pb-20">
-          {/* Left Panel */}
-          <div className="md:col-span-1 bg-white rounded-lg p-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto pt-32 pb-20 items-start">
+          <div className="md:col-span-1 bg-white rounded-lg p-4 shadow-md">
             <h2 className="text-lg font-semibold mb-4 text-gray-700">Questions</h2>
             <div className="flex flex-wrap gap-2 justify-center md:justify-start">
               {questions.map((q, idx) => (
@@ -105,19 +148,16 @@ export default function Page() {
             </div>
           </div>
 
-          {/* Right Panel */}
           <div className="md:col-span-3 bg-white rounded-lg p-6 shadow-md space-y-6">
-            {/* Timer */}
-            <div className="text-center text-lg font-semibold text-red-600">
-              Time Left: {formatTime(timeLeft)}
+            <div className="flex items-center justify-between">
+              <p className="ml-4 text-emerald-500"> Marks: {currentMarks}</p>
+              <p className=''>Time Left: <span className='text-white bg-orange-500 py-1 px-2 rounded-sm font-semibold'>{formatTime(timeLeft)}</span></p>
             </div>
 
-            {/* Question Progress */}
             <div className="text-center text-lg font-semibold text-gray-800">
               Question {currentIndex + 1} of {questions.length}
             </div>
 
-            {/* Progress Bar */}
             <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
               <div
                 className="h-full bg-blue-600 transition-all duration-500 ease-in-out"
@@ -125,12 +165,10 @@ export default function Page() {
               />
             </div>
 
-            {/* Question */}
             <div>
               <h2 className="text-xl font-bold text-gray-800">{currentQuestion.question}</h2>
             </div>
 
-            {/* Options */}
             <div className="space-y-3">
               {currentQuestion.options.map((option, idx) => {
                 const isSelected = selectedAnswers[currentIndex] === idx;
@@ -148,7 +186,6 @@ export default function Page() {
               })}
             </div>
 
-            {/* Navigation & Submit */}
             <div className="flex flex-wrap gap-4 justify-end">
               <button
                 onClick={goToNext}
@@ -158,17 +195,42 @@ export default function Page() {
                 Next
               </button>
 
-              {!isSubmitted && (
-                <button
-                  onClick={handleSubmit}
-                  className="mt-4 px-6 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
-                >
-                  Submit Quiz
-                </button>
-              )}
+              <button
+                onClick={() => setShowConfirm(true)}
+                disabled={!submitEnabled || isSubmitted}
+                className={`mt-4 px-6 py-2 rounded-md text-white ${submitEnabled && !isSubmitted
+                  ? 'bg-green-600 hover:bg-green-700'
+                  : 'bg-gray-400 cursor-not-allowed'
+                  }`}
+              >
+                Submit Quiz
+              </button>
             </div>
           </div>
         </div>
+
+        {showConfirm && (
+          <div className="fixed inset-0 flex items-center justify-center backdrop-blur bg-opacity-50 z-50">
+            <div className="bg-white rounded-lg p-6 max-w-sm w-full shadow-lg">
+              <h3 className="text-lg font-semibold mb-4">Confirm Submission</h3>
+              <p className="mb-6">Are you sure you want to submit the quiz?</p>
+              <div className="flex justify-end gap-4">
+                <button
+                  onClick={() => setShowConfirm(false)}
+                  className="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handleSubmit}
+                  className="px-4 py-2 rounded-md bg-green-600 text-white hover:bg-green-700"
+                >
+                  Yes, Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

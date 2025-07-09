@@ -35,7 +35,7 @@ export default function Page() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {departments.map((branch, idx) => (
-            <Card key={idx} className="cursor-pointer hover:shadow-lg transition" onClick={() => router.push('/computer')}>
+            <Card key={idx} className="cursor-pointer hover:shadow-lg transition" onClick={() => router.push('/faculty/computer-engineering')}>
               <CardContent className="flex items-start gap-4 p-5">
                 <div className="text-white bg-orange-500 rounded-md p-2">{branch.icon}</div>
                 <div>
