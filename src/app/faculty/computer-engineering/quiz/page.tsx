@@ -23,19 +23,16 @@ const fetchQuestion = async () => {
 export default function Page() {
   const router = useRouter();
 
-  // Fetch questions data
   const { data, isLoading, isError } = useQuery({
     queryKey: ['questions'],
     queryFn: fetchQuestion,
   });
 
-  // Stable questions array for dependencies
   const questions = useMemo(() => {
     if (!data) return [];
     return [...(data.section1 || []), ...(data.section2 || [])];
   }, [data]);
 
-  // All hooks unconditionally called here
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<(number | null)[]>(Array(questions.length).fill(null));
   const [timeLeft, setTimeLeft] = useState(2 * 60 * 60);
@@ -44,6 +41,7 @@ export default function Page() {
   const [showConfirm, setShowConfirm] = useState(false);
 
   const setResult = useQuizStore((state) => state.setResult);
+  const resetStore = useQuizStore((state) => state.reset);
 
   const selectedAnswersRef = useRef(selectedAnswers);
   useEffect(() => {
@@ -64,7 +62,7 @@ export default function Page() {
     const mistakes: {
       question: string;
       correctAnswer: string;
-      selectedAnswer: string;
+      selectedAnswer: string | null;
     }[] = [];
 
     selectedAnswersRef.current.forEach((ans, idx) => {
@@ -74,7 +72,6 @@ export default function Page() {
       const marks = idx < 20 ? 1 : 2;
 
       const selectedAnswer = ans !== null ? q.options[ans] : null;
-      // q.answer could be a string or index — adjust if needed
       const correctAnswer = typeof q.answer === 'number' ? q.options[q.answer] : q.answer;
 
       if (selectedAnswer === correctAnswer) {
@@ -89,10 +86,14 @@ export default function Page() {
     });
 
     setResult(tempScore, mistakes, selectedAnswersRef.current);
+
+    // ✅ Reset persisted quiz state for next attempt
+    resetStore();
+
     setIsSubmitted(true);
     setShowConfirm(false);
     router.push('/result');
-  }, [setResult, router, questions]);
+  }, [setResult, resetStore, router, questions]);
 
   useEffect(() => {
     if (isSubmitted) return;
@@ -143,7 +144,7 @@ export default function Page() {
     <>
       {isLoading && (
         <div className="flex items-center justify-center min-h-screen text-lg">
-          <TrophySpin color={["#f54a00", "#30f500", "#00abf5", "#c400f5"]} />
+          <TrophySpin color={['#f54a00', '#30f500', '#00abf5', '#c400f5']} />
         </div>
       )}
 
@@ -156,6 +157,7 @@ export default function Page() {
       {!isLoading && !isError && (
         <div className="bg-white min-h-screen">
           <div className="relative isolate px-6 lg:px-18">
+            {/* Background effect */}
             <div
               aria-hidden="true"
               className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"

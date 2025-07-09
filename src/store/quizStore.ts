@@ -1,3 +1,5 @@
+// store/quizStore.ts
+
 import { create } from 'zustand';
 
 export interface Mistake {
@@ -11,6 +13,7 @@ interface QuizStore {
   mistakes: Mistake[];
   selectedAnswers: (number | null)[];
   setResult: (score: number, mistakes: Mistake[], selectedAnswers: (number | null)[]) => void;
+  reset: () => void; // ✅ Add this
 }
 
 export const useQuizStore = create<QuizStore>((set) => ({
@@ -19,4 +22,5 @@ export const useQuizStore = create<QuizStore>((set) => ({
   selectedAnswers: [],
   setResult: (score, mistakes, selectedAnswers) =>
     set({ score, mistakes, selectedAnswers }),
+  reset: () => set({ score: 0, mistakes: [], selectedAnswers: [] }), // ✅ resets all
 }));
