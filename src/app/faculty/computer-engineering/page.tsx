@@ -1,7 +1,18 @@
+"use client";
+
 import Link from "next/link";
 import { BookOpen, History } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useQuizStore } from "@/store/quizStore";
 
 export default function Page() {
+  const router = useRouter()
+  const reset = useQuizStore((s) => s.reset);
+
+  const handleStart = () => {
+    reset();
+    router.push('/faculty/computer-engineering/quiz')
+  }
   return (
     <div className="bg-white min-h-screen">
       <div className="relative isolate px-6 lg:px-18">
@@ -45,12 +56,11 @@ export default function Page() {
                   Take a fresh quiz from our curated sets and test your knowledge.
                 </p>
               </div>
-              <Link
-                href="/faculty/computer-engineering/quiz"
+              <button onClick={handleStart}
                 className="inline-block self-start px-5 py-2 rounded-md bg-blue-600 text-white font-medium hover:bg-blue-700 transition"
               >
                 Start Quiz
-              </Link>
+              </button>
             </div>
 
             {/* View History Card */}

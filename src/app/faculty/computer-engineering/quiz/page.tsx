@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import { useEffect, useRef, useCallback, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useQuizStore } from '../../../../store/quizStore';
 import { useQuery } from '@tanstack/react-query';
@@ -8,16 +8,8 @@ import axios from 'axios';
 import { TrophySpin } from 'react-loading-indicators';
 
 const fetchQuestion = async () => {
-  const res = await axios.get(
-    'https://nec-backend-kh3u.onrender.com/api/computer/testcomputer',
-    {
-      auth: {
-        username: 'admin',
-        password: 'password',
-      },
-    }
-  );
-  return res.data;
+  const res = await axios.get('/api/proxy-quiz');
+  return res.data.data;
 };
 
 export default function Page() {
@@ -26,6 +18,8 @@ export default function Page() {
   const { data, isLoading, isError } = useQuery({
     queryKey: ['questions'],
     queryFn: fetchQuestion,
+    staleTime: Infinity,
+    refetchOnWindowFocus: false,
   });
 
   const questions = useMemo(() => {
@@ -33,22 +27,27 @@ export default function Page() {
     return [...(data.section1 || []), ...(data.section2 || [])];
   }, [data]);
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedAnswers, setSelectedAnswers] = useState<(number | null)[]>(Array(questions.length).fill(null));
-  const [timeLeft, setTimeLeft] = useState(2 * 60 * 60);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [submitEnabled, setSubmitEnabled] = useState(false);
-  const [showConfirm, setShowConfirm] = useState(false);
-
-  const setResult = useQuizStore((state) => state.setResult);
-  const resetStore = useQuizStore((state) => state.reset);
+  const selectedAnswers = useQuizStore((s) => s.selectedAnswers);
+  const setSelectedAnswers = useQuizStore((s) => s.setSelectedAnswers);
+  const currentIndex = useQuizStore((s) => s.currentIndex);
+  const setCurrentIndex = useQuizStore((s) => s.setCurrentIndex);
+  const setResult = useQuizStore((s) => s.setResult);
 
   const selectedAnswersRef = useRef(selectedAnswers);
   useEffect(() => {
     selectedAnswersRef.current = selectedAnswers;
   }, [selectedAnswers]);
 
-  const currentQuestion = questions[currentIndex];
+  useEffect(() => {
+    if (questions.length > 0 && selectedAnswers.length === 0) {
+      setSelectedAnswers(Array(questions.length).fill(null));
+    }
+  }, [questions, selectedAnswers.length, setSelectedAnswers]);
+
+  const [timeLeft, setTimeLeft] = useState(2 * 60 * 60);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitEnabled, setSubmitEnabled] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
 
   useEffect(() => {
     if (currentIndex === questions.length - 1) {
@@ -57,6 +56,8 @@ export default function Page() {
   }, [currentIndex, questions.length]);
 
   const handleSubmit = useCallback(() => {
+    if (!data) return;
+
     let tempScore = 0;
 
     const mistakes: {
@@ -65,11 +66,13 @@ export default function Page() {
       selectedAnswer: string | null;
     }[] = [];
 
+    const section1Length = data.section1?.length || 0;
+
     selectedAnswersRef.current.forEach((ans, idx) => {
       const q = questions[idx];
       if (!q) return;
 
-      const marks = idx < 20 ? 1 : 2;
+      const marks = idx < section1Length ? 1 : 2;
 
       const selectedAnswer = ans !== null ? q.options[ans] : null;
       const correctAnswer = typeof q.answer === 'number' ? q.options[q.answer] : q.answer;
@@ -87,13 +90,10 @@ export default function Page() {
 
     setResult(tempScore, mistakes, selectedAnswersRef.current);
 
-    // ✅ Reset persisted quiz state for next attempt
-    resetStore();
-
     setIsSubmitted(true);
     setShowConfirm(false);
     router.push('/result');
-  }, [setResult, resetStore, router, questions]);
+  }, [setResult, router, questions, data]);
 
   useEffect(() => {
     if (isSubmitted) return;
@@ -130,7 +130,7 @@ export default function Page() {
 
   const goToNext = () => {
     if (currentIndex < questions.length - 1) {
-      setCurrentIndex((prev) => prev + 1);
+      setCurrentIndex(currentIndex + 1);
     }
   };
 
@@ -138,7 +138,8 @@ export default function Page() {
     setCurrentIndex(index);
   };
 
-  const currentMarks = currentIndex < 60 ? 1 : 2;
+  const section1Length = data?.section1?.length || 0;
+  const currentMarks = currentIndex < section1Length ? 1 : 2;
 
   return (
     <>
@@ -157,20 +158,6 @@ export default function Page() {
       {!isLoading && !isError && (
         <div className="bg-white min-h-screen">
           <div className="relative isolate px-6 lg:px-18">
-            {/* Background effect */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-            >
-              <div
-                style={{
-                  clipPath:
-                    'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-                }}
-                className="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-              />
-            </div>
-
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto pt-32 pb-20 items-start">
               <div className="md:col-span-1 bg-white rounded-lg p-4 shadow-md">
                 <h2 className="text-lg font-semibold mb-4 text-gray-700">Questions</h2>
@@ -216,11 +203,11 @@ export default function Page() {
                 </div>
 
                 <div>
-                  <h2 className="text-xl font-bold text-gray-800">{currentQuestion?.question}</h2>
+                  <h2 className="text-xl font-bold text-gray-800">{questions[currentIndex]?.question}</h2>
                 </div>
 
                 <div className="space-y-3">
-                  {currentQuestion?.options?.map((option: string, idx: number) => {
+                  {questions[currentIndex]?.options?.map((option: string, idx: number) => {
                     const isSelected = selectedAnswers[currentIndex] === idx;
                     return (
                       <div

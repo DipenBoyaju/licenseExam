@@ -25,7 +25,7 @@ const navigation: NavItem[] = [
     ],
   },
   { name: 'Blog', href: '/blog' },
-  { name: 'Review', href: '/review' },
+  // { name: 'Review', href: '/review' },
 ];
 
 export default function Header() {
@@ -134,12 +134,11 @@ export default function Header() {
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
-            href="/departments"
-            className={`text-sm font-semibold text-gray-900 hover:text-[#f54a00] ${isClient && pathname === '/departments' ? 'text-[#f54a00]' : ''
-              }`}
+            href="/review"
+            className={`text-sm font-semibold bg-[#f54a00f1] text-white py-2 px-4 rounded-md group`}
             rel="nofollow"
           >
-            Get Started <span aria-hidden="true">→</span>
+            Review <span aria-hidden="true" className='group-hover:animate-bounce'>→</span>
           </Link>
         </div>
       </nav>

@@ -1,6 +1,5 @@
-// store/quizStore.ts
-
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
 export interface Mistake {
   question: string;
@@ -12,15 +11,28 @@ interface QuizStore {
   score: number;
   mistakes: Mistake[];
   selectedAnswers: (number | null)[];
+  currentIndex: number;
   setResult: (score: number, mistakes: Mistake[], selectedAnswers: (number | null)[]) => void;
-  reset: () => void; // ✅ Add this
+  setCurrentIndex: (index: number) => void;
+  setSelectedAnswers: (answers: (number | null)[]) => void;
+  reset: () => void;
 }
 
-export const useQuizStore = create<QuizStore>((set) => ({
-  score: 0,
-  mistakes: [],
-  selectedAnswers: [],
-  setResult: (score, mistakes, selectedAnswers) =>
-    set({ score, mistakes, selectedAnswers }),
-  reset: () => set({ score: 0, mistakes: [], selectedAnswers: [] }), // ✅ resets all
-}));
+export const useQuizStore = create<QuizStore>()(
+  persist(
+    (set) => ({
+      score: 0,
+      mistakes: [],
+      selectedAnswers: [],
+      currentIndex: 0,
+      setResult: (score, mistakes, selectedAnswers) =>
+        set({ score, mistakes, selectedAnswers }),
+      setCurrentIndex: (index) => set({ currentIndex: index }),
+      setSelectedAnswers: (answers) => set({ selectedAnswers: answers }),
+      reset: () => set({ score: 0, mistakes: [], selectedAnswers: [], currentIndex: 0 }),
+    }),
+    {
+      name: 'quiz-storage', // LocalStorage key
+    }
+  )
+);
