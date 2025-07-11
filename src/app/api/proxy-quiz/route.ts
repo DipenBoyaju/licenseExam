@@ -3,7 +3,7 @@ import axios from "axios";
 
 export async function GET() {
   const res = await axios.get(
-    `${process.env.BASE_URL}/api/computer/testcomputer`,
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/computer/testcomputer`,
     {
       auth: {
         username: process.env.API_USERNAME!,
