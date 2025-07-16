@@ -59,7 +59,7 @@ export default function Page() {
               <button onClick={handleStart}
                 className="inline-block self-start px-5 py-2 rounded-md bg-blue-600 text-white font-medium hover:bg-blue-700 transition"
               >
-                Start Quiz
+                Start Test
               </button>
             </div>
 

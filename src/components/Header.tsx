@@ -138,7 +138,7 @@ export default function Header() {
             className={`text-sm font-semibold bg-[#f54a00f1] text-white py-2 px-4 rounded-md group`}
             rel="nofollow"
           >
-            Review <span aria-hidden="true" className='group-hover:animate-bounce'>→</span>
+            Review Us<span aria-hidden="true" className='group-hover:animate-bounce pl-2'>→</span>
           </Link>
         </div>
       </nav>
@@ -197,13 +197,13 @@ export default function Header() {
               </div>
               <div className="py-6">
                 <Link
-                  href="/departments"
+                  href="/review"
                   onClick={handleMobileMenuClose}
                   className={`-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-gray-900 hover:text-[#f54a00] ${isClient && pathname === '/departments' ? 'text-[#f54a00]' : ''
                     }`}
                   rel="nofollow"
                 >
-                  Get Started
+                  Review Us
                 </Link>
               </div>
             </div>

@@ -22,6 +22,8 @@ export default function Page() {
     refetchOnWindowFocus: false,
   });
 
+  console.log(data)
+
   const questions = useMemo(() => {
     if (!data) return [];
     return [...(data.section1 || []), ...(data.section2 || [])];
