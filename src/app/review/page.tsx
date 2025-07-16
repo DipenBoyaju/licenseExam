@@ -2,12 +2,20 @@
 
 import { useForm } from "react-hook-form";
 
+type FormData = {
+  name?: string;
+  email?: string;
+  rating: string;
+  like: string;
+  improve: string;
+};
+
 export default function ReviewPage() {
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm();
+  } = useForm<FormData>();
 
   const onSubmit = async () => {
 
@@ -74,7 +82,7 @@ export default function ReviewPage() {
                 <option value="1">⭐ Very Poor</option>
               </select>
               {errors.rating && (
-                <p className="text-red-500 text-sm">{errors.rating.message}</p>
+                <p className="text-red-500 text-sm">{errors.rating?.message}</p>
               )}
             </div>
 
@@ -84,7 +92,7 @@ export default function ReviewPage() {
               </label>
               <textarea
                 {...register("like")}
-                rows="3"
+                rows={3}
                 className="mt-1 block w-full border border-zinc-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-indigo-200"
               ></textarea>
             </div>
@@ -95,7 +103,7 @@ export default function ReviewPage() {
               </label>
               <textarea
                 {...register("improve")}
-                rows="3"
+                rows={3}
                 className="mt-1 block w-full border border-zinc-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-indigo-200"
               ></textarea>
             </div>
