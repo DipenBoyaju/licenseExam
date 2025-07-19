@@ -1,8 +1,10 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useQuizStore } from '../../store/quizStore';
 
 export default function ResultPage() {
+  const router = useRouter()
   const { score, mistakes } = useQuizStore();
 
   const noAnswers = score === 0 && mistakes.length === 0;
@@ -56,6 +58,16 @@ export default function ResultPage() {
           <p className="text-gray-600 text-lg">Awesome job, you got all questions right!</p>
         </div>
       )}
+
+      <div className="text-center mt-20">
+        <button
+          onClick={() => window.history.go(-2)}
+          className="px-6 py-3 bg-orange-600 text-white rounded-md shadow-md hover:bg-orange-500 active:bg-orange-700 transition focus:outline-none focus:ring-2 focus:ring-orange-400 uppercase font-semibold"
+        >
+          Back
+        </button>
+      </div>
+
     </main>
   );
 }
