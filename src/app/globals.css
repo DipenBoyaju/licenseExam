@@ -121,4 +121,12 @@
   body {
     @apply bg-background text-foreground;
   }
+  
 }
+
+
+ .container {
+      @apply mx-auto w-full px-3 sm:max-w-[600px] md:max-w-[740px] lg:max-w-[990px] xl:max-w-[1216px] 
+  }
+
+
