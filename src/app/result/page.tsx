@@ -1,10 +1,8 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import { useQuizStore } from '../../store/quizStore';
 
 export default function ResultPage() {
-  const router = useRouter()
   const { score, mistakes } = useQuizStore();
 
   const noAnswers = score === 0 && mistakes.length === 0;
