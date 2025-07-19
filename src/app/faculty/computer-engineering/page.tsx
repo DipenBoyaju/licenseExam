@@ -16,7 +16,7 @@ export default function FacultyPage() {
           />
         </div>
         <main className="mt-32 pb-20">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {/* Left: Main Content */}
             <div className="md:col-span-2">
               {/* Page Header */}

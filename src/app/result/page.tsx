@@ -5,13 +5,20 @@ import { useQuizStore } from '../../store/quizStore';
 export default function ResultPage() {
   const { score, mistakes } = useQuizStore();
 
+  const noAnswers = score === 0 && mistakes.length === 0;
+
   return (
     <main className="max-w-6xl mx-auto p-8 bg-white rounded-lg mt-20">
       <h1 className="text-4xl font-extrabold mb-6 text-center text-orange-500">
         Your Score: <span className="text-orange-600">{score}</span>
       </h1>
 
-      {mistakes.length > 0 ? (
+      {noAnswers ? (
+        <div className="text-center mt-20">
+          <p className="text-3xl text-red-600 font-extrabold mb-4">⚠️ No Answers Submitted</p>
+          <p className="text-gray-600 text-lg">You didn’t attempt any questions. Please try again!</p>
+        </div>
+      ) : mistakes.length > 0 ? (
         <>
           <h2 className="text-2xl font-semibold mb-6 text-gray-800 border-b pb-2">
             Review Your Mistakes
