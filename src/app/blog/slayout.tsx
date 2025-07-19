@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import { baseUrl } from "../constant/constant";
 
-const poppins = Poppins({ weight: "400", subsets: ["latin"] });
+// const poppins = Poppins({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: { default: "Blog", template: "%s | Yantra RPA" },

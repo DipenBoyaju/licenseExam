@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://neclisenceexam.vercel.app
+
+# Sitemaps
+Sitemap: https://neclisenceexam.vercel.app/sitemap.xml

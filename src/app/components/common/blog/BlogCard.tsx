@@ -1,11 +1,8 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
-import blogImage from "./assets/blogImage.jpg";
-import { FiArrowUpRight } from "react-icons/fi";
-import { FaArrowRightLong } from "react-icons/fa6";
 import { GoArrowUpRight } from "react-icons/go";
 // import Router from 'next/router'
-import { permanentRedirect, redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 export type blogType = {
   id: string;
   title: string;
@@ -20,10 +17,10 @@ const BlogCard = ({
   id,
   title,
   description1,
-  description2,
+  // description2,
   photo,
-  author,
-  date,
+  // author,
+  // date,
 }: blogType) => {
   const router = useRouter();
   return (
