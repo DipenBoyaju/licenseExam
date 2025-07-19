@@ -1,20 +1,6 @@
-"use client";
-
-import Link from "next/link";
-import { BookOpen, History } from "lucide-react";
-import { useRouter } from "next/navigation";
-import { useQuizStore } from "@/store/quizStore";
-
-export default function Page() {
-  const router = useRouter()
-  const reset = useQuizStore((s) => s.reset);
-
-  const handleStart = () => {
-    reset();
-    router.push('/faculty/computer-engineering/quiz')
-  }
+export default function FacultyPage() {
   return (
-    <div className="bg-white min-h-screen">
+    <div>
       <div className="relative isolate px-6 lg:px-18">
         {/* Decorative Background */}
         <div
@@ -29,63 +15,75 @@ export default function Page() {
             className="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
           />
         </div>
+        <main className="mt-32 pb-20">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+            {/* Left: Main Content */}
+            <div className="md:col-span-2">
+              {/* Page Header */}
+              <h1 className="text-4xl font-bold mb-4 text-gray-900">
+                Computer Engineering
+              </h1>
+              <p className="mb-10 text-gray-600 max-w-3xl">
+                Get an overview of the core syllabus and key topics for the NEC License Exam in Computer Engineering.
+              </p>
 
-        <div className="max-w-6xl mx-auto pt-28 pb-20">
-          {/* Page Title */}
-          <div className="text-center mb-12">
-            <h2 className="font-inter font-bold text-3xl md:text-4xl">
-              Practice Question Sets
-            </h2>
-            <p className="font-poppins text-gray-600 mt-2 max-w-2xl mx-auto">
-              Prepare smartly — take a new quiz or review your previous attempts to see your progress.
-            </p>
-          </div>
-
-          {/* Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Start Quiz Card */}
-            <div className="flex flex-col justify-between bg-white border border-gray-200 rounded-xl shadow-md p-8 hover:shadow-xl hover:border-blue-600 transition">
-              <div>
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 bg-blue-100 rounded-full">
-                    <BookOpen className="h-6 w-6 text-blue-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold">Start a New Quiz</h3>
-                </div>
-                <p className="text-gray-600 mb-6">
-                  Take a fresh quiz from our curated sets and test your knowledge.
-                </p>
-              </div>
-              <button onClick={handleStart}
-                className="inline-block self-start px-5 py-2 rounded-md bg-blue-600 text-white font-medium hover:bg-blue-700 transition"
-              >
-                Start Test
-              </button>
+              {/* Syllabus Overview */}
+              <section>
+                <h2 className="text-2xl font-semibold mb-4 text-gray-800">
+                  Syllabus Overview
+                </h2>
+                <ul className="list-disc list-inside space-y-2 text-gray-700">
+                  <li>Engineering Mathematics</li>
+                  <li>Computer Organization & Architecture</li>
+                  <li>Digital Logic Design</li>
+                  <li>Data Structures & Algorithms</li>
+                  <li>Operating Systems</li>
+                  <li>Database Management Systems</li>
+                  <li>Computer Networks</li>
+                  <li>Software Engineering</li>
+                </ul>
+                {/* Optional PDF */}
+                <a
+                  href="/files/computer-engineering-syllabus.pdf"
+                  className="inline-block mt-4 text-orange-600 font-medium hover:underline"
+                  download
+                >
+                  Download Full Syllabus PDF →
+                </a>
+              </section>
             </div>
 
-            {/* View History Card */}
-            <div className="flex flex-col justify-between bg-white border border-gray-200 rounded-xl shadow-md p-8 hover:shadow-xl hover:border-green-600 transition">
-              <div>
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 bg-green-100 rounded-full">
-                    <History className="h-6 w-6 text-green-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold">View Past Sets</h3>
-                </div>
-                <p className="text-gray-600 mb-6">
-                  Check your previous quiz results and see how much you’ve improved.
-                </p>
-              </div>
-              <Link
-                href="/history"
-                className="inline-block self-start px-5 py-2 rounded-md bg-green-600 text-white font-medium hover:bg-green-700 transition"
+            {/* Right: Tips & Resources */}
+            <aside className="bg-gray-50 border border-gray-200 rounded-lg p-6 h-fit">
+              <h2 className="text-xl font-semibold mb-4 text-gray-800">
+                Tips & Resources
+              </h2>
+              <p className="text-gray-700 mb-3">
+                ✅ Focus on core concepts first.
+              </p>
+              <p className="text-gray-700 mb-3">
+                ✅ Solve previous year questions.
+              </p>
+              <p className="text-gray-700 mb-3">
+                ✅ Join our community for notes & doubt solving.
+              </p>
+              <a
+                href="/community"
+                className="text-orange-600 font-medium hover:underline"
               >
-                View History
-              </Link>
-            </div>
+                Join Community →
+              </a>
+
+              <a
+                href="/mock-tests/computer-engineering"
+                className="mt-4 inline-block w-full bg-orange-600 text-center text-white px-4 py-2 rounded-md hover:bg-orange-500 transition"
+              >
+                Start Mock Tests →
+              </a>
+            </aside>
           </div>
-        </div>
+        </main>
       </div>
     </div>
-  );
+  )
 }

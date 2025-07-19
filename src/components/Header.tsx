@@ -16,8 +16,17 @@ interface NavItem {
 const navigation: NavItem[] = [
   { name: 'Home', href: '/' },
   {
+    name: 'Take Test',
+    href: '/take-test',
+    subItems: [
+      { name: 'Computer Engineering', href: '/take-test/computer-engineering' },
+      { name: 'Civil', href: '/take-test/civil' },
+      { name: 'Architecture', href: '/take-test/architecture' },
+    ],
+  },
+  {
     name: 'Faculty',
-    href: '/faculty',
+    href: '',
     subItems: [
       { name: 'Computer Engineering', href: '/faculty/computer-engineering' },
       { name: 'Civil', href: '/faculty/civil' },
@@ -25,12 +34,10 @@ const navigation: NavItem[] = [
     ],
   },
   { name: 'Blog', href: '/blog' },
-  // { name: 'Review', href: '/review' },
 ];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isFacultyDropdownOpen, setIsFacultyDropdownOpen] = useState(false);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -40,10 +47,6 @@ export default function Header() {
   const handleMobileMenuClose = useCallback(() => {
     setMobileMenuOpen(false);
   }, []);
-
-  // const toggleFacultyDropdown = useCallback(() => {
-  //   setIsFacultyDropdownOpen((prev) => !prev);
-  // }, []);
 
   const handleScroll = useCallback(() => {
     const currentScrollY = window.scrollY;
@@ -75,17 +78,16 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Logo</span>
-            {/* logo */}
             <Image
               src="/logo.png"
               alt="Logo"
-              width={100} // ← required!
-              height={32} // ← required!
+              width={100}
+              height={32}
               className="h-8 w-auto"
             />
-
           </Link>
         </div>
+
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -98,14 +100,10 @@ export default function Header() {
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
           </button>
         </div>
+
         <div className="hidden lg:flex lg:gap-x-12" id="desktop-menu">
           {navigation.map((item) => (
-            <div
-              key={item.name}
-              className="relative"
-              onMouseEnter={item.subItems ? () => setIsFacultyDropdownOpen(true) : undefined}
-              onMouseLeave={item.subItems ? () => setIsFacultyDropdownOpen(false) : undefined}
-            >
+            <div key={item.name} className="relative group">
               <Link
                 href={item.href}
                 className={`text-sm font-semibold px-3 py-2 ${isClient && pathname === item.href
@@ -115,8 +113,9 @@ export default function Header() {
               >
                 {item.name}
               </Link>
-              {item.subItems && isFacultyDropdownOpen && (
-                <div className="absolute z-10 mt-2 w-48 rounded-md bg-white shadow-sm ">
+
+              {item.subItems && (
+                <div className="absolute z-10 mt-1 w-48 rounded-md bg-white shadow-sm hidden group-hover:block">
                   {item.subItems.map((subItem) => (
                     <Link
                       key={subItem.name}
@@ -132,16 +131,21 @@ export default function Header() {
             </div>
           ))}
         </div>
+
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
             href="/review"
-            className={`text-sm font-semibold bg-[#f54a00f1] text-white py-2 px-4 rounded-md group`}
+            className="text-sm font-semibold bg-[#f54a00f1] text-white py-2 px-4 rounded-md group"
             rel="nofollow"
           >
-            Review Us<span aria-hidden="true" className='group-hover:animate-bounce pl-2'>→</span>
+            Review Us
+            <span aria-hidden="true" className="group-hover:animate-bounce pl-2">
+              →
+            </span>
           </Link>
         </div>
       </nav>
+
       <Dialog
         open={mobileMenuOpen}
         onClose={handleMobileMenuClose}
@@ -152,7 +156,6 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Logo</span>logo
-              {/* <img src="/logo.png" alt="Logo" className="h-8 w-auto" /> */}
             </Link>
             <button
               type="button"
@@ -173,7 +176,8 @@ export default function Header() {
                       onClick={handleMobileMenuClose}
                       className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold hover:text-[#f54a00] ${isClient && pathname === item.href
                         ? 'text-[#f54a00]'
-                        : 'text-gray-900 hover:text-[#f54a00]'}`}
+                        : 'text-gray-900 hover:text-[#f54a00]'
+                        }`}
                     >
                       {item.name}
                     </Link>
@@ -199,8 +203,7 @@ export default function Header() {
                 <Link
                   href="/review"
                   onClick={handleMobileMenuClose}
-                  className={`-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-gray-900 hover:text-[#f54a00] ${isClient && pathname === '/departments' ? 'text-[#f54a00]' : ''
-                    }`}
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-gray-900 hover:text-[#f54a00]"
                   rel="nofollow"
                 >
                   Review Us
