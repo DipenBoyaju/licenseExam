@@ -4,13 +4,13 @@ export default function Footer() {
   return (
     <div className="bg-zinc-100/80 border-t border-zinc-900/10">
       <div className=" px-6 lg:px-18">
-        <div className="grid grid-cols-6 py-20">
-          <div className="col-span-4 space-y-5">
-            <h4 className="font-bold text-4xl w-[60%]">Engineering License Exam Preparation</h4>
-            <p className="text-zinc-600 w-[50%]">Prepare for the Nepal Engineering Council license exam with our practice questions.</p>
+        <div className="grid md:grid-cols-6 md:py-20 py-10">
+          <div className="md:col-span-4 space-y-5">
+            <h4 className="font-bold text-4xl md:w-[60%]">Engineering License Exam Preparation</h4>
+            <p className="text-zinc-600 md:w-[50%]">Prepare for the Nepal Engineering Council license exam with our practice questions.</p>
           </div>
-          <div className="col-span-2">
-            <div className="grid grid-cols-2 gap-5">
+          <div className="md:col-span-2 mt-10 md:mt-0">
+            <div className="grid md:grid-cols-2 gap-5">
               <div className="">
                 <h6 className="uppercase font-semibold text-orange-600 text-lg">Quick Links</h6>
                 <ul className="space-y-2 mt-3">

@@ -13,7 +13,7 @@ export default function Page() {
   const router = useRouter()
 
   return (
-    <div className="bg-white">
+    <div className="bg-white min-h-screen">
       <div className="relative isolate px-6  lg:px-18">
         <div
           aria-hidden="true"
