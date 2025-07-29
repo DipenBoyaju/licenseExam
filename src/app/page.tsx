@@ -4,6 +4,7 @@ import { CheckCircleIcon, AcademicCapIcon, ClockIcon, ChartBarIcon, DevicePhoneM
 import { PlusIcon, MinusIcon } from "@heroicons/react/24/outline"
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion"
+import Link from 'next/link';
 
 const features = [
   {
@@ -93,12 +94,12 @@ export default function Home() {
               Prepare for the Nepal Engineering Council license exam with our practice questions.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a
+              <Link
                 href="/take-test"
                 className="rounded-md bg-orange-600 px-8 py-3 text-lg tracking-wider text-white shadow-xs hover:bg-orange-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600 font-poppins uppercase font-semibold"
               >
                 Start Mock Test
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -132,12 +133,12 @@ export default function Home() {
           <p className="text-lg text-orange-100 mb-8">
             Take your first step towards passing the NEC exam with confidence.
           </p>
-          <a
+          <Link
             href="/take-test"
             className="inline-block rounded-md bg-white px-8 py-3 text-lg tracking-wider text-orange-600 shadow hover:bg-orange-50 font-semibold uppercase"
           >
             Start Your Mock Test
-          </a>
+          </Link>
         </section>
 
         <section className="bg-gray-50 py-20">

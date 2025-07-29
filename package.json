@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.3",
@@ -18,11 +19,13 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.6",
     "lucide-react": "^0.510.0",
-    "next": "15.3.2",
+    "next": "^15.4.2",
+    "next-sitemap": "^4.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.60.0",
     "react-hot-toast": "^2.5.2",
+    "react-icons": "^5.5.0",
     "react-loading-indicators": "^1.0.1",
     "tailwind-merge": "^3.3.0",
     "zustand": "^5.0.6"
