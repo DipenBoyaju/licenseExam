@@ -1,10 +1,17 @@
-"use client"
+"use client";
 
-import { CheckCircleIcon, AcademicCapIcon, ClockIcon, ChartBarIcon, DevicePhoneMobileIcon, LightBulbIcon } from '@heroicons/react/24/outline'
-import { PlusIcon, MinusIcon } from "@heroicons/react/24/outline"
+import {
+  CheckCircleIcon,
+  AcademicCapIcon,
+  ClockIcon,
+  ChartBarIcon,
+  DevicePhoneMobileIcon,
+  LightBulbIcon,
+} from "@heroicons/react/24/outline";
+import { PlusIcon, MinusIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion"
-import Link from 'next/link';
+import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 
 const features = [
   {
@@ -37,7 +44,7 @@ const features = [
     desc: "Study anytime on desktop, tablet, or mobile.",
     icon: DevicePhoneMobileIcon,
   },
-]
+];
 
 const faqs = [
   {
@@ -45,25 +52,37 @@ const faqs = [
     a: "We offer free practice questions and premium plans for advanced mock tests and analytics.",
   },
   {
-    q: "Can I use this on mobile?",
-    a: "Yes! Our platform is fully responsive and works on mobile, tablet, and desktop.",
+    q: "What is the structure and duration of the NEC license exam?",
+    a: "The Nepal Engineering Council (NEC) license exam is a 2-hour computer-based test comprising approximately 80 questions. It includes 60 one-mark and 20 two-mark questions, focusing on core engineering concepts and professional ethics. There is no negative marking in the exam.",
   },
   {
-    q: "How often is the content updated?",
-    a: "Our team updates questions every exam cycle to reflect the latest NEC syllabus.",
+    q: "Who is eligible to apply for the NEC license exam?",
+    a: "To be eligible for the NEC license exam, candidates must hold a Bachelor's degree in engineering from a university recognized by the Nepal Engineering Council. Foreign degree holders must obtain an equivalence certificate from Tribhuvan University.",
   },
   {
-    q: "Do I get detailed solutions?",
-    a: "Yes. Every question includes clear explanations and references for better understanding.",
+    q: "What documents are required for the NEC license exam application?",
+    a: "Applicants must upload notarized copies of key documents including citizenship, academic transcripts (SEE, 10+2, and Bachelor's), character certificates, degree certificates, equivalence certificates (if applicable), and recent passport-size photos.",
   },
-]
+  {
+    q: "How to apply for the NEC license exam in Nepal?",
+    a: "Candidates must apply online through the official NEC portal. The application process includes uploading necessary documents and paying an exam fee of NPR 2,500 via digital payment platforms such as Khalti or Connect IPS.",
+  },
+  {
+    q: "What is the passing score for the NEC license exam?",
+    a: "To pass the NEC license exam, candidates must score a minimum of 50%. There is no penalty for incorrect answers as the exam does not include negative marking.",
+  },
+  {
+    q: "Is there a specific syllabus for the NEC license exam?",
+    a: "Yes, the NEC license exam syllabus varies by engineering discipline (civil, electrical, mechanical, etc.). It covers fundamental engineering concepts, Nepal Engineering Council codes and standards, and professional ethics and practices.",
+  },
+];
 
 export default function Home() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
     <div className="bg-white">
@@ -75,7 +94,7 @@ export default function Home() {
           <div
             style={{
               clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
             }}
             className="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
           />
@@ -83,7 +102,8 @@ export default function Home() {
         <div className="mx-auto max-w-3xl py-32 sm:py-28 lg:py-40 px-6">
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-orange-900/30 hover:ring-orange-900/40">
-              Join <span className="text-orange-500 font-bold">2,000+</span> students preparing for the NEC license exam.
+              Join <span className="text-orange-500 font-bold">2,000+</span>{" "}
+              students preparing for the NEC license exam.
             </div>
           </div>
           <div className="text-center">
@@ -91,7 +111,8 @@ export default function Home() {
               Engineering License Exam Preparation
             </h1>
             <p className="mt-8 text-base font-normal text-pretty text-gray-500 font-poppins">
-              Prepare for the Nepal Engineering Council license exam with our practice questions.
+              Prepare for the Nepal Engineering Council license exam with our
+              practice questions.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
@@ -118,7 +139,9 @@ export default function Home() {
                   <div className="flex items-center justify-center w-12 h-12 rounded-full bg-orange-50 mb-4">
                     <feature.icon className="w-6 h-6 text-orange-600" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2 text-gray-900">{feature.title}</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-gray-900">
+                    {feature.title}
+                  </h3>
                   <p className="text-gray-600 text-sm">{feature.desc}</p>
                 </div>
               ))}
@@ -189,8 +212,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-
       </div>
-    </div >
-  )
+    </div>
+  );
 }
