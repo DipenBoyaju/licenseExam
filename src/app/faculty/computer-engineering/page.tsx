@@ -48,19 +48,21 @@ export default function FacultyPage() {
                 <h2 className="text-2xl font-semibold mb-4 text-gray-800">
                   Syllabus Overview
                 </h2>
-                <ul className="list-disc list-inside space-y-2 text-gray-700">
-                  <li>Engineering Mathematics</li>
-                  <li>Computer Organization & Architecture</li>
-                  <li>Digital Logic Design</li>
-                  <li>Data Structures & Algorithms</li>
-                  <li>Operating Systems</li>
-                  <li>Database Management Systems</li>
-                  <li>Computer Networks</li>
-                  <li>Software Engineering</li>
-                </ul>
+                <ol className="list-decimal list-inside space-y-2 text-gray-700">
+                  <li>Concept of Basic Electrical and Electronics Engineering</li>
+                  <li>Digital Logic and Microprocessor</li>
+                  <li>Programming Language and Its Applications</li>
+                  <li>Computer Organization and Embedded System</li>
+                  <li>Concept of Computer Network and Network Security System</li>
+                  <li>Theory of Computation and Computer Graphics</li>
+                  <li>Data Structures and Algorithm, Database System and Operating System </li>
+                  <li>Software Engineering and Object-Oriented Analysis & Design </li>
+                  <li>Artificial Intelligence and Neural Networks</li>
+                  <li>Project Planning, Design and Implementation</li>
+                </ol>
                 {/* Optional PDF */}
                 <a
-                  href="/files/computer-engineering-syllabus.pdf"
+                  href="/syllabus/NEC_Computer_Engineering_Syllabus.pdf"
                   className="inline-block mt-4 text-orange-600 font-medium hover:underline"
                   download
                 >
@@ -83,12 +85,12 @@ export default function FacultyPage() {
               <p className="text-gray-700 mb-3">
                 ✅ Join our community for notes & doubt solving.
               </p>
-              <a
+              {/* <a
                 href="/community"
                 className="text-orange-600 font-medium hover:underline"
               >
                 Join Community →
-              </a>
+              </a> */}
 
               <a
                 href="/mock-tests/computer-engineering"
