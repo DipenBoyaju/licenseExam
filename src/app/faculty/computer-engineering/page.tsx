@@ -1,3 +1,18 @@
+export function generateMetadata() {
+  return {
+    title: "Computer Engineering - NEC License Exam Preparation",
+    description:
+      "Prepare for the NEC License exam with Computer Engineering resources. Explore the syllabus, key topics, and tips for success in the exam.",
+    keywords: [
+      "NEC License Exam Computer Engineering",
+      "NEC License Exam Preparation",
+      "Computer Engineering Syllabus",
+      "NEC License Exam Tips",
+      "NEC License Exam Resources for Computer Engineering ",
+    ],
+  };
+}
+
 export default function FacultyPage() {
   return (
     <div>
@@ -24,7 +39,8 @@ export default function FacultyPage() {
                 Computer Engineering
               </h1>
               <p className="mb-10 text-gray-600 max-w-3xl">
-                Get an overview of the core syllabus and key topics for the NEC License Exam in Computer Engineering.
+                Get an overview of the core syllabus and key topics for the NEC
+                License Exam in Computer Engineering.
               </p>
 
               {/* Syllabus Overview */}
@@ -85,5 +101,5 @@ export default function FacultyPage() {
         </main>
       </div>
     </div>
-  )
+  );
 }

@@ -1,0 +1,4 @@
+change the baseUrl in files
+
+robots.ts
+next-sitemap.config.js

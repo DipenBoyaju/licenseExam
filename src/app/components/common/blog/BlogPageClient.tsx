@@ -1,11 +1,14 @@
-'use client';
+"use client";
 
-import { useParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import Image from 'next/image';
-import { blogData } from '@/app/constant/constant'; // Adjust path
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { blogData } from "@/app/constant/constant"; // Adjust path
 
-type BlogType = typeof blogData[number];
+type BlogType = (typeof blogData)[number];
+
+import { Metadata } from "next";
+export const metadata: Metadata = {};
 
 export default function BlogPageClient() {
   const { blogId } = useParams() as { blogId: string };
