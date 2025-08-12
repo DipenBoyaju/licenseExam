@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://neclisenceexam.vercel.app/faculty/computer-engineering</loc><lastmod>2025-07-19T10:57:20.600Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://neclisenceexam.vercel.app</loc><lastmod>2025-07-19T10:57:20.601Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://neclisenceexam.vercel.app/faculty</loc><lastmod>2025-07-19T10:57:20.601Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://neclisenceexam.vercel.app/result</loc><lastmod>2025-07-19T10:57:20.601Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://neclisenceexam.vercel.app/blog</loc><lastmod>2025-07-19T10:57:20.601Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://neclisenceexam.vercel.app/faculty/computer-engineering/quiz</loc><lastmod>2025-07-19T10:57:20.601Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://neclisenceexam.vercel.app/review</loc><lastmod>2025-07-19T10:57:20.601Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://neclisenceexam.vercel.app</loc><lastmod>2025-08-12T10:47:41.196Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://neclisenceexam.vercel.app/faculty/computer-engineering</loc><lastmod>2025-08-12T10:47:41.197Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://neclisenceexam.vercel.app/take-test</loc><lastmod>2025-08-12T10:47:41.197Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://neclisenceexam.vercel.app/blog/How-to-Pass-NEC-License-Exam-Nepal</loc><lastmod>2025-08-12T10:47:41.197Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://neclisenceexam.vercel.app/blog/NEC-Exam-Past-Questions-Nepal</loc><lastmod>2025-08-12T10:47:41.197Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://neclisenceexam.vercel.app/blog/NEC-Exam-Preparation-Nepal</loc><lastmod>2025-08-12T10:47:41.197Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://neclisenceexam.vercel.app/blog/NEC-License-Study-Materials-Nepal</loc><lastmod>2025-08-12T10:47:41.197Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://neclisenceexam.vercel.app/blog/Nepal-Engineering-Council-License-Exam</loc><lastmod>2025-08-12T10:47:41.197Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://neclisenceexam.vercel.app/blog/Why-Engineering-License-Is-Important-Nepal</loc><lastmod>2025-08-12T10:47:41.197Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://neclisenceexam.vercel.app/take-test/computer-engineering/quiz</loc><lastmod>2025-08-12T10:47:41.197Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://neclisenceexam.vercel.app/result</loc><lastmod>2025-08-12T10:47:41.197Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://neclisenceexam.vercel.app/review</loc><lastmod>2025-08-12T10:47:41.197Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://neclisenceexam.vercel.app/take-test/computer-engineering</loc><lastmod>2025-08-12T10:47:41.197Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://neclisenceexam.vercel.app/blog</loc><lastmod>2025-08-12T10:47:41.197Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
