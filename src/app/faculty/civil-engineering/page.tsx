@@ -2,15 +2,15 @@ import Link from "next/link";
 
 export function generateMetadata() {
   return {
-    title: "Computer Engineering - NEC License Exam Preparation",
+    title: "Civil Engineering - NEC License Exam Preparation",
     description:
-      "Prepare for the NEC License exam with Computer Engineering resources. Explore the syllabus, key topics, and tips for success in the exam.",
+      "Prepare for the NEC License exam with Civil Engineering resources. Explore the syllabus, key topics, and tips for success in the exam.",
     keywords: [
-      "NEC License Exam Computer Engineering",
+      "NEC License Exam Civil Engineering",
       "NEC License Exam Preparation",
-      "Computer Engineering Syllabus",
+      "Civil Engineering Syllabus",
       "NEC License Exam Tips",
-      "NEC License Exam Resources for Computer Engineering ",
+      "NEC License Exam Resources for Civil Engineering ",
     ],
   };
 }
@@ -38,11 +38,11 @@ export default function FacultyPage() {
             <div className="md:col-span-2">
               {/* Page Header */}
               <h1 className="text-4xl font-bold mb-4 text-gray-900">
-                Computer Engineering
+                Civil Engineering
               </h1>
               <p className="mb-10 text-gray-600 max-w-3xl">
                 Get an overview of the core syllabus and key topics for the NEC
-                License Exam in Computer Engineering.
+                License Exam in Civil Engineering.
               </p>
 
               {/* Syllabus Overview */}
@@ -51,20 +51,20 @@ export default function FacultyPage() {
                   Syllabus Overview
                 </h2>
                 <ol className="list-decimal list-inside space-y-2 text-gray-700">
-                  <li>Concept of Basic Electrical and Electronics Engineering</li>
-                  <li>Digital Logic and Microprocessor</li>
-                  <li>Programming Language and Its Applications</li>
-                  <li>Computer Organization and Embedded System</li>
-                  <li>Concept of Computer Network and Network Security System</li>
-                  <li>Theory of Computation and Computer Graphics</li>
-                  <li>Data Structures and Algorithm, Database System and Operating System </li>
-                  <li>Software Engineering and Object-Oriented Analysis & Design </li>
-                  <li>Artificial Intelligence and Neural Networks</li>
+                  <li>Basic Civil Engineering</li>
+                  <li>Soil Mechanics and Foundation Engineering</li>
+                  <li>Basic Water Resources Engineering</li>
+                  <li>Structural Mechanics</li>
+                  <li>Design of Structures</li>
+                  <li>Water Supply, Sanitation and Environment</li>
+                  <li>Irrigation and Drainage</li>
+                  <li>Hydropower</li>
+                  <li>Transportation</li>
                   <li>Project Planning, Design and Implementation</li>
                 </ol>
                 {/* Optional PDF */}
                 <a
-                  href="/syllabus/NEC_Computer_Engineering_Syllabus.pdf"
+                  href="/syllabus/NEC_Civil_Engineering_Syllabus.pdf"
                   className="inline-block mt-4 text-orange-600 font-medium hover:underline"
                   download
                 >
@@ -95,8 +95,8 @@ export default function FacultyPage() {
               </a> */}
 
               <Link
-                href="/take-test/computer-engineering/quiz"
-                className="mt-4 inline-block w-full bg-orange-600 text-center text-white px-4 py-2 rounded-md hover:bg-orange-500 transition"
+                href="/mock-tests/computer-engineering"
+                className="mt-4 inline-block w-full bg-orange-600 text-center text-white px-4 py-2 rounded-md hover:bg-orange-500 transition cursor-not-allowed pointer-events-none opacity-50"
               >
                 Start Mock Tests →
               </Link>

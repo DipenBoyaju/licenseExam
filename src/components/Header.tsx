@@ -24,7 +24,7 @@ const navigation: NavItem[] = [
     href: '',
     subItems: [
       { name: 'Computer Engineering', href: '/faculty/computer-engineering' },
-      { name: 'Civil', href: '/faculty/civil' },
+      { name: 'Civil Engineering', href: '/faculty/civil-engineering' },
       { name: 'Architecture', href: '/faculty/architecture' },
     ],
   },
