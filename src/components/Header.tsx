@@ -18,11 +18,6 @@ const navigation: NavItem[] = [
   {
     name: 'Take Test',
     href: '/take-test',
-    subItems: [
-      { name: 'Computer Engineering', href: '/take-test/computer-engineering' },
-      { name: 'Civil', href: '/take-test/civil' },
-      { name: 'Architecture', href: '/take-test/architecture' },
-    ],
   },
   {
     name: 'Faculty',
