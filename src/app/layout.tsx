@@ -36,6 +36,54 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org/",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Take Test",
+                  item: process.env.NEXT_PUBLIC_SITE_URL + "/take-test",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Faculty",
+                  item: [
+                    process.env.NEXT_PUBLIC_SITE_URL +
+                      "/faculty/computer-engineering",
+                    process.env.NEXT_PUBLIC_SITE_URL +
+                      "/faculty/civil-engineering",
+                    process.env.NEXT_PUBLIC_SITE_URL +
+                      "/faculty/electrical-engineering",
+                    process.env.NEXT_PUBLIC_SITE_URL +
+                      "/faculty/software-engineering",
+                    process.env.NEXT_PUBLIC_SITE_URL +
+                      "/faculty/architecture",
+                  ],
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: "Blog",
+                  item: process.env.NEXT_PUBLIC_SITE_URL + "/blog",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 4,
+                  name: "Reviews",
+                  item: process.env.NEXT_PUBLIC_SITE_URL + "/review",
+                },
+              ],
+            }),
+          }}
+        />
+      </head>
       <body className={`${inter.variable} ${poppins.variable} antialiased`}>
         <Providers>
           <div className="flex min-h-screen flex-col">

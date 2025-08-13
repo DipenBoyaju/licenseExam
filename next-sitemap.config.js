@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://neclisenceexam.vercel.app',
+  siteUrl: process.env.SITE_URL || "https://neclicenseexam.vercel.app",
   generateRobotsTxt: true, // (optional)
   // ...other options
-}
+};
