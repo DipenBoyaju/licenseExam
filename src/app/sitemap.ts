@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { blogData } from "./app/constant/constant";
+import { blogData } from "./constant/constant";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = process.env.SITE_URL || "https://neclicenseexam.vercel.app";
