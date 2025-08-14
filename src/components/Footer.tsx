@@ -6,7 +6,7 @@ export default function Footer() {
       <div className=" px-6 lg:px-18">
         <div className="grid md:grid-cols-6 md:py-20 py-10">
           <div className="md:col-span-4 space-y-5">
-            <h4 className="font-bold text-4xl md:w-[60%]">Engineering License Exam Preparation</h4>
+            <h4 className="font-bold text-3xl md:w-[60%]">Engineering License Exam Preparation</h4>
             <p className="text-zinc-600 md:w-[50%]">Prepare for the Nepal Engineering Council license exam with our practice questions.</p>
           </div>
           <div className="md:col-span-2 mt-10 md:mt-0">

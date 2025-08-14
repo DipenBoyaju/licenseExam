@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://neclisenceexam.vercel.app
+Host: https://neclicenseexam.vercel.app
 
 # Sitemaps
-Sitemap: https://neclisenceexam.vercel.app/sitemap.xml
+Sitemap: https://neclicenseexam.vercel.app/sitemap.xml
