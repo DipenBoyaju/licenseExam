@@ -1,32 +1,27 @@
 'use client';
 
-import { useEffect, useRef, useCallback, useMemo, useState } from 'react';
+import React, { useEffect, useRef, useCallback, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useQuizStore } from '../../../../store/quizStore';
 import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import { TrophySpin } from 'react-loading-indicators';
+import { fetchQuestions } from '@/services/quizService';
 
-const fetchQuestion = async () => {
-  const res = await axios.get('/api/proxy-quiz');
-  return res.data.data;
-};
-
-export default function Page() {
+export default function Page({ params }: { params: Promise<{ faculty: string }> }) {
   const router = useRouter();
+  const { faculty } = React.use(params);
 
   const { data, isLoading, isError } = useQuery({
-    queryKey: ['questions'],
-    queryFn: fetchQuestion,
+    queryKey: ['questions', faculty],
+    queryFn: () => fetchQuestions(faculty),
     staleTime: Infinity,
     refetchOnWindowFocus: false,
+    retry: false,
   });
 
-  console.log(data)
 
   const questions = useMemo(() => {
-    if (!data) return [];
-    return [...(data.section1 || []), ...(data.section2 || [])];
+    return Array.isArray(data) ? data : [];
   }, [data]);
 
   const selectedAnswers = useQuizStore((s) => s.selectedAnswers);
@@ -36,17 +31,24 @@ export default function Page() {
   const setResult = useQuizStore((s) => s.setResult);
 
   const selectedAnswersRef = useRef(selectedAnswers);
+
   useEffect(() => {
     selectedAnswersRef.current = selectedAnswers;
   }, [selectedAnswers]);
 
   useEffect(() => {
-    if (questions.length > 0 && selectedAnswers.length === 0) {
+    if (questions.length > 0 && selectedAnswers.length !== questions.length) {
       setSelectedAnswers(Array(questions.length).fill(null));
     }
-  }, [questions, selectedAnswers.length, setSelectedAnswers]);
+  }, [questions.length, selectedAnswers.length, setSelectedAnswers]);
 
+  //timer initialization 
   const [timeLeft, setTimeLeft] = useState(2 * 60 * 60);
+  useEffect(() => {
+    if (data?.remainingTimeSec) {
+      setTimeLeft(data.remainingTimeSec);
+    }
+  }, [data?.remainingTimeSec]);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitEnabled, setSubmitEnabled] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
@@ -58,9 +60,9 @@ export default function Page() {
   }, [currentIndex, questions.length]);
 
   const handleSubmit = useCallback(() => {
-    if (!data) return;
+    if (questions.length === 0) return;
 
-    let tempScore = 0;
+    let totalScore = 0;
 
     const mistakes: {
       question: string;
@@ -68,19 +70,16 @@ export default function Page() {
       selectedAnswer: string | null;
     }[] = [];
 
-    const section1Length = data.section1?.length || 0;
-
-    selectedAnswersRef.current.forEach((ans, idx) => {
+    selectedAnswersRef.current.forEach((ansIndex, idx) => {
       const q = questions[idx];
       if (!q) return;
 
-      const marks = idx < section1Length ? 1 : 2;
+      const selectedAnswer = ansIndex !== null ? q.options[ansIndex] : null;
 
-      const selectedAnswer = ans !== null ? q.options[ans] : null;
-      const correctAnswer = typeof q.answer === 'number' ? q.options[q.answer] : q.answer;
+      const correctAnswer = q.answer;
 
       if (selectedAnswer === correctAnswer) {
-        tempScore += marks;
+        totalScore += 1;
       } else if (selectedAnswer !== null) {
         mistakes.push({
           question: q.question,
@@ -90,15 +89,15 @@ export default function Page() {
       }
     });
 
-    setResult(tempScore, mistakes, selectedAnswersRef.current);
+    setResult(totalScore, mistakes, selectedAnswersRef.current);
 
     setIsSubmitted(true);
     setShowConfirm(false);
     router.push('/result');
-  }, [setResult, router, questions, data]);
+  }, [questions, setResult, router]);
 
   useEffect(() => {
-    if (isSubmitted) return;
+    if (isSubmitted || questions.length === 0) return;
 
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
@@ -112,7 +111,7 @@ export default function Page() {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [isSubmitted, handleSubmit]);
+  }, [isSubmitted, handleSubmit, questions.length]);
 
   const formatTime = (seconds: number) => {
     const hrs = Math.floor(seconds / 3600);
@@ -140,8 +139,7 @@ export default function Page() {
     setCurrentIndex(index);
   };
 
-  const section1Length = data?.section1?.length || 0;
-  const currentMarks = currentIndex < section1Length ? 1 : 2;
+  // const currentMarks = currentIndex;
 
   return (
     <>
@@ -164,19 +162,19 @@ export default function Page() {
               <div className="md:col-span-1 bg-white rounded-lg p-4 shadow-md">
                 <h2 className="text-lg font-semibold mb-4 text-gray-700">Questions</h2>
                 <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                  {questions.map((q, idx) => (
+                  {questions?.map((_, i) => (
                     <button
-                      key={q.id || idx}
-                      onClick={() => goToQuestion(idx)}
+                      key={i}
+                      onClick={() => goToQuestion(i)}
                       className={`w-10 h-10 text-sm font-medium flex items-center justify-center border rounded-lg
-                        ${selectedAnswers[idx] !== null
+                        ${selectedAnswers[i] !== null
                           ? 'bg-green-500 text-white'
                           : 'bg-gray-100 text-gray-700'
                         }
-                        ${idx === currentIndex ? 'ring-2 ring-blue-500 scale-105' : ''}
+                        ${i === currentIndex ? 'ring-2 ring-blue-500 scale-105' : ''}
                       `}
                     >
-                      {idx + 1}
+                      {i + 1}
                     </button>
                   ))}
                 </div>
@@ -184,7 +182,9 @@ export default function Page() {
 
               <div className="md:col-span-3 bg-white rounded-lg p-6 shadow-md space-y-6">
                 <div className="flex items-center justify-between">
-                  <p className="ml-4 text-emerald-500">Mark: {currentMarks}</p>
+                  <p className="ml-4 text-emerald-500 font-bold">Total Mark: 100</p>
+                  <p></p>
+                  {/* <p className="ml-4 text-emerald-500">Mark: {currentMarks}</p> */}
                   <p>
                     Time Left:{' '}
                     <span className="text-white bg-orange-500 py-1 px-2 rounded-sm font-semibold">

@@ -1,27 +1,27 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { BrickWall, Laptop } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { faculty } from "../constant/faculty";
 
-const faculty = [
-  {
-    title: "Computer Engineering",
-    slug: "computer-engineering",
-    icon: <Laptop />,
-    desc: "Includes topics like DSA, OS, CN, DBMS, and Software Engineering.",
-  },
-  {
-    title: "Civil Engineering",
-    icon: <BrickWall strokeWidth={1} />,
-    desc: "Covers structures, fluid mechanics, surveying, soil, and more.",
-  },
-  {
-    title: "Architecture",
-    icon: <BrickWall strokeWidth={1} />,
-    desc: "Covers structures, fluid mechanics, surveying, soil, and more.",
-  },
-];
+// const faculty = [
+//   {
+//     title: "Computer Engineering",
+//     slug: "computer-engineering",
+//     icon: <Laptop />,
+//     desc: "Includes topics like DSA, OS, CN, DBMS, and Software Engineering.",
+//   },
+//   {
+//     title: "Civil Engineering",
+//     icon: <BrickWall strokeWidth={1} />,
+//     desc: "Covers structures, fluid mechanics, surveying, soil, and more.",
+//   },
+//   {
+//     title: "Architecture",
+//     icon: <BrickWall strokeWidth={1} />,
+//     desc: "Covers structures, fluid mechanics, surveying, soil, and more.",
+//   },
+// ];
 export default function Page() {
   const router = useRouter();
 
@@ -51,9 +51,9 @@ export default function Page() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {faculty.map((branch, idx) => (
+          {faculty.map((branch) => (
             <Card
-              key={idx}
+              key={branch.id}
               className="cursor-pointer hover:shadow-lg transition"
               onClick={() => router.push(`/take-test/${branch.slug}`)}
             >

@@ -4,15 +4,20 @@ import Link from "next/link";
 import { BookOpen, History } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useQuizStore } from "@/store/quizStore";
+import React from "react";
 
-export default function Page() {
+export default function Page({ params }: { params: Promise<{ faculty: string }> }) {
+  const resolvedParams = React.use(params);
+  const facultyName = resolvedParams.faculty;
   const router = useRouter()
   const reset = useQuizStore((s) => s.reset);
 
   const handleStart = () => {
     reset();
-    router.push('/take-test/computer-engineering/quiz')
+    router.push(`/take-test/${facultyName}/quiz`)
   }
+
+  const formattedTitle = facultyName.replace(/-/g, ' ');
   return (
     <div className="bg-white min-h-screen">
       <div className="relative isolate px-6 lg:px-18">
@@ -34,7 +39,7 @@ export default function Page() {
           {/* Page Title */}
           <div className="text-center mb-12">
             <h2 className="font-inter font-bold text-3xl md:text-4xl">
-              Practice Question Sets
+              <span className="text-orange-600 capitalize">{formattedTitle}</span> <br />Practice Question Sets
             </h2>
             <p className="font-poppins text-gray-600 mt-2 max-w-2xl mx-auto">
               Prepare smartly — take a new quiz or review your previous attempts to see your progress.
