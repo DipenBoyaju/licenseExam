@@ -1,3 +1,4 @@
+import SyllabusButtonSection from "@/app/components/SyllabusButtonSection";
 import Link from "next/link";
 
 export function generateMetadata() {
@@ -16,6 +17,7 @@ export function generateMetadata() {
 }
 
 export default function FacultyPage() {
+  const syllabusPath = "/syllabus/NEC_Civil_Engineering_Syllabus.pdf";
   return (
     <div>
       <div className="relative isolate px-6 lg:px-18">
@@ -63,13 +65,7 @@ export default function FacultyPage() {
                   <li>Project Planning, Design and Implementation</li>
                 </ol>
                 {/* Optional PDF */}
-                <a
-                  href="/syllabus/NEC_Civil_Engineering_Syllabus.pdf"
-                  className="inline-block mt-4 text-orange-600 font-medium hover:underline"
-                  download
-                >
-                  Download Full Syllabus PDF →
-                </a>
+                <SyllabusButtonSection pdfPath={syllabusPath} />
               </section>
             </div>
 
