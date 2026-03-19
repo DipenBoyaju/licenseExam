@@ -6,12 +6,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
+import { faculty } from "../app/constant/faculty"
 
 interface NavItem {
   name: string;
   href: string;
   subItems?: { name: string; href: string }[];
 }
+
+const dynamicFacultySubItems = faculty.map(dept => ({
+  name: dept.title,
+  href: `/faculty/${dept.slug}`
+}));
 
 const navigation: NavItem[] = [
   { name: 'Home', href: '/' },
@@ -22,11 +28,7 @@ const navigation: NavItem[] = [
   {
     name: 'Faculty',
     href: '',
-    subItems: [
-      { name: 'Computer Engineering', href: '/faculty/computer-engineering' },
-      { name: 'Civil Engineering', href: '/faculty/civil-engineering' },
-      { name: 'Architecture', href: '/faculty/architecture' },
-    ],
+    subItems: dynamicFacultySubItems,
   },
   { name: 'Blog', href: '/blog' },
 ];

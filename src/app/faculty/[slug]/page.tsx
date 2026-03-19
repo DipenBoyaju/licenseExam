@@ -1,24 +1,44 @@
-
 import SyllabusButtonSection from "@/app/components/SyllabusButtonSection";
+import { facultyDetails, FacultyDetail } from "@/app/constant/facultyDetails";
 import Link from "next/link";
 
 export function generateMetadata() {
   return {
-    title: "Computer Engineering - NEC License Exam Preparation",
+    title: "Civil Engineering - NEC License Exam Preparation",
     description:
-      "Prepare for the NEC License exam with Computer Engineering resources. Explore the syllabus, key topics, and tips for success in the exam.",
+      "Prepare for the NEC License exam with Civil Engineering resources. Explore the syllabus, key topics, and tips for success in the exam.",
     keywords: [
-      "NEC License Exam Computer Engineering",
+      "NEC License Exam Civil Engineering",
       "NEC License Exam Preparation",
-      "Computer Engineering Syllabus",
+      "Civil Engineering Syllabus",
       "NEC License Exam Tips",
-      "NEC License Exam Resources for Computer Engineering ",
+      "NEC License Exam Resources for Civil Engineering ",
     ],
   };
 }
 
-export default function FacultyPage() {
-  const syllabusPath = "/syllabus/NEC_Computer_Engineering_Syllabus.pdf";
+export default async function page({
+  params
+}: {
+  params: Promise<{ slug: string }>
+}) {
+
+  const { slug } = await params;
+
+  const data: FacultyDetail | undefined = facultyDetails[slug];
+
+  const syllabusPath = data?.pdfPath || "/syllabus/NEC_Civil_Engineering_Syllabus.pdf";
+
+  if (!data) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[60vh] mt-20">
+        <h1 className="text-2xl font-bold text-gray-400">Coming Soon</h1>
+        <p className="text-gray-500 italic">Resources for {slug.replace(/-/g, ' ')} are being prepared.</p>
+        <Link href="/" className="mt-4 text-orange-600 hover:underline">← Back to Home</Link>
+      </div>
+    );
+  }
+
   return (
     <div>
       <div className="relative isolate px-6 lg:px-18">
@@ -41,11 +61,10 @@ export default function FacultyPage() {
             <div className="md:col-span-2">
               {/* Page Header */}
               <h1 className="text-4xl font-bold mb-4 text-gray-900">
-                Computer Engineering
+                {data.title}
               </h1>
               <p className="mb-10 text-gray-600 max-w-3xl">
-                Get an overview of the core syllabus and key topics for the NEC
-                License Exam in Computer Engineering.
+                {data.subtitle}
               </p>
 
               {/* Syllabus Overview */}
@@ -54,21 +73,15 @@ export default function FacultyPage() {
                   Syllabus Overview
                 </h2>
                 <ol className="list-decimal list-inside space-y-2 text-gray-700">
-                  <li>Concept of Basic Electrical and Electronics Engineering</li>
-                  <li>Digital Logic and Microprocessor</li>
-                  <li>Programming Language and Its Applications</li>
-                  <li>Computer Organization and Embedded System</li>
-                  <li>Concept of Computer Network and Network Security System</li>
-                  <li>Theory of Computation and Computer Graphics</li>
-                  <li>Data Structures and Algorithm, Database System and Operating System </li>
-                  <li>Software Engineering and Object-Oriented Analysis & Design </li>
-                  <li>Artificial Intelligence and Neural Networks</li>
-                  <li>Project Planning, Design and Implementation</li>
+                  {
+                    data.syllabus.map((list, idx) => (
+                      <li key={idx}>{list}</li>
+                    ))
+                  }
                 </ol>
                 {/* Optional PDF */}
                 <SyllabusButtonSection pdfPath={syllabusPath} />
               </section>
-
             </div>
 
             {/* Right: Tips & Resources */}
@@ -93,8 +106,8 @@ export default function FacultyPage() {
               </a> */}
 
               <Link
-                href="/take-test/computer-engineering/quiz"
-                className="mt-4 inline-block w-full bg-orange-600 text-center text-white px-4 py-2 rounded-md hover:bg-orange-500 transition"
+                href="/mock-tests/computer-engineering"
+                className="mt-4 inline-block w-full bg-orange-600 text-center text-white px-4 py-2 rounded-md hover:bg-orange-500 transition cursor-not-allowed pointer-events-none opacity-50"
               >
                 Start Mock Tests →
               </Link>
