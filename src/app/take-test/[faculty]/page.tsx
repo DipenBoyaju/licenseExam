@@ -9,7 +9,8 @@ import React from "react";
 export default function Page({ params }: { params: Promise<{ faculty: string }> }) {
   const resolvedParams = React.use(params);
   const facultyName = resolvedParams.faculty;
-  const router = useRouter()
+  console.log(facultyName);
+  const router = useRouter();
   const reset = useQuizStore((s) => s.reset);
 
   const handleStart = () => {
