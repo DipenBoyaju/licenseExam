@@ -9,7 +9,6 @@ import React from "react";
 export default function Page({ params }: { params: Promise<{ faculty: string }> }) {
   const resolvedParams = React.use(params);
   const facultyName = resolvedParams.faculty;
-  console.log(facultyName);
   const router = useRouter();
   const reset = useQuizStore((s) => s.reset);
 
@@ -50,7 +49,14 @@ export default function Page({ params }: { params: Promise<{ faculty: string }> 
           {/* Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Start Quiz Card */}
-            <div className="flex flex-col justify-between bg-white border border-gray-200 rounded-xl shadow-md p-8 hover:shadow-xl hover:border-blue-600 transition">
+            <div className="flex flex-col justify-between bg-white border border-gray-200 rounded-xl shadow-md p-8 hover:shadow-xl hover:border-blue-600 transition relative">
+              <p className="absolute top-2 right-2 flex items-center gap-1.5 rounded-full bg-green-500/10 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-green-600 border border-red-500/20 shadow-sm">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                New Questions Every 2min
+              </p>
               <div>
                 <div className="flex items-center gap-4 mb-4">
                   <div className="p-3 bg-blue-100 rounded-full">

@@ -8,7 +8,7 @@ const SyllabusButtonSection = ({ pdfPath }: { pdfPath: string }) => {
 
   return (
     <>
-      <div className="flex gap-5 flex-row items-center">
+      <div className="flex gap-5 flex-col items-start md:flex-row md:items-center ">
         <button
           onClick={() => setIsPopupOpen(true)}
           className="inline-block mt-4 text-white font-medium hover:bg-orange-500 transition-all ease-in-out duration-500 bg-orange-600 py-3 px-4 rounded-md cursor-pointer"

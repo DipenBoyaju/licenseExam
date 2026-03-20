@@ -1,5 +1,6 @@
 import SyllabusButtonSection from "@/app/components/SyllabusButtonSection";
 import { facultyDetails, FacultyDetail } from "@/app/constant/facultyDetails";
+import FacultyDetailPageButton from "@/components/FacultyDetailPageButton";
 import Link from "next/link";
 
 export function generateMetadata() {
@@ -105,12 +106,7 @@ export default async function page({
                 Join Community →
               </a> */}
 
-              <Link
-                href="/mock-tests/computer-engineering"
-                className="mt-4 inline-block w-full bg-orange-600 text-center text-white px-4 py-2 rounded-md hover:bg-orange-500 transition cursor-not-allowed pointer-events-none opacity-50"
-              >
-                Start Mock Tests →
-              </Link>
+              <FacultyDetailPageButton faculty={slug} />
             </aside>
           </div>
         </main>
