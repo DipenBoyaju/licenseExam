@@ -3,17 +3,23 @@ import { facultyDetails, FacultyDetail } from "@/app/constant/facultyDetails";
 import FacultyDetailPageButton from "@/components/FacultyDetailPageButton";
 import Link from "next/link";
 
-export function generateMetadata() {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+
+  const formattedSlug = slug
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+
   return {
-    title: "Civil Engineering - NEC License Exam Preparation",
-    description:
-      "Prepare for the NEC License exam with Civil Engineering resources. Explore the syllabus, key topics, and tips for success in the exam.",
+    title: `${formattedSlug} - NEC License Exam Preparation`,
+    description: `Prepare for the NEC License exam with ${formattedSlug} resources. Explore the syllabus, key topics, and tips for success in the exam.`,
     keywords: [
-      "NEC License Exam Civil Engineering",
+      `NEC License Exam ${formattedSlug}`,
       "NEC License Exam Preparation",
-      "Civil Engineering Syllabus",
+      `${formattedSlug} Syllabus`,
       "NEC License Exam Tips",
-      "NEC License Exam Resources for Civil Engineering ",
+      `NEC License Exam Resources for ${formattedSlug}`,
     ],
   };
 }

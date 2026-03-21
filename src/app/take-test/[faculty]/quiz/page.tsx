@@ -7,6 +7,7 @@ import { useQuery } from '@tanstack/react-query';
 import { TrophySpin } from 'react-loading-indicators';
 import { fetchQuestions } from '@/services/quizService';
 
+
 export default function Page({ params }: { params: Promise<{ faculty: string }> }) {
   const router = useRouter();
   const { faculty } = React.use(params);
