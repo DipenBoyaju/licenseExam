@@ -20,6 +20,7 @@ export default function Page({ params }: { params: Promise<{ faculty: string }> 
     retry: false,
   });
 
+  const facultyName = faculty.replaceAll("-", " ");
 
   const questions = useMemo(() => {
     return Array.isArray(data) ? data : [];
@@ -181,11 +182,10 @@ export default function Page({ params }: { params: Promise<{ faculty: string }> 
                 </div>
               </div>
 
-              <div className="md:col-span-3 bg-white rounded-lg p-6 shadow-md space-y-6">
+              <div className="md:col-span-3 bg-white rounded-lg p-6 shadow-md space-y-6 relative">
                 <div className="flex items-center justify-between">
-                  <p className="ml-4 text-emerald-500 font-bold">Total Mark: 100</p>
-                  <p></p>
-                  {/* <p className="ml-4 text-emerald-500">Mark: {currentMarks}</p> */}
+                  <p className=" text-emerald-500 font-bold">Total Mark: 100</p>
+                  <p className='absolute top-0 left-[41%] uppercase px-5 py-2 font-semibold text-sm tracking-wider bg-orange-500 text-white rounded-b-2xl'>{facultyName}</p>
                   <p>
                     Time Left:{' '}
                     <span className="text-white bg-orange-500 py-1 px-2 rounded-sm font-semibold">
