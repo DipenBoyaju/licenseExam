@@ -13,6 +13,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { ScaleIcon } from "lucide-react";
+import Testimony from "@/components/Testimony";
 
 const features = [
   {
@@ -209,30 +210,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* <section className="py-20">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-              Why Choose Our Platform?
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {features.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="flex flex-col items-start rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition hover:border-orange-500"
-                >
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-orange-50 mb-4">
-                    <feature.icon className="w-6 h-6 text-orange-600" />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-gray-900">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm">{feature.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section> */}
-
         <section className="py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Everything you need to pass in one click</h2>
@@ -262,6 +239,8 @@ export default function Home() {
             Start Your Mock Test
           </Link>
         </section>
+
+        <Testimony />
 
         <section className="bg-gray-50 py-20">
           <div className="mx-auto max-w-4xl px-6 lg:px-8">

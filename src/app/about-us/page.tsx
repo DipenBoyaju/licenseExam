@@ -1,5 +1,6 @@
 "use client";
 
+import Testimony from "@/components/Testimony";
 import {
   UserGroupIcon,
   ShieldCheckIcon,
@@ -137,6 +138,8 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      <Testimony />
     </div>
   );
 }
