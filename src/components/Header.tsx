@@ -21,6 +21,7 @@ const dynamicFacultySubItems = faculty.map(dept => ({
 
 const navigation: NavItem[] = [
   { name: 'Home', href: '/' },
+  { name: 'About Us', href: '/about-us' },
   {
     name: 'Take Test',
     href: '/take-test',
