@@ -103,13 +103,13 @@ export default function Home() {
         </div>
         <div className="mx-auto max-w-3xl py-32 sm:py-28 lg:py-40 px-6">
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-            <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-orange-900/30 hover:ring-orange-900/40">
+            <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-orange-900/30 hover:ring-orange-900/40 mt-2">
               Join <span className="text-orange-500 font-bold">2,000+</span>{" "}
               students preparing for the NEC license exam.
             </div>
           </div>
           <div className="text-center">
-            <h1 className="text-5xl font-bold tracking-tight text-balance text-gray-900 sm:text-7xl font-inter">
+            <h1 className="text-5xl font-bold tracking-tight text-balance text-gray-900 sm:text-7xl font-inter pt-3">
               Engineering License Exam Preparation
             </h1>
             <p className="mt-8 text-base font-normal text-pretty text-gray-500 font-poppins">
