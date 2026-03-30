@@ -89,7 +89,7 @@ export default function Page({ params }: { params: Promise<{ faculty: string }> 
                 </p>
               </div>
               <Link
-                href="/history"
+                href="/past-questions"
                 className="inline-block self-start px-5 py-2 rounded-md bg-green-600 text-white font-medium hover:bg-green-700 transition"
               >
                 View History
