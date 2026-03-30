@@ -32,6 +32,7 @@ const navigation: NavItem[] = [
     subItems: dynamicFacultySubItems,
   },
   { name: 'Blog', href: '/blog' },
+  { name: 'Contact Us', href: '/contact-us' },
 ];
 
 export default function Header() {
