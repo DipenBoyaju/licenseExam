@@ -144,37 +144,7 @@ export default function Page({ params }: { params: Promise<{ faculty: string }> 
 
   // const currentMarks = currentIndex;
 
-  if (!data) {
-    return (
-      <div className="relative flex flex-col items-center justify-center min-h-[80vh] px-4 text-center overflow-hidden">
 
-        {/* Subtle Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-white to-orange-100 opacity-60" />
-        <div className="relative z-10">
-
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mt-2 tracking-tight">
-            Coming Soon
-          </h1>
-          <p className="mt-4 text-lg text-gray-500 capitalize max-w-xl mx-auto">
-            We’re preparing resources for{" "}
-            <span className="font-medium text-gray-700">
-              {faculty.replace(/-/g, " ")}
-            </span>{" "}
-            — stay tuned!
-          </p>
-          <div className="w-20 h-1 bg-orange-500 mt-6 mx-auto rounded-full animate-pulse" />
-
-          {/* CTA */}
-          <Link
-            href="/"
-            className="mt-8 inline-block text-orange-500 font-medium hover:text-orange-600 transition"
-          >
-            ← Back to Home
-          </Link>
-        </div>
-      </div>
-    );
-  }
   return (
     <>
       {isLoading && (
