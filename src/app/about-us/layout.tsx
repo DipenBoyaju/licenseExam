@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import React, { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "Take Test",
+  title: "About Us | NEC Exam",
   description:
     "Prepare effectively for the NEC License exam with our extensive MCQ practice tests. Access chapter-wise quizzes, model question sets, and detailed solutions to master all topics and boost your success.",
   keywords: [
