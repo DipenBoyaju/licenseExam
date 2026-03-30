@@ -12,6 +12,7 @@ import { PlusIcon, MinusIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
+import { ScaleIcon } from "lucide-react";
 
 const features = [
   {
@@ -125,7 +126,90 @@ export default function Home() {
           </div>
         </div>
 
-        <section className="pb-20">
+        <section className="py-24 bg-gray-50/50 overflow-hidden">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+              {/* Left Column: Contextual Content */}
+              <div className="relative">
+                {/* Subtle Decorative Background Element */}
+                <div className="absolute -left-4 -top-4 w-20 h-20 bg-orange-100 rounded-full blur-3xl opacity-60" />
+
+                <span className="inline-flex items-center rounded-full bg-orange-50 px-3 py-1 text-sm font-medium text-orange-700 ring-1 ring-inset ring-orange-600/20 mb-6">
+                  Official Guidelines
+                </span>
+
+                <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl mb-6">
+                  Understanding the <span className="text-orange-600 font-inter">NEC Licensing</span> Requirement
+                </h2>
+
+                <div className="space-y-6 text-gray-600 text-lg leading-relaxed font-poppins">
+                  <p>
+                    As per the <strong className="text-gray-900">Nepal Engineering Council Act, 2055 (First Amendment 2079)</strong>,
+                    passing the professional licensing examination is now a mandatory requirement to practice
+                    engineering legally in Nepal.
+                  </p>
+                  <p>
+                    This mandate ensures that every registered engineer meets the
+                    <span className="text-gray-900 font-semibold"> professional competence</span> required to handle
+                    nation-building projects safely and ethically.
+                  </p>
+                  <p className="text-base text-gray-500 italic">
+                    Our platform covers the full spectrum of the <strong className="text-orange-600">12th General Registered Engineer Examination</strong>,
+                    focusing specifically on Civil, Computer, and Electrical faculties.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right Column: Information Card */}
+              <div className="relative group">
+                {/* Glow effect on hover */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 to-orange-400 rounded-2xl blur opacity-10 group-hover:opacity-20 transition duration-1000 group-hover:duration-200" />
+
+                <div className="relative bg-white p-8 sm:p-10 rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100">
+                  <div className="flex items-center gap-3 mb-8 border-b border-gray-100 pb-6">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-600">
+                      <ScaleIcon className="h-6 w-6 text-white" aria-hidden="true" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900">
+                      2082/2083 Marking Scheme
+                    </h3>
+                  </div>
+
+                  <ul className="space-y-5">
+                    {[
+                      { label: "Total Marks", value: "100" },
+                      { label: "Question Type", value: "100 MCQs" },
+                      { label: "Passing Score", value: "50% (50 Marks)" },
+                      { label: "Exam Duration", value: "2 Hours" },
+                      { label: "Negative Marking", value: "None", isLast: true },
+                    ].map((item, idx) => (
+                      <li key={idx} className={`flex justify-between items-center ${!item.isLast ? 'border-b border-gray-50 pb-4' : ''}`}>
+                        <span className="text-gray-500 font-medium">{item.label}</span>
+                        <span className={`font-bold ${item.value === 'None' ? 'text-green-600' : 'text-gray-900'}`}>
+                          {item.value}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-8">
+                    <Link
+                      href="/syllabus"
+                      className="text-sm font-semibold text-orange-600 hover:text-orange-500 flex items-center gap-1 transition"
+                    >
+                      View detailed faculty syllabus
+                      <span aria-hidden="true">→</span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* <section className="py-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
               Why Choose Our Platform?
@@ -146,6 +230,21 @@ export default function Home() {
                 </div>
               ))}
             </div>
+          </div>
+        </section> */}
+
+        <section className="py-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Everything you need to pass in one click</h2>
+          </div>
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            {features.map((f) => (
+              <div key={f.title} className="p-8 border border-gray-100 rounded-3xl bg-white shadow-xs hover:shadow-md transition border-b-4 hover:border-b-orange-600">
+                <f.icon className="w-10 h-10 text-orange-600 mb-6" />
+                <h3 className="text-xl font-bold mb-3 text-gray-900">{f.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{f.desc}</p>
+              </div>
+            ))}
           </div>
         </section>
 
