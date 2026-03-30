@@ -31,6 +31,7 @@ const navigation: NavItem[] = [
     href: '',
     subItems: dynamicFacultySubItems,
   },
+  { name: 'Syllabus', href: '/syllabus' },
   { name: 'Blog', href: '/blog' },
   { name: 'Contact Us', href: '/contact-us' },
 ];
@@ -105,7 +106,7 @@ export default function Header() {
             <div key={item.name} className="relative group">
               <Link
                 href={item.href}
-                className={`text-sm font-semibold px-3 py-2 ${isClient && pathname === item.href
+                className={`text-sm font-semibold  py-2 ${isClient && pathname === item.href
                   ? 'text-[#f54a00]'
                   : 'text-gray-900 hover:text-[#f54a00]'
                   }`}
