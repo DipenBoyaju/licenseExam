@@ -18,7 +18,7 @@ export default function Footer() {
                   <li className="hover:text-orange-400 transition-all duration-500 ease-in-out hover:pl-2 font-semibold text-zinc-600"><Link href="/take-test">Take Test</Link></li>
                   <li className="hover:text-orange-400 transition-all duration-500 ease-in-out hover:pl-2 font-semibold text-zinc-600"><Link href="/blog">Blog</Link></li>
                   <li className="hover:text-orange-400 transition-all duration-500 ease-in-out hover:pl-2 font-semibold text-zinc-600"><Link href="/review">Review Us</Link></li>
-                  {/* <li className="hover:text-orange-400 transition-all duration-500 ease-in-out hover:pl-2 font-semibold text-zinc-600"><Link href="/privacy">Privacy Policy</Link></li> */}
+                  <li className="hover:text-orange-400 transition-all duration-500 ease-in-out hover:pl-2 font-semibold text-zinc-600"><Link href="/privacy">Privacy Policy</Link></li>
                 </ul>
               </div>
               <div className="">
