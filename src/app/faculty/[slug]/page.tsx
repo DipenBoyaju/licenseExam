@@ -2,6 +2,13 @@ import SyllabusButtonSection from "@/app/components/SyllabusButtonSection";
 import { facultyDetails, FacultyDetail } from "@/app/constant/facultyDetails";
 import FacultyDetailPageButton from "@/components/FacultyDetailPageButton";
 import Link from "next/link";
+import {
+  BookOpen,
+  Sparkles,
+  Compass,
+  HelpCircle,
+  ArrowLeft
+} from "lucide-react";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -29,39 +36,38 @@ export default async function page({
 }: {
   params: Promise<{ slug: string }>
 }) {
-
   const { slug } = await params;
-
   const data: FacultyDetail | undefined = facultyDetails[slug];
-
   const syllabusPath = data?.pdfPath || "/syllabus/NEC_Civil_Engineering_Syllabus.pdf";
 
   if (!data) {
     return (
-      <div className="relative flex flex-col items-center justify-center min-h-[80vh] px-4 text-center overflow-hidden">
+      <div className="bg-white min-h-screen relative overflow-hidden flex flex-col items-center justify-center px-6 text-center">
+        {/* Structural ambient lighting blurred shapes */}
+        <div className="absolute top-0 right-0 -translate-y-12 translate-x-12 w-96 h-96 bg-orange-100/30 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-1/4 left-0 -translate-x-12 w-72 h-72 bg-amber-100/10 rounded-full blur-3xl pointer-events-none" />
 
-        {/* Subtle Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-white to-orange-100 opacity-60" />
-        <div className="relative z-10">
-
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mt-2 tracking-tight">
+        <div className="relative z-10 max-w-md">
+          <span className="inline-flex items-center rounded-full bg-orange-50 px-3 py-1 text-sm font-medium text-orange-700 ring-1 ring-inset ring-orange-600/20 mb-4 font-poppins">
+            Curriculum Pipeline
+          </span>
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 font-inter">
             Coming Soon
           </h1>
-          <p className="mt-4 text-lg text-gray-500 capitalize max-w-xl mx-auto">
-            We’re preparing resources for{" "}
-            <span className="font-medium text-gray-700">
+          <p className="mt-4 text-base text-gray-500 capitalize leading-relaxed font-poppins">
+            Our academic board is actively structuring resources and curated datasets for{" "}
+            <span className="font-semibold text-gray-800">
               {slug.replace(/-/g, " ")}
-            </span>{" "}
-            — stay tuned!
+            </span>.
           </p>
-          <div className="w-20 h-1 bg-orange-500 mt-6 mx-auto rounded-full animate-pulse" />
+          <div className="w-16 h-1 bg-orange-500 mt-6 mx-auto rounded-full animate-pulse" />
 
-          {/* CTA */}
           <Link
             href="/"
-            className="mt-8 inline-block text-orange-500 font-medium hover:text-orange-600 transition"
+            className="mt-8 group inline-flex items-center justify-center gap-2 rounded-xl bg-neutral-100 px-5 py-2.5 text-sm font-bold text-neutral-700 shadow-xs hover:bg-neutral-200/80 transition-all font-poppins"
           >
-            ← Back to Home
+            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" />
+            Return to Home
           </Link>
         </div>
       </div>
@@ -69,73 +75,117 @@ export default async function page({
   }
 
   return (
-    <div>
-      <div className="relative isolate px-6 lg:px-18">
-        {/* Decorative Background */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-        >
-          <div
-            style={{
-              clipPath:
-                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-            }}
-            className="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-          />
-        </div>
-        <main className="mt-32 pb-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {/* Left: Main Content */}
-            <div className="md:col-span-2">
-              {/* Page Header */}
-              <h1 className="text-4xl font-bold mb-4 text-gray-900">
-                {data.title}
-              </h1>
-              <p className="mb-10 text-gray-600 max-w-3xl">
-                {data.subtitle}
-              </p>
+    <div className="bg-white min-h-screen relative overflow-hidden">
+      {/* Platform-standard signature ambient layout light particles */}
+      <div className="absolute top-0 right-0 -translate-y-12 translate-x-12 w-96 h-96 bg-orange-100/30 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 left-0 -translate-x-12 w-72 h-72 bg-amber-100/10 rounded-full blur-3xl pointer-events-none" />
 
-              {/* Syllabus Overview */}
-              <section>
-                <h2 className="text-2xl font-semibold mb-4 text-gray-800">
-                  Syllabus Overview
-                </h2>
-                <ol className="list-decimal list-inside space-y-2 text-gray-700">
-                  {
-                    data.syllabus.map((list, idx) => (
-                      <li key={idx}>{list}</li>
-                    ))
-                  }
-                </ol>
-                {/* Optional PDF */}
-                <SyllabusButtonSection pdfPath={syllabusPath} />
+      <div className="relative isolate px-6 lg:px-8 max-w-7xl mx-auto pt-24 pb-20">
+        <main className="pt-12">
+          {/* Asymmetrical 12-Column Main Content Layout Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+            {/* Left: Main Content Canvas Stack (Spans 8 Columns) */}
+            <div className="lg:col-span-8 space-y-10">
+              {/* Dynamic Course Header Card */}
+              <div>
+                <span className="inline-flex items-center rounded-full bg-orange-50 px-3 py-1 text-sm font-medium text-orange-700 ring-1 ring-inset ring-orange-600/20 mb-4 font-poppins">
+                  Official Syllabus Module
+                </span>
+                <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl font-inter leading-tight">
+                  {data.title}
+                </h1>
+                <p className="mt-4 text-base sm:text-lg text-gray-500 font-poppins leading-relaxed">
+                  {data.subtitle}
+                </p>
+              </div>
+
+              {/* Refactored Interactive Syllabus Overview Accordion Section */}
+              <section className="border-t border-gray-100 pt-8">
+                <div className="flex items-center gap-2.5 mb-6">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-orange-50 text-orange-600 shadow-2xs">
+                    <BookOpen className="w-5 h-5" />
+                  </div>
+                  <h2 className="text-xl font-bold text-gray-900 font-inter tracking-tight">
+                    Syllabus Overview
+                  </h2>
+                </div>
+
+                {/* Styled structural stream blocks instead of flat un-styled lists */}
+                <div className="space-y-3 font-poppins text-sm sm:text-base">
+                  {data.syllabus.map((chapter, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-start gap-4 p-4 border border-gray-100 rounded-xl bg-white shadow-3xs hover:border-orange-500/30 hover:shadow-xs transition duration-200"
+                    >
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-neutral-100 text-xs font-bold text-neutral-600 font-inter">
+                        {String(idx + 1).padStart(2, '0')}
+                      </span>
+                      <span className="text-gray-700 font-medium leading-relaxed pt-0.5">
+                        {chapter}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Upgraded Optional PDF Controller Button Wrapper row */}
+                <div className="mt-8 p-4 rounded-2xl bg-gray-50/50 border border-gray-100">
+                  <SyllabusButtonSection pdfPath={syllabusPath} />
+                </div>
               </section>
             </div>
 
-            {/* Right: Tips & Resources */}
-            <aside className="bg-gray-50 border border-gray-200 rounded-lg p-6 h-fit">
-              <h2 className="text-xl font-semibold mb-4 text-gray-800">
-                Tips & Resources
-              </h2>
-              <p className="text-gray-700 mb-3">
-                ✅ Focus on core concepts first.
-              </p>
-              <p className="text-gray-700 mb-3">
-                ✅ Solve previous year questions.
-              </p>
-              <p className="text-gray-700 mb-3">
-                ✅ Join our community for notes & doubt solving.
-              </p>
-              {/* <a
-                href="/community"
-                className="text-orange-600 font-medium hover:underline"
-              >
-                Join Community →
-              </a> */}
+            {/* Right: Floating Study Tips & Resources Aside Sidebar (Spans 4 Columns) */}
+            <aside className="lg:col-span-4 sticky top-24 lg:mt-2">
+              <div className="relative group rounded-3xl border border-gray-100 bg-white p-6 shadow-xl shadow-gray-200/40">
+                <div className="absolute -inset-px bg-gradient-to-b from-orange-500/5 to-amber-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none" />
 
-              <FacultyDetailPageButton faculty={slug} />
+                <div className="relative z-10">
+                  <h2 className="text-lg font-bold text-gray-900 font-inter tracking-tight mb-5 flex items-center gap-2 pb-3 border-b border-gray-100">
+                    <Compass className="w-4 h-4 text-orange-600" />
+                    Tips & Resources
+                  </h2>
+
+                  <div className="space-y-4 text-xs sm:text-sm font-poppins text-gray-600 mb-6">
+                    <div className="flex items-start gap-3">
+                      <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                        <Sparkles className="w-3 h-3" />
+                      </div>
+                      <p className="leading-relaxed">
+                        <strong className="text-gray-900 block font-inter font-semibold">Core Concept Focus</strong>
+                        Prioritize foundation weights first to safely maximize baseline scoring.
+                      </p>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                        <HelpCircle className="w-3 h-3" />
+                      </div>
+                      <p className="leading-relaxed">
+                        <strong className="text-gray-900 block font-inter font-semibold">Past Set Analytics</strong>
+                        Consistently solve historical sequences to match required pace targets.
+                      </p>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                        <BookOpen className="w-3 h-3" />
+                      </div>
+                      <p className="leading-relaxed">
+                        <strong className="text-gray-900 block font-inter font-semibold">Peer Group Review</strong>
+                        Engage with our digital engineering lounge to resolve edge problems quickly.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Dynamic Action Navigation Hub Button Component block */}
+                  <div className="pt-2 border-t border-gray-50">
+                    <FacultyDetailPageButton faculty={slug} />
+                  </div>
+                </div>
+              </div>
             </aside>
+
           </div>
         </main>
       </div>
