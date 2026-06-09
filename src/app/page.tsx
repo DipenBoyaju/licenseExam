@@ -8,13 +8,12 @@ import {
   DevicePhoneMobileIcon,
   LightBulbIcon,
 } from "@heroicons/react/24/outline";
-import { PlusIcon, MinusIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { ScaleIcon } from "lucide-react";
 import Testimony from "@/components/Testimony";
 import Image from "next/image";
+import Faq from "@/components/Faq";
+import Cta from "@/components/Cta";
 
 const features = [
   {
@@ -79,44 +78,7 @@ const nestedSuiteFeatures = [
   },
 ];
 
-const faqs = [
-  {
-    q: "Is this platform free?",
-    a: "We offer free practice questions and premium plans for advanced mock tests and analytics.",
-  },
-  {
-    q: "What is the structure and duration of the NEC license exam?",
-    a: "The Nepal Engineering Council (NEC) license exam is a 2-hour computer-based test comprising approximately 80 questions. It includes 60 one-mark and 20 two-mark questions, focusing on core engineering concepts and professional ethics. There is no negative marking in the exam.",
-  },
-  {
-    q: "Who is eligible to apply for the NEC license exam?",
-    a: "To be eligible for the NEC license exam, candidates must hold a Bachelor's degree in engineering from a university recognized by the Nepal Engineering Council. Foreign degree holders must obtain an equivalence certificate from Tribhuvan University.",
-  },
-  {
-    q: "What documents are required for the NEC license exam application?",
-    a: "Applicants must upload notarized copies of key documents including citizenship, academic transcripts (SEE, 10+2, and Bachelor's), character certificates, degree certificates, equivalence certificates (if applicable), and recent passport-size photos.",
-  },
-  {
-    q: "How to apply for the NEC license exam in Nepal?",
-    a: "Candidates must apply online through the official NEC portal. The application process includes uploading necessary documents and paying an exam fee of NPR 2,500 via digital payment platforms such as Khalti or Connect IPS.",
-  },
-  {
-    q: "What is the passing score for the NEC license exam?",
-    a: "To pass the NEC license exam, candidates must score a minimum of 50%. There is no penalty for incorrect answers as the exam does not include negative marking.",
-  },
-  {
-    q: "Is there a specific syllabus for the NEC license exam?",
-    a: "Yes, the NEC license exam syllabus varies by engineering discipline (civil, electrical, mechanical, etc.). It covers fundamental engineering concepts, Nepal Engineering Council codes and standards, and professional ethics and practices.",
-  },
-];
-
 export default function Home() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   return (
     <div className="bg-white">
       <div className="relative isolate">
@@ -218,14 +180,9 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Modernized Vertical-Stacked Official Guidelines & Marking Layout */}
         <section className="py-24 bg-linear-to-b from-gray-50 to-white overflow-hidden relative">
-          {/* Ambient light glow behind the full section stack */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-100/30 rounded-full blur-3xl pointer-events-none" />
-
           <div className="mx-auto max-w-7xl px-6 lg:px-8 relative">
-
-            {/* Top Row: Contextual Headline and Narrative Block (Full Width) */}
             <div className="max-w-4xl mx-auto text-center mb-16 relative">
               <span className="inline-flex items-center rounded-full bg-orange-50 px-3 py-1 text-sm font-medium text-orange-700 ring-1 ring-inset ring-orange-600/20 mb-6">
                 Official Guidelines
@@ -284,25 +241,21 @@ export default function Home() {
                     <span className="text-2xl font-extrabold text-gray-900 font-inter mt-3">100 Marks</span>
                   </div>
 
-                  {/* Metric 2 */}
                   <div className="p-5 rounded-2xl bg-gray-50/80 border border-gray-100 flex flex-col justify-between hover:bg-gray-50 transition">
                     <span className="text-xs uppercase tracking-wider text-gray-400 font-bold font-poppins">Question Structure</span>
                     <span className="text-2xl font-extrabold text-gray-900 font-inter mt-3">100 MCQs</span>
                   </div>
 
-                  {/* Metric 3 */}
                   <div className="p-5 rounded-2xl bg-gray-50/80 border border-gray-100 flex flex-col justify-between hover:bg-gray-50 transition">
                     <span className="text-xs uppercase tracking-wider text-gray-400 font-bold font-poppins">Allotted Time</span>
                     <span className="text-2xl font-extrabold text-gray-900 font-inter mt-3">2 Hours</span>
                   </div>
 
-                  {/* Metric 4 */}
                   <div className="p-5 rounded-2xl bg-green-50/20 border border-green-100 flex flex-col justify-between">
                     <span className="text-xs uppercase tracking-wider text-green-800/60 font-bold font-poppins">Negative Marking</span>
                     <span className="text-2xl font-extrabold text-green-600 font-inter mt-3">None</span>
                   </div>
 
-                  {/* Wide-spread Horizontal focal card targeting threshold data */}
                   <div className="p-5 rounded-2xl bg-orange-50/40 border border-orange-100 sm:col-span-2 lg:col-span-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-2">
                     <div>
                       <span className="block text-xs uppercase tracking-wider text-orange-800/70 font-bold font-poppins">Passing Score Threshold</span>
@@ -326,25 +279,7 @@ export default function Home() {
           </div>
         </section>
 
-
-        {/* <section className="py-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Everything you need to pass in one click</h2>
-          </div>
-          <div className="mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {features.map((f) => (
-              <div key={f.title} className="p-8 border border-gray-100 rounded-3xl bg-white shadow-xs hover:shadow-md transition border-b-4 hover:border-b-orange-600">
-                <f.icon className="w-10 h-10 text-orange-600 mb-6" />
-                <h3 className="text-xl font-bold mb-3 text-gray-900">{f.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section> */}
-
-        {/* Modernized Features Grid Section */}
         <section className="py-24 bg-white relative overflow-hidden">
-          {/* Accent layout radial light in background to bridge sections */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-orange-50/50 rounded-full blur-3xl pointer-events-none" />
 
           <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center mb-20 relative">
@@ -359,7 +294,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Smoother cascading columns layout map */}
           <div className="mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 relative">
             {features.map((f) => (
               <div
@@ -367,7 +301,6 @@ export default function Home() {
                 className="group p-8 border border-gray-100 rounded-3xl bg-white shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-b-4 hover:border-b-orange-600 flex flex-col justify-between"
               >
                 <div>
-                  {/* Modernized Icon Wrapper with subtle scale matching on card hover */}
                   <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-orange-50 text-orange-600 mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors duration-300 shadow-xs">
                     <f.icon className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
                   </div>
@@ -384,133 +317,12 @@ export default function Home() {
           </div>
         </section>
 
-
-
-        {/* <section className="bg-orange-600 py-20 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to get started?
-          </h2>
-          <p className="text-lg text-orange-100 mb-8">
-            Take your first step towards passing the NEC exam with confidence.
-          </p>
-          <Link
-            href="/take-test"
-            className="inline-block rounded-md bg-white px-8 py-3 text-lg tracking-wider text-orange-600 shadow hover:bg-orange-50 font-semibold uppercase"
-          >
-            Start Your Mock Test
-          </Link>
-        </section> */}
-
-        {/* Premium High-Conversion CTA Section */}
-        <section className="py-24 max-w-7xl mx-auto px-6 lg:px-8 relative">
-          {/* Card Wrapper with dark high-contrast panel design */}
-          <div className="relative isolate overflow-hidden bg-neutral-950 px-6 py-20 text-center shadow-2xl rounded-3xl border border-neutral-800 sm:px-16">
-
-            {/* Engineering Grid Vector Overlay Layer */}
-            <svg
-              className="absolute inset-0 -z-10 h-full w-full stroke-white/[0.04] [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
-              aria-hidden="true"
-            >
-              <defs>
-                <pattern id="grid-pattern" width={40} height={40} patternUnits="userSpaceOnUse" x="50%">
-                  <path d="M.5 40V.5H40" fill="none" />
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#grid-pattern)" />
-            </svg>
-
-            {/* Glowing Ambient Mesh Blurs */}
-            <div className="absolute top-0 right-1/4 -z-10 transform-gpu blur-3xl" aria-hidden="true">
-              <div
-                className="aspect-1155/678 w-[45rem] bg-gradient-to-tr from-orange-600 to-amber-400 opacity-25"
-                style={{
-                  clipPath:
-                    'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-                }}
-              />
-            </div>
-
-            {/* Accent Notification Pill */}
-            <span className="inline-flex items-center rounded-full bg-orange-500/10 px-3 py-1 text-xs font-semibold text-orange-400 ring-1 ring-inset ring-orange-500/20 mb-6 tracking-wide uppercase">
-              Instant Access • 100% Free
-            </span>
-
-            {/* Main Content Copy Set */}
-            <h2 className="mx-auto max-w-2xl text-3xl font-extrabold tracking-tight text-white sm:text-4xl font-inter leading-tight">
-              Ready to Secure Your <br className="hidden sm:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">Engineering License?</span>
-            </h2>
-
-            <p className="mx-auto mt-4 max-w-xl text-base sm:text-lg text-neutral-400 font-poppins leading-relaxed">
-              Take your first step towards passing the NEC exam with confidence. Jump straight into an automated mock test session right now.
-            </p>
-
-            {/* Interactive Button Module */}
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Link
-                href="/take-test"
-                className="group relative inline-flex items-center justify-center gap-2 rounded-xl bg-orange-600 px-8 py-4 text-base font-bold text-white shadow-md hover:bg-orange-500 transition-all duration-200 hover:shadow-orange-600/20 hover:scale-[1.02] active:scale-[0.98]"
-              >
-                Start Your Mock Test
-                <span className="inline-block transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">
-                  →
-                </span>
-              </Link>
-            </div>
-
-          </div>
-        </section>
+        <Cta />
 
         <Testimony />
 
-        <section className="bg-gray-50 py-20">
-          <div className="mx-auto max-w-4xl px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-              Frequently Asked Questions
-            </h2>
-            <div className="space-y-4">
-              {faqs.map((faq, index) => (
-                <div
-                  key={faq.q}
-                  className="border border-gray-200 rounded-xl bg-white shadow-sm hover:shadow-md transition"
-                >
-                  <button
-                    onClick={() => toggle(index)}
-                    className="flex w-full items-center justify-between px-6 py-5 text-left group"
-                  >
-                    <span className="text-lg font-medium text-gray-900 group-hover:text-orange-600 transition">
-                      {faq.q}
-                    </span>
-                    {openIndex === index ? (
-                      <MinusIcon className="w-6 h-6 text-orange-600 transition" />
-                    ) : (
-                      <PlusIcon className="w-6 h-6 text-gray-500 group-hover:text-orange-600 transition" />
-                    )}
-                  </button>
+        <Faq />
 
-                  <AnimatePresence initial={false}>
-                    {openIndex === index && (
-                      <motion.div
-                        key="content"
-                        initial="collapsed"
-                        animate="open"
-                        exit="collapsed"
-                        variants={{
-                          open: { height: "auto", opacity: 1 },
-                          collapsed: { height: 0, opacity: 0 },
-                        }}
-                        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                        className="overflow-hidden px-6"
-                      >
-                        <div className="pb-5 text-gray-600">{faq.a}</div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
       </div>
     </div>
   );

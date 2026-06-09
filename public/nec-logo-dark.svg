@@ -1,0 +1,20 @@
+<svg width="340" height="88" viewBox="0 0 340 88" xmlns="http://www.w3.org/2000/svg">
+  <rect width="340" height="88" fill="#0F172A" rx="14"/>
+  <!-- Icon tile -->
+  <rect x="16" y="8" width="72" height="72" rx="16" fill="#0C0C0C"/>
+  <!-- Crosshairs -->
+  <line x1="52" y1="14" x2="52" y2="82" stroke="#FF6B00" stroke-width="1" opacity="0.6"/>
+  <line x1="22" y1="44" x2="82" y2="44" stroke="#FF6B00" stroke-width="1" opacity="0.6"/>
+  <!-- Diamond frame -->
+  <polygon points="52,20 76,44 52,68 28,44" fill="none" stroke="#F97316" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- Compass -->
+  <line x1="52" y1="30" x2="40" y2="60" stroke="#F97316" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="52" y1="30" x2="64" y2="60" stroke="#F97316" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="45" y1="43" x2="59" y2="43" stroke="#F97316" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M 40 60 Q 52 68 64 60" stroke="#F97316" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <circle cx="52" cy="30" r="2.5" fill="#F97316"/>
+  <!-- Wordmark -->
+  <text x="100" y="53" font-family="Inter, Segoe UI, system-ui" font-size="36" font-weight="900" letter-spacing="-1.5" fill="#FFFFFF">NEC</text>
+  <text x="168" y="53" font-family="Inter, Segoe UI, system-ui" font-size="36" font-weight="900" letter-spacing="-1.5" fill="#F97316">Exam</text>
+  <text x="101" y="68" font-family="Inter, Segoe UI, system-ui" font-size="10" font-weight="600" letter-spacing="3" fill="#64748B">LICENSE PREPARATION</text>
+</svg>
