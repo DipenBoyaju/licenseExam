@@ -25,6 +25,14 @@ export const metadata: Metadata = {
   },
   description:
     "Prepare for the Nepal Engineering Council License exam with targeted MCQ practice tests for Civil, Computer,Software, Architecture, Electrical, Mechanical, and other engineering disciplines. Access chapter-wise quizzes, model questions, and detailed solutions to boost your success.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   keywords:
     "NEC License MCQ, NEC exam preparation, Nepal Engineering Council questions, license exam practice, engineering MCQs Nepal, NEC registration test,NEC License MCQ, NEC exam practice, Civil Engineering MCQs, Computer Engineering questions, Architecture license exam, Electrical Engineering NEC, Mechanical Engineering test, Engineering licensing Nepal, NEC model questions, engineering chapter quizzes, engineering exam solutions, Nepal engineering license preparation",
 };
@@ -56,15 +64,15 @@ export default function RootLayout({
                   name: "Faculty",
                   item: [
                     process.env.NEXT_PUBLIC_SITE_URL +
-                      "/faculty/computer-engineering",
+                    "/faculty/computer-engineering",
                     process.env.NEXT_PUBLIC_SITE_URL +
-                      "/faculty/civil-engineering",
+                    "/faculty/civil-engineering",
                     process.env.NEXT_PUBLIC_SITE_URL +
-                      "/faculty/electrical-engineering",
+                    "/faculty/electrical-engineering",
                     process.env.NEXT_PUBLIC_SITE_URL +
-                      "/faculty/software-engineering",
+                    "/faculty/software-engineering",
                     process.env.NEXT_PUBLIC_SITE_URL +
-                      "/faculty/architecture",
+                    "/faculty/architecture",
                   ],
                 },
                 {
