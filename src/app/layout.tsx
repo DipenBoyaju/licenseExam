@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   keywords:
-    "NEC License MCQ, NEC exam preparation, Nepal Engineering Council questions, license exam practice, engineering MCQs Nepal, NEC registration test,NEC License MCQ, NEC exam practice, Civil Engineering MCQs, Computer Engineering questions, Architecture license exam, Electrical Engineering NEC, Mechanical Engineering test, Engineering licensing Nepal, NEC model questions, engineering chapter quizzes, engineering exam solutions, Nepal engineering license preparation",
+    "nec mcq practice, nec routine, nec syllabus, nec exam date, NEC License MCQ, NEC exam preparation, Nepal Engineering Council questions, license exam practice, engineering MCQs Nepal, NEC registration test,NEC License MCQ, NEC exam practice, Civil Engineering MCQs, Computer Engineering questions, Architecture license exam, Electrical Engineering NEC, Mechanical Engineering test, Engineering licensing Nepal, NEC model questions, engineering chapter quizzes, engineering exam solutions, Nepal engineering license preparation",
 };
 
 export default function RootLayout({
