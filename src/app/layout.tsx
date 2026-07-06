@@ -20,7 +20,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: "NEC License Exam Preparation | Nepal Engineering Council MCQs",
+    default: "NEC License Exam Preparation | Nepal Engineering Council MCQs | nec mcq practice",
     template: "%s | NEC License Exam Preparation",
   },
   description:
