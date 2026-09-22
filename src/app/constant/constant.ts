@@ -56,7 +56,7 @@ export const blogData = [
       },
     ],
     photo: blog1,
-    author: "Your Name",
+    author: "Ashish",
     date: "08/08/25",
   },
   {
@@ -111,7 +111,7 @@ export const blogData = [
       },
     ],
     photo: blog2,
-    author: "Your Name",
+    author: "Dipen",
     date: "08/08/25",
   },
 
@@ -174,7 +174,7 @@ export const blogData = [
       },
     ],
     photo: blog3,
-    author: "Your Name",
+    author: "Sajan",
     date: "08/08/25",
   },
   {
@@ -227,7 +227,7 @@ export const blogData = [
       },
     ],
     photo: blog4,
-    author: "Your Name",
+    author: "Linza",
     date: "08/08/25",
   },
   {
@@ -279,7 +279,7 @@ export const blogData = [
       },
     ],
     photo: blog5,
-    author: "Your Name",
+    author: "Ashish",
     date: "08/08/25",
   },
   {
@@ -331,7 +331,110 @@ export const blogData = [
       },
     ],
     photo: blog6,
-    author: "Your Name",
+    author: "Dipen",
     date: "08/08/25",
   },
+  {
+  id: "NEC-License-Exam-Registration-Nepal",
+  title:
+    "NEC License Exam Registration Nepal: Complete Step-by-Step Guide",
+  description1:
+    "Looking for information about NEC License Exam Registration in Nepal? This complete guide explains the Nepal Engineering Council (NEC) license exam registration process, eligibility requirements, required documents, application steps, registration fees, payment methods, and important deadlines. Learn how to apply for the NEC license exam online and prepare your application correctly to avoid common registration mistakes.",
+  description2: [
+    {
+      title: "What Is NEC License Exam Registration?",
+      subtitle:
+        "Understand the Nepal Engineering Council license exam and why registration is an important step for engineering graduates in Nepal.",
+      descriptionList: [
+        "NEC License Exam: The Nepal Engineering Council conducts the registration examination for engineers seeking general registration.",
+        "Professional Registration: Successful candidates can proceed with the applicable NEC registration process according to current Council requirements.",
+        "Online Application: Candidates can submit their examination application through the official NEC online registration portal.",
+      ],
+    },
+    {
+      title: "NEC License Exam Eligibility Requirements",
+      subtitle:
+        "Check the basic eligibility requirements before starting your NEC license exam application.",
+      descriptionList: [
+        "Engineering Degree: Applicants should have completed a Bachelor's degree in Engineering from a university recognized by the Nepal Engineering Council.",
+        "Foreign Degrees: Candidates with engineering degrees obtained outside Nepal may need an applicable equivalence certificate.",
+        "Document Verification: Academic and identification documents must meet the requirements specified by NEC before application submission.",
+      ],
+    },
+    {
+      title: "How to Register for the NEC License Exam Online",
+      subtitle:
+        "Follow the main steps involved in completing your NEC license exam registration in Nepal.",
+      descriptionList: [
+        "Create an Account: Access the official NEC registration portal and create or log in to your applicant account.",
+        "Complete the Application: Enter your personal, citizenship, academic, and engineering qualification details accurately.",
+        "Upload Documents: Upload the required academic certificates, transcripts, citizenship documents, photograph, and other applicable documents.",
+        "Pay the Fee: Complete the required payment using the payment options available through the NEC registration system.",
+        "Submit the Form: Review every detail carefully before submitting your NEC license exam application.",
+      ],
+    },
+    {
+      title: "Documents Required for NEC License Exam Registration",
+      subtitle:
+        "Prepare your documents in advance to make the online NEC registration process easier and faster.",
+      descriptionList: [
+        "Citizenship Certificate: A notarized copy of the applicant's Nepalese citizenship certificate where applicable.",
+        "Academic Documents: Required SEE, 10+2, and Bachelor's-level transcripts, mark sheets, and certificates.",
+        "Engineering Degree: Bachelor's degree or provisional certificate issued by the relevant university.",
+        "Character Certificate: Required academic character certificates according to the NEC application requirements.",
+        "Equivalence Certificate: Applicable for candidates whose engineering qualification was obtained from a foreign institution.",
+        "Photograph: A recent passport-size photograph meeting the NEC portal requirements.",
+      ],
+    },
+    {
+      title: "NEC License Exam Registration Fee and Payment",
+      subtitle:
+        "Understand the fees associated with the NEC examination and registration process.",
+      descriptionList: [
+        "Examination Fee: Check the latest NEC notice and online registration portal for the current examination fee.",
+        "Registration Charges: Applicable registration and identification-card charges may be collected according to current NEC requirements.",
+        "Online Payment: Use the payment methods displayed in the official NEC registration portal.",
+        "Payment Verification: Confirm that your payment has been successfully synchronized with your NEC application before submitting the form.",
+      ],
+    },
+    {
+      title: "Common NEC Registration Mistakes to Avoid",
+      subtitle:
+        "Avoid application problems by checking your information and documents before final submission.",
+      descriptionList: [
+        "Incorrect Information: Make sure your name, date of birth, citizenship details, and academic information match your official documents.",
+        "Poor Document Quality: Upload clear and readable copies of all required documents.",
+        "Wrong Academic Details: Carefully enter your university, engineering discipline, graduation information, and qualification details.",
+        "Payment Issues: Do not make duplicate payments without first checking the status of an existing transaction.",
+        "Late Application: Submit your application before the deadline stated in the latest NEC examination notice.",
+      ],
+    },
+    {
+      title: "How to Check NEC License Exam Registration Status",
+      subtitle:
+        "Learn how to stay updated after submitting your NEC license exam application.",
+      descriptionList: [
+        "Application Dashboard: Regularly check your NEC online account for application-related updates.",
+        "Official Notices: Follow the Nepal Engineering Council website for examination schedules, application announcements, and other notices.",
+        "Admit Card: Check the official instructions regarding admit-card availability and examination-center information.",
+        "Application Confirmation: Keep your application details and payment confirmation safely for future reference.",
+      ],
+    },
+    {
+      title: "Important Tips Before Submitting Your NEC Application",
+      subtitle:
+        "Use this checklist to make your NEC license exam registration process smoother.",
+      descriptionList: [
+        "Verify Eligibility: Confirm that your engineering qualification meets the current NEC requirements.",
+        "Prepare Documents: Keep all required certificates, transcripts, photographs, and identification documents ready before starting the application.",
+        "Check the Deadline: Always verify the latest NEC examination notice for the application opening and closing dates.",
+        "Review Everything: Carefully check the complete application before final submission because some submitted information or documents may not be editable afterward.",
+        "Use Official Sources: Rely on the official NEC website and registration portal for current fees, deadlines, requirements, and examination updates.",
+      ],
+    },
+  ],
+  photo: blog1,
+  author: "Ashish",
+  date: "22/09/26",
+}
 ];
