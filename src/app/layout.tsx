@@ -20,11 +20,11 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: "NEC License Exam Preparation | Nepal Engineering Council MCQs | nec mcq practice",
+    default: "NEC License Exam Preparation | Nepal Engineering Council MCQs | nec mcq practice | nec exam",
     template: "%s | NEC License Exam Preparation",
   },
   description:
-    "Prepare for the Nepal Engineering Council License exam with targeted MCQ practice tests for Civil, Computer,Software, Architecture, Electrical, Mechanical, and other engineering disciplines. Access chapter-wise quizzes, model questions, and detailed solutions to boost your success.",
+    "Prepare for the Nepal Engineering Council License nec exam with targeted MCQ practice tests for Civil, Computer,Software, Architecture, Electrical, Mechanical, and other engineering disciplines. Access chapter-wise quizzes, model questions, and detailed solutions to boost your success.",
   icons: {
     icon: [
       { url: "/favicon.ico" },
