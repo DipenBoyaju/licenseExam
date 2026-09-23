@@ -20,11 +20,11 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: "NEC License Exam Preparation | Nepal Engineering Council MCQs | nec mcq practice | nec exam",
+    default: "NEC License Exam Preparation | Nepal Engineering Council MCQs | nec mcq practice | nec ",
     template: "%s | NEC License Exam Preparation",
   },
   description:
-    "Prepare for the Nepal Engineering Council License nec exam with targeted MCQ practice tests for Civil, Computer,Software, Architecture, Electrical, Mechanical, and other engineering disciplines. Access chapter-wise quizzes, model questions, and detailed solutions to boost your success.",
+    "Prepare for the Nepal Engineering Council License nec exam with targeted MCQ practice & question set tests for Civil, Computer,Software, Architecture, Electrical, Mechanical, and other engineering disciplines. Access chapter-wise quizzes, model questions, and detailed solutions to boost your success.",
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   keywords:
-    "nec mcq practice, nec routine, nec syllabus, nec exam date, NEC License MCQ, NEC exam preparation, Nepal Engineering Council questions, license exam practice, engineering MCQs Nepal, NEC registration test,NEC License MCQ, NEC exam practice, Civil Engineering MCQs, Computer Engineering questions, Architecture license exam, Electrical Engineering NEC, Mechanical Engineering test, Engineering licensing Nepal, NEC model questions, engineering chapter quizzes, engineering exam solutions, Nepal engineering license preparation",
+    "nec mcq practice,nec question set,nec routine, nec syllabus, nec exam date, NEC License MCQ, NEC exam preparation, Nepal Engineering Council questions, license exam practice, engineering MCQs Nepal, NEC registration test,NEC License MCQ, NEC exam practice, Civil Engineering MCQs, Computer Engineering questions, Architecture license exam, Electrical Engineering NEC, Mechanical Engineering test, Engineering licensing Nepal, NEC model questions, engineering chapter quizzes, engineering exam solutions, Nepal engineering license preparation",
 };
 
 export default function RootLayout({

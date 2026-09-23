@@ -1,14 +1,15 @@
-// app/blog/[blogId]/page.tsx
-
 import BlogPageClient from "@/app/components/common/blog/BlogPageClient";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { blogData, baseUrl } from "@/app/constant/constant";
 
 type Props = {
   params: Promise<{ blogId: string }>;
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: Props): Promise<Metadata> {
   const { blogId } = await params;
 
   const blog = blogData.find((item) => item.id === blogId);
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!blog) {
     return {
       title: "Blog Not Found",
-      description: "This blog post NEC License Exam found.",
+      description: "This blog post was not found.",
     };
   }
 
@@ -25,6 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: blog.description1,
     metadataBase: new URL(baseUrl),
     keywords: [
+      "nec set",
+      "nec question set pratice",
       "NEC License Exam",
       "Nepal Engineering Council",
       "NEC Blog",
@@ -42,6 +45,14 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function BlogPage() {
-  return <BlogPageClient  />;
+export default async function BlogPage({ params }: Props) {
+  const { blogId } = await params;
+
+  const blog = blogData.find((item) => item.id === blogId);
+
+  if (!blog) {
+    notFound();
+  }
+
+  return <BlogPageClient blog={blog} />;
 }

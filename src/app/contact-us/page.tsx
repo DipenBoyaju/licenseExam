@@ -41,7 +41,7 @@ export default function Contact() {
                   <h3 className="text-sm font-bold text-gray-900 font-inter">Email Support</h3>
                   <p className="text-xs text-gray-400 font-poppins mt-0.5">For general inquiries and setup support</p>
                   <a href="mailto:support@neclicenseexam.vercel.app" className="text-sm text-orange-600 font-semibold hover:underline block mt-1 font-poppins">
-                    support@neclicenseexam.vercel.app
+                    dipenboyaju@gmail.com
                   </a>
                 </div>
               </div>

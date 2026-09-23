@@ -4,9 +4,299 @@ import blog3 from "./blog/blog3.webp";
 import blog4 from "./blog/blog4.webp";
 import blog5 from "./blog/blog5.webp";
 import blog6 from "./blog/blog6.webp";
+import blog7 from "./blog/blog7.webp";
+import blog8 from "./blog/blog8.webp";
+
+
 export const baseUrl = "https://www.rpayantra.com";
 
 export const blogData = [
+
+{
+  id: "NEC-Question-Set-Nepal-License-Exam",
+
+  title:
+    "NEC Question Set Nepal: Practice Questions, Mock Tests and License Exam Preparation",
+
+  description1:
+    "Prepare for the Nepal Engineering Council (NEC) License Exam with a comprehensive NEC question set covering engineering license exam questions, practice questions, mock tests, important topics, and effective preparation strategies. This guide is designed to help engineering graduates understand how to use NEC question sets effectively, strengthen their technical knowledge, identify weak areas, and prepare systematically for the professional engineering license examination in Nepal.",
+
+  description2: [
+    {
+      title: "What Is an NEC Question Set?",
+
+      subtitle:
+        "Understand what an NEC question set contains and how practice questions can support your Nepal Engineering Council license exam preparation.",
+
+      descriptionList: [
+        "NEC Question Set: A collection of practice questions designed to help engineering graduates revise concepts and prepare for the NEC license examination.",
+
+        "Engineering License Questions: Practice questions can cover technical concepts, engineering fundamentals, professional practice, ethics, standards, and other areas relevant to the applicable examination syllabus.",
+
+        "Practice Questions: Regular question practice helps candidates become familiar with different question formats and identify topics that require additional revision.",
+
+        "Mock Question Sets: Full-length practice sets can be used to simulate examination conditions and improve time management before the actual examination.",
+      ],
+    },
+
+    {
+      title: "NEC License Exam Question Set for Engineering Graduates",
+
+      subtitle:
+        "Use structured question sets to revise important engineering concepts and prepare for the professional registration examination.",
+
+      descriptionList: [
+        "Technical Questions: Practice questions related to the core engineering concepts relevant to your discipline.",
+
+        "Engineering Fundamentals: Revise important principles, formulas, calculations, definitions, and concepts from your undergraduate engineering studies.",
+
+        "Professional Practice Questions: Include questions covering engineering ethics, professional responsibilities, safety, standards, regulations, and professional conduct where applicable.",
+
+        "Discipline-Specific Questions: Focus on the technical subjects and areas included in the current NEC examination information applicable to your engineering discipline.",
+      ],
+    },
+
+    {
+      title: "NEC License Exam Questions and Practice Questions",
+
+      subtitle:
+        "Learn how solving practice questions can improve your understanding and readiness for the NEC license examination.",
+
+      descriptionList: [
+        "Concept-Based Practice: Focus on understanding why an answer is correct rather than memorizing answers from a question bank.",
+
+        "Topic-Wise Questions: Divide questions into subjects so you can identify which engineering topics need more attention.",
+
+        "Calculation-Based Questions: Practice relevant numerical and analytical problems to improve accuracy and solving speed.",
+
+        "Conceptual Questions: Review theoretical questions to strengthen your understanding of fundamental engineering principles.",
+
+        "Professional Questions: Include appropriate questions related to engineering ethics, professional responsibility, public safety, and applicable regulations.",
+      ],
+    },
+
+    {
+      title: "NEC Question Set by Engineering Discipline",
+
+      subtitle:
+        "Organize your preparation around the engineering discipline and subjects covered by the applicable NEC examination requirements.",
+
+      descriptionList: [
+        "Civil Engineering: Practice questions covering relevant civil engineering fundamentals and discipline-specific subjects included in the applicable syllabus.",
+
+        "Electrical Engineering: Revise electrical engineering concepts, calculations, systems, and other relevant technical areas.",
+
+        "Computer Engineering: Practice questions related to computing, programming, computer systems, networks, and other applicable areas.",
+
+        "Electronics and Communication Engineering: Review relevant electronics, communication, signal, systems, and technical concepts.",
+
+        "Other Engineering Disciplines: Build your question practice around the current examination syllabus and requirements for your specific engineering discipline.",
+      ],
+    },
+
+    {
+      title: "How to Use an NEC Question Set for Exam Preparation",
+
+      subtitle:
+        "Follow a structured approach to get more value from NEC license exam practice questions.",
+
+      descriptionList: [
+        "Start with the Syllabus: Review the latest available examination syllabus and identify the subjects you need to cover.",
+
+        "Practice Topic by Topic: Begin with individual subjects before attempting complete question sets.",
+
+        "Understand Every Answer: Review the explanation and underlying concept instead of simply checking whether your answer is correct.",
+
+        "Track Your Mistakes: Maintain a list of questions and concepts that you repeatedly get wrong.",
+
+        "Repeat Difficult Questions: Return to challenging topics after revision and solve similar questions again.",
+      ],
+    },
+
+    {
+      title: "NEC Mock Test and Full Question Set",
+
+      subtitle:
+        "Use complete mock tests to measure your preparation and practice solving questions under time constraints.",
+
+      descriptionList: [
+        "Timed Practice: Attempt complete question sets within a fixed time to develop better examination time management.",
+
+        "Exam Simulation: Create an environment similar to the actual examination by avoiding unnecessary interruptions during practice.",
+
+        "Check Your Performance: Review your score and analyze the questions you answered incorrectly.",
+
+        "Identify Weak Subjects: Use mock-test results to determine which topics require additional study.",
+
+        "Repeat Mock Tests: Take multiple practice tests after revision to monitor improvement and build familiarity with the question-solving process.",
+      ],
+    },
+
+    {
+      title: "Important Topics to Cover Before Solving NEC Questions",
+
+      subtitle:
+        "Build a strong technical foundation before relying heavily on practice question sets.",
+
+      descriptionList: [
+        "Engineering Fundamentals: Review the fundamental concepts that support your engineering discipline.",
+
+        "Core Technical Subjects: Focus on the major subjects identified in the applicable NEC examination syllabus.",
+
+        "Engineering Calculations: Practice formulas, numerical problems, units, and analytical methods relevant to your discipline.",
+
+        "Codes and Standards: Review applicable engineering codes, standards, regulations, and professional requirements.",
+
+        "Engineering Ethics: Understand professional responsibilities, ethical conduct, public safety, and the responsibilities of registered engineers.",
+      ],
+    },
+
+    {
+      title: "How to Improve Your Score Using NEC Practice Questions",
+
+      subtitle:
+        "Turn your question-solving practice into a structured revision system.",
+
+      descriptionList: [
+        "Analyze Incorrect Answers: Do not simply move to the next question after making a mistake; identify the concept behind the error.",
+
+        "Create a Mistake Notebook: Record difficult formulas, concepts, definitions, and frequently missed questions.",
+
+        "Focus on Weak Areas: Allocate more study time to subjects where your practice performance is consistently lower.",
+
+        "Use Spaced Revision: Revisit difficult topics at regular intervals instead of studying them only once.",
+
+        "Practice Under Time Limits: Gradually increase the number of questions you can solve accurately within the available time.",
+      ],
+    },
+
+    {
+      title: "NEC Question Bank vs NEC Mock Test",
+
+      subtitle:
+        "Understand the difference between a question bank and a complete mock examination and when to use each.",
+
+      descriptionList: [
+        "Question Bank: A larger collection of questions that can be used for topic-wise learning and revision.",
+
+        "Topic-Wise Practice: Question banks are useful when you want to focus on a specific engineering subject or concept.",
+
+        "Mock Test: A mock test combines questions into a timed practice examination to help evaluate overall preparation.",
+
+        "Preparation Sequence: Start with topic-wise questions and gradually move toward full-length mock tests as the examination approaches.",
+
+        "Performance Analysis: Use both question banks and mock tests to identify knowledge gaps and improve problem-solving speed.",
+      ],
+    },
+
+    {
+      title: "Best Way to Prepare with an NEC Question Set",
+
+      subtitle:
+        "Combine question practice with reliable study materials instead of depending only on question banks.",
+
+      descriptionList: [
+        "Follow Official Information: Use the latest information, syllabus, notices, and examination guidelines published by the Nepal Engineering Council.",
+
+        "Study Engineering Textbooks: Use standard engineering textbooks to understand concepts that appear difficult during question practice.",
+
+        "Use Reliable Question Sets: Choose practice questions that are relevant to your discipline and aligned with the current examination syllabus.",
+
+        "Review Explanations: Study the reasoning behind answers so that you can apply the concept to unfamiliar questions.",
+
+        "Take Regular Mock Tests: Measure your preparation periodically and adjust your study plan based on your performance.",
+      ],
+    },
+
+    {
+      title: "NEC Question Set Preparation Strategy",
+
+      subtitle:
+        "Create a practical study routine that combines learning, revision, question practice, and mock examinations.",
+
+      descriptionList: [
+        "Week 1–2: Review the examination syllabus and begin revising fundamental engineering concepts.",
+
+        "Topic Practice: Solve question sets after completing each major subject and record your mistakes.",
+
+        "Revision Stage: Revisit difficult concepts, formulas, calculations, and professional topics identified during practice.",
+
+        "Mock Test Stage: Begin completing full-length practice tests under timed conditions.",
+
+        "Final Revision: Focus on important concepts, recurring mistakes, formulas, definitions, and areas that require additional attention.",
+      ],
+    },
+
+    {
+      title: "Common Mistakes When Practicing NEC Questions",
+
+      subtitle:
+        "Avoid common study habits that can reduce the effectiveness of your NEC question-set preparation.",
+
+      descriptionList: [
+        "Memorizing Answers: Avoid depending entirely on memorized answers because questions may test the same concept in a different way.",
+
+        "Ignoring Explanations: Always understand why an answer is correct or incorrect.",
+
+        "Skipping Weak Subjects: Do not avoid difficult topics simply because they are challenging.",
+
+        "Practicing Without Time Limits: Include timed sessions so that you can develop better question-solving speed.",
+
+        "Using Outdated Materials: Check whether your preparation resources correspond to the latest available examination information.",
+      ],
+    },
+
+    {
+      title: "NEC Question Set Frequently Asked Questions",
+
+      subtitle:
+        "Quick answers to common questions about NEC question sets and license exam preparation.",
+
+      descriptionList: [
+        "What is an NEC question set? It is a collection of practice questions used to revise engineering concepts and prepare for the Nepal Engineering Council license examination.",
+
+        "Where can I find NEC license exam questions? Use reliable preparation resources and official NEC information, and verify that practice materials are relevant to the current examination requirements.",
+
+        "Are NEC practice questions the same as actual exam questions? Practice questions should be treated as preparation materials and should not be assumed to be identical to questions used in the actual examination.",
+
+        "How many NEC questions should I practice? The appropriate number depends on your preparation level, available study time, engineering discipline, and familiarity with the syllabus.",
+
+        "Should I practice topic-wise or full mock tests? Start with topic-wise practice to strengthen concepts and gradually include full-length mock tests as your preparation progresses.",
+
+        "Can NEC question sets help improve exam performance? Regular practice can help improve familiarity with concepts, question-solving speed, time management, and identification of weak areas.",
+
+        "How should I prepare for the NEC license exam? Review the current syllabus and official information, study your core engineering subjects, practice relevant questions, review mistakes, and complete timed mock tests.",
+      ],
+    },
+
+    {
+      title: "Final Tips for NEC Question Set Preparation",
+
+      subtitle:
+        "Use consistent practice and focused revision to make your NEC license exam preparation more effective.",
+
+      descriptionList: [
+        "Study Consistently: Follow a realistic daily or weekly study schedule rather than relying on last-minute preparation.",
+
+        "Practice Regularly: Solve NEC-related practice questions throughout your preparation period.",
+
+        "Learn From Mistakes: Treat every incorrect answer as an opportunity to identify and fix a knowledge gap.",
+
+        "Revise Important Concepts: Regularly review formulas, definitions, technical principles, standards, and difficult topics.",
+
+        "Follow NEC Updates: Check official Nepal Engineering Council announcements for the latest examination information, requirements, schedules, and notices.",
+      ],
+    },
+  ],
+
+  photo: blog8,
+
+  author: "Madan Shrestha",
+
+  date: "23/10/26",
+},
+
+
   {
     id: "NEC-Exam-Preparation-Nepal",
     title:
@@ -59,282 +349,7 @@ export const blogData = [
     author: "Ashish",
     date: "08/08/25",
   },
-  {
-    id: "Nepal-Engineering-Council-License-Exam",
-    title:
-      "NEC License Exam: Complete Guide to Your Engineering Career in Nepal",
-    description1:
-      "Unlock your engineering career in Nepal by mastering the Nepal Engineering Council (NEC) License Exam. This essential guide covers exam structure, eligibility, application procedures, syllabi, and preparation strategies tailored for Nepali engineers. Whether you aspire to practice civil, electrical, or other engineering disciplines, understanding the NEC licensing process is vital for professional recognition and legal practice in Nepal.",
-    description2: [
-      {
-        title: "NEC License Exam Structure and Eligibility Criteria",
-        subtitle:
-          "Learn about exam duration, question types, passing scores, and who is eligible to apply.",
-        descriptionList: [
-          "Exam Format: Computer-based test lasting 2 hours with multiple choice and multiple response questions.",
-          "Question Pattern: Approximately 60 one-mark questions and 20 two-mark questions covering core syllabus areas.",
-          "Passing Mark: Minimum of 50% with no negative marking.",
-          "Eligibility: Bachelor’s degree in engineering from NEC-recognized universities; foreign degrees require equivalence certification.",
-        ],
-      },
-      {
-        title: "Application Process and Required Documents",
-        subtitle:
-          "Step-by-step guide on how to register for the exam and what documents are necessary.",
-        descriptionList: [
-          "Online Application: Apply through the official NEC portal with secure payment options (Khalti, Connect IPS).",
-          "Required Documents: Citizenship certificate, mark sheets, character certificates, transcripts, degree certificates, equivalence certificates if applicable, and recent passport-size photographs.",
-          "Fees: Exam fee NPR 2,500 at application; registration fee NPR 5,200 after passing the exam.",
-        ],
-      },
-      {
-        title: "Exam Syllabus Highlights for Different Engineering Disciplines",
-        subtitle:
-          "Overview of what topics to focus on for civil, electrical, mechanical, and other engineering exams.",
-        descriptionList: [
-          "Civil Engineering: Structural mechanics, seismic design, RCC and steel structures, project management, and Nepal Building Code essentials.",
-          "Electrical Engineering: Fundamentals, hydroelectric principles, power systems, and Nepal electrical standards.",
-          "Mechanical and Other Fields: Discipline-specific technical areas as defined by NEC syllabus documents available online.",
-          "Professional Ethics: Licensing regulations and ethical standards governing engineering practice in Nepal.",
-        ],
-      },
-      {
-        title: "Effective Preparation Tips and Resources",
-        subtitle:
-          "Strategies and study materials to help you succeed in the NEC license exam.",
-        descriptionList: [
-          "Past Papers and Practice Sets: Utilize official question sets and mock tests to build confidence and time management skills.",
-          "Local Coaching and Study Groups: Engage with Nepali exam preparation communities for support and insight.",
-          "Official Updates: Regularly check NEC announcements for code updates, syllabus changes, and exam schedules.",
-          "Online Resources: Leverage platforms offering video tutorials, downloadable presentations, and NEC official documentation.",
-        ],
-      },
-    ],
-    photo: blog2,
-    author: "Dipen",
-    date: "08/08/25",
-  },
-
-  {
-    id: "How-to-Pass-NEC-License-Exam-Nepal",
-    title:
-      "How to Pass the Nepal Engineering Council (NEC) License Exam: Strategies and Tips for Success",
-    description1:
-      "Ace the Nepal Engineering Council (NEC) License Exam with proven strategies, study techniques, and resources designed for Nepali engineering candidates. This comprehensive guide covers important tips on understanding exam patterns, effective preparation methods, time management, and leveraging local resources to boost your chances of success.",
-    description2: [
-      {
-        title: "Know the Exam Pattern and Syllabus Thoroughly",
-        subtitle:
-          "Understanding the exam format and syllabus is foundational for targeted preparation.",
-        descriptionList: [
-          "Exam Structure: 2-hour computer-based test with 60 one-mark and 20 two-mark questions, covering core engineering concepts and professional practice.",
-          "Syllabus Breakdown: Focus on fundamental engineering principles, discipline-specific topics, Nepal Engineering Council code and regulations, and ethics.",
-          "Question Distribution: Majority are multiple-choice questions sourced from previous years and official syllabi.",
-        ],
-      },
-      {
-        title: "Develop a Personalized Study Plan",
-        subtitle:
-          "Create a realistic schedule that balances revision, practice, and rest.",
-        descriptionList: [
-          "Divide Topics: Break down the syllabus into manageable sections; allocate more time to weak areas.",
-          "Daily Goals: Set achievable study targets for each day, utilizing chapter-wise MCQs and official practice sets.",
-          "Consistency: Study regularly with focused sessions to build retention and avoid last-minute cramming.",
-        ],
-      },
-      {
-        title: "Utilize Quality Study Materials and Practice Tests",
-        subtitle:
-          "Use trusted resources tailored for Nepal’s NEC exam to gain confidence.",
-        descriptionList: [
-          "Past Question Sets: Practice with official and reputed compiled question banks available online and in print.",
-          "Online Resources: Leverage Nepali platforms offering video tutorials, mock tests, and detailed explanations.",
-          "Coaching Classes and Study Groups: Consider joining local preparation classes or peer groups for discussions and doubt clearing.",
-        ],
-      },
-      {
-        title: "Master Exam Day Strategies",
-        subtitle:
-          "Effective time and stress management techniques to optimize exam performance.",
-        descriptionList: [
-          "Time Management: Allocate appropriate time per question; do not spend too much time on difficult items.",
-          "Answer Smartly: Attempt easier questions first, then tackle harder ones to maximize score.",
-          "Stay Calm and Focused: Practice mindfulness and avoid last-minute panic to keep a clear mind.",
-        ],
-      },
-      {
-        title: "Keep Updated with NEC Notifications and Code Changes",
-        subtitle:
-          "Stay informed on latest exam announcements and Nepal Engineering Council code revisions.",
-        descriptionList: [
-          "Official NEC Website: Regularly check for updates on exam schedules, syllabus modifications, and application deadlines.",
-          "Code Updates: Study recent changes in Nepal engineering codes and regulations, as they may reflect in exam questions.",
-          "Professional Development: Engage in workshops and seminars to enhance understanding and stay connected with the engineering community.",
-        ],
-      },
-    ],
-    photo: blog3,
-    author: "Sajan",
-    date: "08/08/25",
-  },
-  {
-    id: "NEC-Exam-Past-Questions-Nepal",
-    title:
-      "NEC Exam Past Questions Nepal: Essential Practice for Nepal Engineering Council License Exam",
-    description1:
-      "Boost your preparation for the Nepal Engineering Council (NEC) License Exam by practicing with past questions specifically relevant to Nepali engineering candidates. This guide highlights the importance of past exam papers, where to find authentic question sets, and strategies to effectively use them for improving your exam readiness and confidence.",
-    description2: [
-      {
-        title: "Why Practice Past Questions for the NEC Exam?",
-        subtitle:
-          "Understand the benefits of using past question papers as a core part of your study plan.",
-        descriptionList: [
-          "Familiarity with Exam Format: Learn the structure, question types, and marking scheme used by the NEC.",
-          "Identifying Key Topics: Spot frequently tested subjects and focus areas to optimize your study time.",
-          "Time Management: Practice under timed conditions to enhance speed and accuracy during the actual exam.",
-        ],
-      },
-      {
-        title: "Where to Find Authentic NEC Exam Past Questions in Nepal",
-        subtitle:
-          "Reliable sources and platforms providing official or well-curated NEC question papers and practice sets.",
-        descriptionList: [
-          "Official NEC Resources: Nepal Engineering Council’s website and the Application Management Information System (AMIS) for sample and model questions.",
-          "Local Educational Platforms: Nepali quiz websites like Simple Quiz, PANA Academy, and Nepal Exam Prep offering discipline-specific past questions and MCQs.",
-          "Coaching Centers and Study Groups: Access past question compilations shared by established local coaching institutes and peer groups.",
-        ],
-      },
-      {
-        title:
-          "Effective Strategies for Using Past Questions in NEC Exam Preparation",
-        subtitle:
-          "Maximize your learning and exam performance using past papers effectively.",
-        descriptionList: [
-          "Simulate Exam Conditions: Take full-length tests with time limits to improve focus and reduce anxiety.",
-          "Review Mistakes: Analyze wrong answers to identify gaps in knowledge or understanding.",
-          "Regular Practice: Incorporate past questions into daily study routines for continuous improvement.",
-        ],
-      },
-      {
-        title: "Additional Tips for NEC Exam Success",
-        subtitle:
-          "Complement past question practice with other preparation techniques.",
-        descriptionList: [
-          "Refer to Updated NEC Codes: Ensure practice materials align with the latest standards and regulations.",
-          "Use Official Syllabus: Match your practice with the current exam syllabus provided by NEC.",
-          "Join Discussion Forums: Participate in online or local groups for shared insights and doubt clearing.",
-        ],
-      },
-    ],
-    photo: blog4,
-    author: "Linza",
-    date: "08/08/25",
-  },
-  {
-    id: "NEC-License-Study-Materials-Nepal",
-    title:
-      "NEC License Study Materials Nepal: Your Essential Resources for Exam Success",
-    description1:
-      "Prepare confidently for the Nepal Engineering Council (NEC) License Exam with the best study materials curated specifically for Nepali engineering candidates. This guide presents top resources including question sets, video lectures, presentation notes, and recommended books to boost your exam readiness and help you pass the NEC exam efficiently.",
-    description2: [
-      {
-        title: "Official NEC Practice Question Sets and Sample Papers",
-        subtitle:
-          "Utilize authentic question banks provided by NEC and other trusted platforms for targeted practice.",
-        descriptionList: [
-          "NEC official question sets: Access 18+ sets of practice questions released for exam preparation purposes.",
-          "Exam pattern familiarization: Learn question types, marking scheme, and time management by practicing these papers.",
-          "Online repositories: Download presentations and question compilations shared by experienced Nepali engineers.",
-        ],
-      },
-      {
-        title: "Video Tutorials and Online Classes for NEC Exam Preparation",
-        subtitle:
-          "Leverage visual learning and expert guidance through quality video lectures and coaching platforms.",
-        descriptionList: [
-          "Free video series: YouTube channels offering step-by-step tutorials covering key NEC syllabus topics.",
-          "Paid online coaching: Institutes like Fast Track Engineering Institute and N.I.E. provide live and recorded classes.",
-          "Mock tests and interactive sessions to evaluate progress and clarify doubts.",
-        ],
-      },
-      {
-        title: "Presentation Notes and Reference Books",
-        subtitle:
-          "Study concise notes and authoritative textbooks aligned with NEC syllabus requirements.",
-        descriptionList: [
-          "Downloadable presentation slides summarizing important NEC exam concepts.",
-          "Recommended books including Nepal Engineering Council codebooks and discipline-specific texts.",
-          "Access to comprehensive compilations of past questions & answers in printed or digital format.",
-        ],
-      },
-      {
-        title: "Local Study Groups and Coaching Centers in Nepal",
-        subtitle:
-          "Join peer groups or professional coaching hubs to enhance understanding and stay motivated.",
-        descriptionList: [
-          "Regular topic-wise tests and weekly model exams organized by coaching centers.",
-          "Discussion forums and support groups to share resources and solve difficulties collaboratively.",
-          "In-person guidance especially useful for those preparing for electrical, civil, or mechanical engineering license exams.",
-        ],
-      },
-    ],
-    photo: blog5,
-    author: "Ashish",
-    date: "08/08/25",
-  },
-  {
-    id: "Why-Engineering-License-Is-Important-Nepal",
-    title:
-      "Why Engineering License is Important: Ensuring Professional Standards and Safety in Nepal",
-    description1:
-      "Obtaining an engineering license from the Nepal Engineering Council (NEC) is essential for practicing engineering legally and professionally in Nepal. This blog explains the importance of the NEC license in maintaining engineering quality, ensuring public safety, and advancing the engineering profession in Nepal’s growing infrastructure landscape.",
-    description2: [
-      {
-        title: "Legal Requirement for Engineering Practice in Nepal",
-        subtitle:
-          "Understand the mandatory nature of the NEC license to legally work as an engineer in Nepal.",
-        descriptionList: [
-          "The Nepal Engineering Council Act mandates that engineers must obtain a license from NEC to legally practice engineering in Nepal.",
-          "Since 2023, passing the NEC licensing exam has been compulsory to get the license, ensuring only qualified engineers serve the profession.",
-          "Similar to other professions like doctors and lawyers, licensure safeguards public interest by enforcing professional standards.",
-        ],
-      },
-      {
-        title: "Upholding Professional Standards and Quality",
-        subtitle:
-          "The NEC license ensures engineers meet competency standards and adhere to ethical codes.",
-        descriptionList: [
-          "Licensing guarantees engineers have the required education, skills, and knowledge verified through rigorous examinations.",
-          "NEC sets and monitors engineering education standards, accrediting institutions and approving curriculum for quality assurance.",
-          "It enforces the professional code of conduct, promoting ethical engineering practices crucial for public safety and trust.",
-        ],
-      },
-      {
-        title: "Enhancing Career Opportunities and Credibility",
-        subtitle:
-          "Holding an NEC license boosts career prospects and professional recognition for engineers in Nepal.",
-        descriptionList: [
-          "A licensed engineer is eligible for government jobs, consultancy roles, construction projects, and hydropower sectors, which often require valid NEC licensing.",
-          "Licensed engineers enjoy better salary prospects and growth opportunities due to their certified capabilities.",
-          "The license serves as a mark of credibility, fostering trust with employers, clients, and the public.",
-        ],
-      },
-      {
-        title: "Protecting Public Safety and Infrastructure Integrity",
-        subtitle:
-          "Licensed engineers play a key role in ensuring safe, reliable, and sustainable engineering solutions in Nepal.",
-        descriptionList: [
-          "Through a licensing system, NEC helps prevent unqualified individuals from practicing, reducing risks of structural failures and hazards.",
-          "It ensures engineers are up to date with the latest codes, standards, and best practices tailored for Nepal’s unique environment, including seismic safety.",
-          "This system supports Nepal’s development by promoting responsible engineering critical for infrastructure longevity and public welfare.",
-        ],
-      },
-    ],
-    photo: blog6,
-    author: "Dipen",
-    date: "08/08/25",
-  },
-  {
+    {
   id: "NEC-License-Exam-Registration-Nepal",
   title:
     "NEC License Exam Registration Nepal: Complete Step-by-Step Guide",
@@ -433,11 +448,290 @@ export const blogData = [
       ],
     },
   ],
-  photo: blog1,
+  photo: blog7,
   author: "Ashish",
   date: "22/09/26",
 },
+
+  {
+    id: "Nepal-Engineering-Council-License-Exam",
+    title:
+      "NEC License Exam: Complete Guide to Your Engineering Career in Nepal",
+    description1:
+      "Unlock your engineering career in Nepal by mastering the Nepal Engineering Council (NEC) License Exam. This essential guide covers exam structure, eligibility, application procedures, syllabi, and preparation strategies tailored for Nepali engineers. Whether you aspire to practice civil, electrical, or other engineering disciplines, understanding the NEC licensing process is vital for professional recognition and legal practice in Nepal.",
+    description2: [
+      {
+        title: "NEC License Exam Structure and Eligibility Criteria",
+        subtitle:
+          "Learn about exam duration, question types, passing scores, and who is eligible to apply.",
+        descriptionList: [
+          "Exam Format: Computer-based test lasting 2 hours with multiple choice and multiple response questions.",
+          "Question Pattern: Approximately 60 one-mark questions and 20 two-mark questions covering core syllabus areas.",
+          "Passing Mark: Minimum of 50% with no negative marking.",
+          "Eligibility: Bachelor’s degree in engineering from NEC-recognized universities; foreign degrees require equivalence certification.",
+        ],
+      },
+      {
+        title: "Application Process and Required Documents",
+        subtitle:
+          "Step-by-step guide on how to register for the exam and what documents are necessary.",
+        descriptionList: [
+          "Online Application: Apply through the official NEC portal with secure payment options (Khalti, Connect IPS).",
+          "Required Documents: Citizenship certificate, mark sheets, character certificates, transcripts, degree certificates, equivalence certificates if applicable, and recent passport-size photographs.",
+          "Fees: Exam fee NPR 2,500 at application; registration fee NPR 5,200 after passing the exam.",
+        ],
+      },
+      {
+        title: "Exam Syllabus Highlights for Different Engineering Disciplines",
+        subtitle:
+          "Overview of what topics to focus on for civil, electrical, mechanical, and other engineering exams.",
+        descriptionList: [
+          "Civil Engineering: Structural mechanics, seismic design, RCC and steel structures, project management, and Nepal Building Code essentials.",
+          "Electrical Engineering: Fundamentals, hydroelectric principles, power systems, and Nepal electrical standards.",
+          "Mechanical and Other Fields: Discipline-specific technical areas as defined by NEC syllabus documents available online.",
+          "Professional Ethics: Licensing regulations and ethical standards governing engineering practice in Nepal.",
+        ],
+      },
+      {
+        title: "Effective Preparation Tips and Resources",
+        subtitle:
+          "Strategies and study materials to help you succeed in the NEC license exam.",
+        descriptionList: [
+          "Past Papers and Practice Sets: Utilize official question sets and mock tests to build confidence and time management skills.",
+          "Local Coaching and Study Groups: Engage with Nepali exam preparation communities for support and insight.",
+          "Official Updates: Regularly check NEC announcements for code updates, syllabus changes, and exam schedules.",
+          "Online Resources: Leverage platforms offering video tutorials, downloadable presentations, and NEC official documentation.",
+        ],
+      },
+    ],
+    photo: blog2,
+    author: "Dipen",
+    date: "08/08/25",
+  },
+
+
+  
+ 
+  {
+    id: "Why-Engineering-License-Is-Important-Nepal",
+    title:
+      "Why Engineering License is Important: Ensuring Professional Standards and Safety in Nepal",
+    description1:
+      "Obtaining an engineering license from the Nepal Engineering Council (NEC) is essential for practicing engineering legally and professionally in Nepal. This blog explains the importance of the NEC license in maintaining engineering quality, ensuring public safety, and advancing the engineering profession in Nepal’s growing infrastructure landscape.",
+    description2: [
+      {
+        title: "Legal Requirement for Engineering Practice in Nepal",
+        subtitle:
+          "Understand the mandatory nature of the NEC license to legally work as an engineer in Nepal.",
+        descriptionList: [
+          "The Nepal Engineering Council Act mandates that engineers must obtain a license from NEC to legally practice engineering in Nepal.",
+          "Since 2023, passing the NEC licensing exam has been compulsory to get the license, ensuring only qualified engineers serve the profession.",
+          "Similar to other professions like doctors and lawyers, licensure safeguards public interest by enforcing professional standards.",
+        ],
+      },
+      {
+        title: "Upholding Professional Standards and Quality",
+        subtitle:
+          "The NEC license ensures engineers meet competency standards and adhere to ethical codes.",
+        descriptionList: [
+          "Licensing guarantees engineers have the required education, skills, and knowledge verified through rigorous examinations.",
+          "NEC sets and monitors engineering education standards, accrediting institutions and approving curriculum for quality assurance.",
+          "It enforces the professional code of conduct, promoting ethical engineering practices crucial for public safety and trust.",
+        ],
+      },
+      {
+        title: "Enhancing Career Opportunities and Credibility",
+        subtitle:
+          "Holding an NEC license boosts career prospects and professional recognition for engineers in Nepal.",
+        descriptionList: [
+          "A licensed engineer is eligible for government jobs, consultancy roles, construction projects, and hydropower sectors, which often require valid NEC licensing.",
+          "Licensed engineers enjoy better salary prospects and growth opportunities due to their certified capabilities.",
+          "The license serves as a mark of credibility, fostering trust with employers, clients, and the public.",
+        ],
+      },
+      {
+        title: "Protecting Public Safety and Infrastructure Integrity",
+        subtitle:
+          "Licensed engineers play a key role in ensuring safe, reliable, and sustainable engineering solutions in Nepal.",
+        descriptionList: [
+          "Through a licensing system, NEC helps prevent unqualified individuals from practicing, reducing risks of structural failures and hazards.",
+          "It ensures engineers are up to date with the latest codes, standards, and best practices tailored for Nepal’s unique environment, including seismic safety.",
+          "This system supports Nepal’s development by promoting responsible engineering critical for infrastructure longevity and public welfare.",
+        ],
+      },
+    ],
+    photo: blog6,
+    author: "Dipen",
+    date: "08/08/25",
+  },
 {
+    id: "NEC-Exam-Past-Questions-Nepal",
+    title:
+      "NEC Exam Past Questions Nepal: Essential Practice for Nepal Engineering Council License Exam",
+    description1:
+      "Boost your preparation for the Nepal Engineering Council (NEC) License Exam by practicing with past questions specifically relevant to Nepali engineering candidates. This guide highlights the importance of past exam papers, where to find authentic question sets, and strategies to effectively use them for improving your exam readiness and confidence.",
+    description2: [
+      {
+        title: "Why Practice Past Questions for the NEC Exam?",
+        subtitle:
+          "Understand the benefits of using past question papers as a core part of your study plan.",
+        descriptionList: [
+          "Familiarity with Exam Format: Learn the structure, question types, and marking scheme used by the NEC.",
+          "Identifying Key Topics: Spot frequently tested subjects and focus areas to optimize your study time.",
+          "Time Management: Practice under timed conditions to enhance speed and accuracy during the actual exam.",
+        ],
+      },
+      {
+        title: "Where to Find Authentic NEC Exam Past Questions in Nepal",
+        subtitle:
+          "Reliable sources and platforms providing official or well-curated NEC question papers and practice sets.",
+        descriptionList: [
+          "Official NEC Resources: Nepal Engineering Council’s website and the Application Management Information System (AMIS) for sample and model questions.",
+          "Local Educational Platforms: Nepali quiz websites like Simple Quiz, PANA Academy, and Nepal Exam Prep offering discipline-specific past questions and MCQs.",
+          "Coaching Centers and Study Groups: Access past question compilations shared by established local coaching institutes and peer groups.",
+        ],
+      },
+      {
+        title:
+          "Effective Strategies for Using Past Questions in NEC Exam Preparation",
+        subtitle:
+          "Maximize your learning and exam performance using past papers effectively.",
+        descriptionList: [
+          "Simulate Exam Conditions: Take full-length tests with time limits to improve focus and reduce anxiety.",
+          "Review Mistakes: Analyze wrong answers to identify gaps in knowledge or understanding.",
+          "Regular Practice: Incorporate past questions into daily study routines for continuous improvement.",
+        ],
+      },
+      {
+        title: "Additional Tips for NEC Exam Success",
+        subtitle:
+          "Complement past question practice with other preparation techniques.",
+        descriptionList: [
+          "Refer to Updated NEC Codes: Ensure practice materials align with the latest standards and regulations.",
+          "Use Official Syllabus: Match your practice with the current exam syllabus provided by NEC.",
+          "Join Discussion Forums: Participate in online or local groups for shared insights and doubt clearing.",
+        ],
+      },
+    ],
+    photo: blog4,
+    author: "Linza",
+    date: "08/08/25",
+  },
+    {
+    id: "How-to-Pass-NEC-License-Exam-Nepal",
+    title:
+      "How to Pass the Nepal Engineering Council (NEC) License Exam: Strategies and Tips for Success",
+    description1:
+      "Ace the Nepal Engineering Council (NEC) License Exam with proven strategies, study techniques, and resources designed for Nepali engineering candidates. This comprehensive guide covers important tips on understanding exam patterns, effective preparation methods, time management, and leveraging local resources to boost your chances of success.",
+    description2: [
+      {
+        title: "Know the Exam Pattern and Syllabus Thoroughly",
+        subtitle:
+          "Understanding the exam format and syllabus is foundational for targeted preparation.",
+        descriptionList: [
+          "Exam Structure: 2-hour computer-based test with 60 one-mark and 20 two-mark questions, covering core engineering concepts and professional practice.",
+          "Syllabus Breakdown: Focus on fundamental engineering principles, discipline-specific topics, Nepal Engineering Council code and regulations, and ethics.",
+          "Question Distribution: Majority are multiple-choice questions sourced from previous years and official syllabi.",
+        ],
+      },
+      {
+        title: "Develop a Personalized Study Plan",
+        subtitle:
+          "Create a realistic schedule that balances revision, practice, and rest.",
+        descriptionList: [
+          "Divide Topics: Break down the syllabus into manageable sections; allocate more time to weak areas.",
+          "Daily Goals: Set achievable study targets for each day, utilizing chapter-wise MCQs and official practice sets.",
+          "Consistency: Study regularly with focused sessions to build retention and avoid last-minute cramming.",
+        ],
+      },
+      {
+        title: "Utilize Quality Study Materials and Practice Tests",
+        subtitle:
+          "Use trusted resources tailored for Nepal’s NEC exam to gain confidence.",
+        descriptionList: [
+          "Past Question Sets: Practice with official and reputed compiled question banks available online and in print.",
+          "Online Resources: Leverage Nepali platforms offering video tutorials, mock tests, and detailed explanations.",
+          "Coaching Classes and Study Groups: Consider joining local preparation classes or peer groups for discussions and doubt clearing.",
+        ],
+      },
+      {
+        title: "Master Exam Day Strategies",
+        subtitle:
+          "Effective time and stress management techniques to optimize exam performance.",
+        descriptionList: [
+          "Time Management: Allocate appropriate time per question; do not spend too much time on difficult items.",
+          "Answer Smartly: Attempt easier questions first, then tackle harder ones to maximize score.",
+          "Stay Calm and Focused: Practice mindfulness and avoid last-minute panic to keep a clear mind.",
+        ],
+      },
+      {
+        title: "Keep Updated with NEC Notifications and Code Changes",
+        subtitle:
+          "Stay informed on latest exam announcements and Nepal Engineering Council code revisions.",
+        descriptionList: [
+          "Official NEC Website: Regularly check for updates on exam schedules, syllabus modifications, and application deadlines.",
+          "Code Updates: Study recent changes in Nepal engineering codes and regulations, as they may reflect in exam questions.",
+          "Professional Development: Engage in workshops and seminars to enhance understanding and stay connected with the engineering community.",
+        ],
+      },
+    ],
+    photo: blog3,
+    author: "Sajan",
+    date: "08/08/25",
+  },
+   {
+    id: "NEC-License-Study-Materials-Nepal",
+    title:
+      "NEC License Study Materials Nepal: Your Essential Resources for Exam Success",
+    description1:
+      "Prepare confidently for the Nepal Engineering Council (NEC) License Exam with the best study materials curated specifically for Nepali engineering candidates. This guide presents top resources including question sets, video lectures, presentation notes, and recommended books to boost your exam readiness and help you pass the NEC exam efficiently.",
+    description2: [
+      {
+        title: "Official NEC Practice Question Sets and Sample Papers",
+        subtitle:
+          "Utilize authentic question banks provided by NEC and other trusted platforms for targeted practice.",
+        descriptionList: [
+          "NEC official question sets: Access 18+ sets of practice questions released for exam preparation purposes.",
+          "Exam pattern familiarization: Learn question types, marking scheme, and time management by practicing these papers.",
+          "Online repositories: Download presentations and question compilations shared by experienced Nepali engineers.",
+        ],
+      },
+      {
+        title: "Video Tutorials and Online Classes for NEC Exam Preparation",
+        subtitle:
+          "Leverage visual learning and expert guidance through quality video lectures and coaching platforms.",
+        descriptionList: [
+          "Free video series: YouTube channels offering step-by-step tutorials covering key NEC syllabus topics.",
+          "Paid online coaching: Institutes like Fast Track Engineering Institute and N.I.E. provide live and recorded classes.",
+          "Mock tests and interactive sessions to evaluate progress and clarify doubts.",
+        ],
+      },
+      {
+        title: "Presentation Notes and Reference Books",
+        subtitle:
+          "Study concise notes and authoritative textbooks aligned with NEC syllabus requirements.",
+        descriptionList: [
+          "Downloadable presentation slides summarizing important NEC exam concepts.",
+          "Recommended books including Nepal Engineering Council codebooks and discipline-specific texts.",
+          "Access to comprehensive compilations of past questions & answers in printed or digital format.",
+        ],
+      },
+      {
+        title: "Local Study Groups and Coaching Centers in Nepal",
+        subtitle:
+          "Join peer groups or professional coaching hubs to enhance understanding and stay motivated.",
+        descriptionList: [
+          "Regular topic-wise tests and weekly model exams organized by coaching centers.",
+          "Discussion forums and support groups to share resources and solve difficulties collaboratively.",
+          "In-person guidance especially useful for those preparing for electrical, civil, or mechanical engineering license exams.",
+        ],
+      },
+    ],
+    photo: blog5,
+    author: "Ashish",
+    date: "08/08/25",
+  },
+  {
   id: "NEC-License-Exam-Preparation-Questions-Nepal",
   title:
     "NEC License Exam Preparation Nepal: Questions, Syllabus and Complete Study Guide",
