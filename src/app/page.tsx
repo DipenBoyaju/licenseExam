@@ -15,6 +15,24 @@ import Image from "next/image";
 import Faq from "@/components/Faq";
 import Cta from "@/components/Cta";
 
+const jsonLdData = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "NEC License Exam Preparation",
+  "description": "Comprehensive nec MCQ question practice platform for the Nepal Engineering Council licensing examination.",
+  "provider": {
+    "@type": "Organization",
+    "name": "NEC Question Practice"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "128",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
+
 const features = [
   {
     title: "5,000+ Practice Questions",
@@ -81,6 +99,11 @@ const nestedSuiteFeatures = [
 export default function Home() {
   return (
     <div className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
+      />
+
       <div className="relative isolate">
         <div
           aria-hidden="true"
@@ -200,20 +223,17 @@ export default function Home() {
                   <span className="text-gray-900 font-semibold"> professional competence</span> required to handle nation-building projects safely and ethically.
                 </p>
 
-                {/* Centered Minimal Info Ribbon */}
                 <div className="inline-flex items-center justify-center bg-orange-50/60 border border-orange-100 px-4 py-2 rounded-xl mt-2 text-sm text-gray-700 font-medium">
                   🚀 Covering the full spectrum of the <span className="text-orange-700 font-bold mx-1">12th General Exam</span> across Civil, Computer, & Electrical faculties.
                 </div>
               </div>
             </div>
 
-            {/* Bottom Row: Wide High-Fidelity Extended Marking Scheme Card Frame */}
             <div className="relative group max-w-5xl mx-auto w-full">
               <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 to-amber-500 rounded-3xl blur opacity-10 group-hover:opacity-20 transition duration-1000" />
 
               <div className="relative bg-white p-6 sm:p-10 rounded-3xl shadow-xl shadow-gray-200/50 border border-gray-100">
 
-                {/* Header structure within the broad dashboard asset */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 border-b border-gray-100 pb-6">
                   <div className="flex items-center gap-3">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-orange-600 shadow-xs">
@@ -233,9 +253,7 @@ export default function Home() {
                   </span>
                 </div>
 
-                {/* Stretched Responsive Grid Layout for metrics across 4 balances */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  {/* Metric 1 */}
                   <div className="p-5 rounded-2xl bg-gray-50/80 border border-gray-100 flex flex-col justify-between hover:bg-gray-50 transition">
                     <span className="text-xs uppercase tracking-wider text-gray-400 font-bold font-poppins">Total Allocation</span>
                     <span className="text-2xl font-extrabold text-gray-900 font-inter mt-3">100 Marks</span>
