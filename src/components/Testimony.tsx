@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 
 const testimonials = [
@@ -43,8 +45,6 @@ const testimonials = [
     content:
       "Clear video solutions and updated notes for the 2079 amendment made studying efficient. This is the top choice for NEC exam preparation in Nepal.",
   },
-
-  // --- 3 new (only Civil or Computer) ---
   {
     name: "Bikram Rai",
     role: "Civil Engineer",
@@ -75,7 +75,7 @@ const Testimony = () => {
       aria-labelledby="testimonials-heading"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Section header with SEO-friendly headings */}
+        {/* Section header */}
         <div className="text-center mb-16">
           <h2
             id="testimonials-heading"
@@ -106,12 +106,27 @@ const Testimony = () => {
               transition={{ delay: idx * 0.1 }}
               className="flex flex-col justify-between bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:border-orange-200 transition-colors shadow-sm"
             >
+              {/* Target item being reviewed */}
+              <div
+                itemProp="itemReviewed"
+                itemScope
+                itemType="https://schema.org/Course"
+                className="hidden"
+              >
+                <meta itemProp="name" content="NEC License Exam Preparation" />
+              </div>
+
               <div>
-                {/* Star rating (visual + accessible) */}
+                {/* Star rating (visual + structured data) */}
                 <div
                   className="flex gap-1 text-orange-500 mb-4"
                   aria-label="5 out of 5 stars"
+                  itemProp="reviewRating"
+                  itemScope
+                  itemType="https://schema.org/Rating"
                 >
+                  <meta itemProp="ratingValue" content="5" />
+                  <meta itemProp="bestRating" content="5" />
                   {[...Array(5)].map((_, i) => (
                     <svg
                       key={i}
@@ -136,20 +151,15 @@ const Testimony = () => {
               {/* Reviewer info */}
               <div
                 className="mt-8 flex items-center gap-4 border-t border-gray-200 pt-6"
+                itemProp="author"
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                <div className="sr-only">
-                  {/* Hidden structured-data-only name for schema */}
-                  <span itemProp="name">{t.name}</span>
-                  <span itemProp="jobTitle">{t.role}</span>
-                </div>
-
                 <div>
-                  <h3 className="text-sm font-bold text-gray-900">
+                  <h3 className="text-sm font-bold text-gray-900" itemProp="name">
                     {t.name}
                   </h3>
-                  <p className="text-xs text-gray-500">{t.role}</p>
+                  <p className="text-xs text-gray-500" itemProp="jobTitle">{t.role}</p>
                 </div>
               </div>
             </motion.article>
