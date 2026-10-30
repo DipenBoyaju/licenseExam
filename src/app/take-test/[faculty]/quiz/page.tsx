@@ -30,7 +30,10 @@ export default function Page({ params }: { params: Promise<{ faculty: string }> 
   const facultyName = faculty.replaceAll("-", " ");
 
   const questions = useMemo(() => {
-    return Array.isArray(data) ? data : [];
+    if (!data) return [];
+    if (Array.isArray(data)) return data;
+    if (Array.isArray(data.questions)) return data.questions;
+    return [];
   }, [data]);
 
   const selectedAnswers = useQuizStore((s) => s.selectedAnswers);
@@ -51,13 +54,8 @@ export default function Page({ params }: { params: Promise<{ faculty: string }> 
     }
   }, [questions.length, selectedAnswers.length, setSelectedAnswers]);
 
-  // Timer Initialization 
+  // Timer Initialization (2 hours for 100 questions official NEC standard)
   const [timeLeft, setTimeLeft] = useState(2 * 60 * 60);
-  useEffect(() => {
-    if (data?.remainingTimeSec) {
-      setTimeLeft(data.remainingTimeSec);
-    }
-  }, [data?.remainingTimeSec]);
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitEnabled, setSubmitEnabled] = useState(false);
@@ -123,9 +121,10 @@ export default function Page({ params }: { params: Promise<{ faculty: string }> 
   }, [isSubmitted, handleSubmit, questions.length]);
 
   const formatTime = (seconds: number) => {
-    const hrs = Math.floor(seconds / 3600);
-    const mins = Math.floor((seconds % 3600) / 60);
-    const secs = seconds % 60;
+    const safe = Math.max(0, Math.floor(seconds || 0));
+    const hrs = Math.floor(safe / 3600);
+    const mins = Math.floor((safe % 3600) / 60);
+    const secs = safe % 60;
     return `${hrs.toString().padStart(2, '0')}:${mins
       .toString()
       .padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;

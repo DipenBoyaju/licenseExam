@@ -39,7 +39,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
     },
     {
+      url: `${siteUrl}/faculty/electronics-engineering`,
+      lastModified: new Date(),
+    },
+    {
       url: `${siteUrl}/faculty/architecture`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${siteUrl}/faculty/software-engineering`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${siteUrl}/take-test/software-engineering`,
       lastModified: new Date(),
     },
     {

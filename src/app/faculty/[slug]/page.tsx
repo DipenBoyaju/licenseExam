@@ -126,7 +126,7 @@ export default async function FacultyPage({
                   </div>
                   <div className="p-3 bg-gray-50 rounded-xl border border-gray-100 text-center">
                     <span className="block text-xs font-bold text-gray-400 uppercase">Total Questions</span>
-                    <span className="text-base font-bold text-gray-900 font-inter">80 MCQs</span>
+                    <span className="text-base font-bold text-gray-900 font-inter">100 MCQs</span>
                   </div>
                   <div className="p-3 bg-gray-50 rounded-xl border border-gray-100 text-center">
                     <span className="block text-xs font-bold text-gray-400 uppercase">Total Marks</span>
@@ -342,9 +342,9 @@ export default async function FacultyPage({
                       </div>
                       <p className="leading-relaxed">
                         <strong className="text-gray-900 block font-inter font-semibold">
-                          2-Mark Analytical Weight
+                          Uniform 1-Mark Weightage
                         </strong>
-                        Section B questions contribute 40 marks total. Practice formulas and numerical problems.
+                        All 100 questions carry 1 mark each (100 marks total). Practice formulas, conceptual definitions, and numerical problems uniformly.
                       </p>
                     </div>
 

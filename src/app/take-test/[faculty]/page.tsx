@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { BookOpen, History } from "lucide-react";
+import { BookOpen, History, Sparkles } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useQuizStore } from "@/store/quizStore";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { getRemainingTime, normalizeRemainingSeconds, formatMinutesSeconds } from "@/services/quizService";
 
 export default function Page({ params }: { params: Promise<{ faculty: string }> }) {
   const resolvedParams = React.use(params);
@@ -12,12 +13,52 @@ export default function Page({ params }: { params: Promise<{ faculty: string }> 
   const router = useRouter();
   const reset = useQuizStore((s) => s.reset);
 
+  const [refreshCountdown, setRefreshCountdown] = useState(120);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    // Fetch initial backend cache expiration timer and normalize it safely
+    getRemainingTime(facultyName)
+      .then((res) => {
+        if (isMounted) {
+          setRefreshCountdown(normalizeRemainingSeconds(res.data?.remainingTimeSec));
+        }
+      })
+      .catch(() => {
+        fetch(`/api/proxy-quiz?action=time&faculty=${facultyName}`)
+          .then((r) => r.json())
+          .then((data) => {
+            if (isMounted) {
+              setRefreshCountdown(normalizeRemainingSeconds(data?.remainingTimeSec));
+            }
+          })
+          .catch(() => {});
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, [facultyName]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setRefreshCountdown((prev) => {
+        if (prev <= 1) {
+          return 120;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
   const handleStart = () => {
     reset();
     router.push(`/take-test/${facultyName}/quiz`);
   };
 
-  const formattedTitle = facultyName.replace(/-/g, ' ');
+  const formattedTitle = facultyName.replace(/-/g, " ");
 
   return (
     <div className="bg-white min-h-screen relative overflow-hidden">
@@ -26,7 +67,6 @@ export default function Page({ params }: { params: Promise<{ faculty: string }> 
       <div className="absolute bottom-0 left-1/4 translate-y-12 w-80 h-80 bg-amber-100/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative isolate px-6 lg:px-8 max-w-7xl mx-auto pt-24 pb-20">
-
         {/* Top Centered Header Section Block */}
         <div className="max-w-3xl mx-auto text-center mb-16 relative">
           <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl font-inter leading-tight">
@@ -41,17 +81,17 @@ export default function Page({ params }: { params: Promise<{ faculty: string }> 
 
         {/* Premium High-Fidelity Multi-Action Grid Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto relative">
-
           {/* Card 1: Start Quiz Framework */}
           <div className="group relative flex flex-col justify-between p-8 border border-gray-100 rounded-2xl bg-white shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-b-4 border-b-transparent hover:border-b-orange-600">
-            {/* Live Synchronized Pill Tag */}
-            <p className="absolute top-4 right-4 flex items-center gap-1.5 rounded-full bg-orange-500/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-orange-700 border border-orange-500/10 shadow-3xs backdrop-blur-xs font-poppins">
-              <span className="relative flex h-1.5 w-1.5">
+            {/* Live Dynamic Countdown Pill */}
+            <div className="absolute top-4 right-4 flex items-center gap-1.5 rounded-full bg-orange-500/10 px-3 py-1.5 text-[11px] font-bold text-orange-700 border border-orange-500/15 shadow-2xs font-poppins">
+              <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-orange-500"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
               </span>
-              Dynamic Refresh Engine
-            </p>
+              <span>New set in:</span>
+              <span className="font-mono font-bold text-orange-900">{formatMinutesSeconds(refreshCountdown)}</span>
+            </div>
 
             <div>
               <div className="flex items-center gap-4 mb-5">
@@ -60,9 +100,18 @@ export default function Page({ params }: { params: Promise<{ faculty: string }> 
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 font-inter tracking-tight">Start a New Quiz</h3>
               </div>
-              <p className="text-gray-500 text-sm leading-relaxed font-poppins mb-8">
+              <p className="text-gray-500 text-sm leading-relaxed font-poppins mb-4">
                 Take a fresh quiz from our curated datasets structured explicitly around matching council parameters.
               </p>
+
+              {/* Informative Live Pool Refresh Banner */}
+              <div className="flex items-center gap-2 text-xs text-orange-950 bg-orange-50/80 border border-orange-200/70 rounded-xl px-3.5 py-2.5 mb-6 font-poppins shadow-3xs">
+                <Sparkles className="h-4 w-4 text-orange-600 shrink-0" />
+                <span>
+                  Next randomized 100-question pool rotates in{" "}
+                  <strong className="font-mono font-bold text-orange-800">{formatMinutesSeconds(refreshCountdown)}</strong>
+                </span>
+              </div>
             </div>
 
             <button
@@ -96,9 +145,7 @@ export default function Page({ params }: { params: Promise<{ faculty: string }> 
               <span className="inline-block transition-transform duration-200 group-hover/btn:translate-x-1" aria-hidden="true">→</span>
             </Link>
           </div>
-
         </div>
-
       </div>
     </div>
   );

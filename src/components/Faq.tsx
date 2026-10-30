@@ -14,17 +14,17 @@ const faqs: FaqItem[] = [
   {
     category: "pattern",
     q: "What is the structure, total marks, and duration of the NEC license exam in Nepal?",
-    a: "The Nepal Engineering Council (NEC) licensing examination is a 2-hour (120 minutes) Computer-Based Test (CBT) consisting of 80 multiple-choice questions (MCQs) for a total of 100 marks. The paper is divided into Section A (60 questions carrying 1 mark each on fundamentals) and Section B (20 questions carrying 2 marks each on analytical engineering problems).",
+    a: "The Nepal Engineering Council (NEC) licensing examination is a 2-hour (120 minutes) Computer-Based Test (CBT) consisting of 100 multiple-choice questions (MCQs) for a total of 100 marks. Under the new update, all 100 questions carry 1 mark each (Section A: 60 questions carrying 1 mark each on fundamentals; Section B: 40 questions carrying 1 mark each on analytical and professional practice).",
   },
   {
     category: "pattern",
     q: "What is the passing score for the NEC license exam, and is there negative marking?",
-    a: "The passing threshold is 50% (50 marks out of 100). According to official Nepal Engineering Council guidelines, there is currently NO negative marking for incorrect or unanswered questions. Candidates are strongly encouraged to attempt all 80 questions within the 120-minute time limit.",
+    a: "The passing threshold is 50% (50 marks out of 100). According to official Nepal Engineering Council guidelines, there is currently NO negative marking for incorrect or unanswered questions. Candidates are strongly encouraged to attempt all 100 questions within the 120-minute time limit.",
   },
   {
     category: "pattern",
     q: "Are scientific calculators allowed in the NEC CBT licensing examination?",
-    a: "Yes. Candidates are permitted to use non-programmable scientific calculators (such as the Casio fx-82MS, fx-991MS, or fx-991ES series) for the 2-mark analytical and structural calculation questions. Programmable graphing calculators and smart devices are strictly prohibited.",
+    a: "Yes. Candidates are permitted to use non-programmable scientific calculators (such as the Casio fx-82MS, fx-991MS, or fx-991ES series) for analytical and structural numerical calculation questions. Programmable graphing calculators and smart devices are strictly prohibited.",
   },
   {
     category: "eligibility",

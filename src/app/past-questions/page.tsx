@@ -55,8 +55,8 @@ const examStructure = [
   },
   {
     section: "Section B: Analytical & Professional Practice",
-    weight: "20 Questions (40 Marks)",
-    type: "2 Marks Each",
+    weight: "40 Questions (40 Marks)",
+    type: "1 Mark Each",
     description:
       "Deep problem-solving, numerical analysis, engineering ethics, standard codes of Nepal, safety bylaws, and project management.",
   },
@@ -116,7 +116,7 @@ export default function PastQuestionsPage() {
             <div className="flex items-center gap-3">
               <ClipboardDocumentCheckIcon className="w-6 h-6 text-orange-600 shrink-0" />
               <p className="text-sm text-orange-950 font-medium">
-                <strong>Total Marks:</strong> 100 Marks | <strong>Pass Threshold:</strong> 50 Marks | <strong>Duration:</strong> 120 Minutes | <strong>Format:</strong> Computer Based Test (CBT)
+                <strong>Total Evaluation:</strong> 100 Questions (100 Marks • All 1 Mark Each) | <strong>Pass Threshold:</strong> 50 Marks (50%) | <strong>Duration:</strong> 120 Minutes | <strong>Format:</strong> Computer Based Test (CBT)
               </p>
             </div>
             <Link
@@ -189,19 +189,19 @@ export default function PastQuestionsPage() {
             <div className="bg-white p-5 rounded-2xl border border-gray-100">
               <h3 className="font-bold text-gray-900 font-inter mb-2 flex items-center gap-2">
                 <CheckBadgeIcon className="w-4 h-4 text-emerald-600" />
-                Focus on 2-Mark Numerical Concepts
+                Uniform 1-Mark Weightage
               </h3>
               <p>
-                Section B questions carry 2 marks each and comprise 40% of your total score. Prioritize standard formula derivations, structural checks, and algorithm complexities.
+                Under the new update, all 100 questions carry 1 mark each. Balance your preparation across theoretical fundamentals, standard code provisions, and practical engineering problem-solving.
               </p>
             </div>
             <div className="bg-white p-5 rounded-2xl border border-gray-100">
               <h3 className="font-bold text-gray-900 font-inter mb-2 flex items-center gap-2">
                 <CheckBadgeIcon className="w-4 h-4 text-emerald-600" />
-                Pace Your Time Per Question
+                Pace ~70 Seconds Per Question
               </h3>
               <p>
-                With 80 total questions to complete in 120 minutes, allocate roughly 60 seconds per 1-mark question to preserve ample time for analytical multi-step calculations.
+                With 100 total questions to complete in 120 minutes (7,200 seconds), allocate roughly 65 to 70 seconds per question to ensure you attempt every question without time stress.
               </p>
             </div>
             <div className="bg-white p-5 rounded-2xl border border-gray-100">

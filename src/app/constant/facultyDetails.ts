@@ -52,7 +52,7 @@ export const facultyDetails: FacultyDetailsMap = {
     pdfPath: "/syllabus/NEC_Computer_Engineering_Syllabus.pdf",
     hasMockTest: true,
     examOverview:
-      "The NEC Computer Engineering licensure examination evaluates candidates on foundational computing sciences, hardware architecture, software lifecycle development, networks, systems, and professional ethics under the Nepal Engineering Council Act 2055. The test contains 80 objective multiple-choice questions totaling 100 marks.",
+      "The NEC Computer Engineering licensure examination evaluates candidates on foundational computing sciences, hardware architecture, software lifecycle development, networks, systems, and professional ethics under the Nepal Engineering Council Act 2055. The test contains 100 objective multiple-choice questions totaling 100 marks (1 mark each).",
     chapters: [
       {
         chapterNumber: 1,
@@ -238,12 +238,12 @@ export const facultyDetails: FacultyDetailsMap = {
       {
         question: "What is the examination pattern for Computer Engineering in the NEC license exam?",
         answer:
-          "The exam is a 2-hour Computer-Based Test (CBT) consisting of 80 multiple-choice questions (60 1-mark questions and 20 2-mark questions) totaling 100 marks. The passing threshold is 50 marks (50%), and there is no negative marking.",
+          "The exam is a 2-hour Computer-Based Test (CBT) consisting of 100 multiple-choice questions (1 mark each) totaling 100 marks. The passing threshold is 50 marks (50%), and there is no negative marking.",
       },
       {
         question: "Are questions in the NEC exam purely theoretical or numerical?",
         answer:
-          "The 1-mark questions are predominantly conceptual and theoretical (definitions, architectural pinouts, protocol layers). The 2-mark questions test analytical problems, such as subnetting calculations, K-map simplifications, pipeline cycle computations, and algorithm complexities.",
+          "Under the new update, all 100 questions carry 1 mark each. Questions cover both conceptual theory (definitions, architectural pinouts, protocol layers) and practical analytical calculations (subnetting, K-map simplifications, pipeline cycles, and algorithm complexities).",
       },
       {
         question: "How important is Chapter 10 (Ethics and Project Planning)?",
@@ -461,9 +461,9 @@ export const facultyDetails: FacultyDetailsMap = {
     ],
     faqs: [
       {
-        question: "How should civil engineers prepare for the 2-mark questions in the NEC exam?",
+        question: "How should civil engineers prepare for numerical and analytical questions in the NEC exam?",
         answer:
-          "Focus on standard civil calculations: sight distance (SSD/OSD), superelevation, critical depth in open channels, Mohr-Coulomb shear parameters, bending stress equations, and float calculations in CPM network charts.",
+          "Focus on standard civil calculations: sight distance (SSD/OSD), superelevation, critical depth in open channels, Mohr-Coulomb shear parameters, bending stress equations, and float calculations in CPM network charts. Under the new update, every question carries 1 mark uniformly.",
       },
       {
         question: "Does the NEC Civil Engineering exam follow IS codes or Nepal National Building Codes (NBC)?",
@@ -473,7 +473,7 @@ export const facultyDetails: FacultyDetailsMap = {
       {
         question: "Is there negative marking in the Civil Engineering licensure exam?",
         answer:
-          "No, there is currently no negative marking for incorrect answers. Candidates are advised to answer all 80 questions within the 120-minute examination duration.",
+          "No, there is currently no negative marking for incorrect answers. Candidates are advised to answer all 100 questions within the 120-minute examination duration.",
       },
     ],
   },
@@ -636,4 +636,14 @@ export const facultyDetails: FacultyDetailsMap = {
       },
     ],
   },
+};
+
+// Registered aliases for multi-slug platform consistency
+facultyDetails["electronics-engineering"] = facultyDetails["electrical-engineering"];
+facultyDetails["software-engineering"] = {
+  ...facultyDetails["computer-engineering"],
+  title: "Software Engineering",
+  subtitle:
+    "Comprehensive chapter breakdown, official curriculum topics, and high-yield practice questions for the Nepal Engineering Council (NEC) Software Engineering license exam.",
+  pdfPath: "/syllabus/NEC_Computer_Engineering_Syllabus.pdf",
 };

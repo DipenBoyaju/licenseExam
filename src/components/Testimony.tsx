@@ -25,7 +25,7 @@ const testimonials: Testimonial[] = [
     date: "2024-09-15",
     rating: 5,
     content:
-      "The 2-mark numerical questions in Section B were almost identical in structure to what I practiced here. The time management practice on the 120-minute CBT simulator was what actually helped me clear the NEC exam on my first attempt.",
+      "The analytical numerical questions were almost identical in structure to what I practiced here. The time management practice on the 100-question 120-minute CBT simulator was what actually helped me clear the NEC exam on my first attempt.",
   },
   {
     name: "Anjali Sharma",

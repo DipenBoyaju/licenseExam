@@ -63,8 +63,9 @@ export default function Footer() {
                 {[
                   { label: "Computer Engineering", path: "/faculty/computer-engineering" },
                   { label: "Civil Engineering", path: "/faculty/civil-engineering" },
-                  { label: "Electrical Engineering", path: "/faculty/electrical-engineering" },
+                  { label: "Electronics & Communication", path: "/faculty/electronics-engineering" },
                   { label: "Architecture", path: "/faculty/architecture" },
+                  { label: "Software Engineering", path: "/faculty/software-engineering" },
                 ].map((link) => (
                   <li key={link.path}>
                     <Link
