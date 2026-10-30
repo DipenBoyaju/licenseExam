@@ -161,9 +161,9 @@ export function getMockQuestionsByFaculty(slug: string): QuizQuestion[] {
   const normalized = slug.toLowerCase().replace(/^(faculty-)/, "");
 
   if (normalized.includes("computer")) {
-    // Select 50 randomized questions from the 3300+ dataset
+    // Select 100 randomized questions from the 3300+ dataset for full exam simulation
     const shuffled = [...computerEngineeringData].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, 50).map((q) => ({
+    return shuffled.slice(0, 100).map((q) => ({
       question: q.question,
       options: q.options,
       answer: q.answer,
