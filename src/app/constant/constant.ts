@@ -9,6 +9,7 @@ import blog8 from "./blog/blog8.webp";
 
 
 export const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://neclicenseexam.vercel.app";
+export const BACKEND_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://nec-backend-kh3u.onrender.com";
 
 export const blogData = [
 
