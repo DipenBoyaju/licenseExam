@@ -1,7 +1,7 @@
-import { Laptop, HardHat } from "lucide-react";
-// import { Laptop, HardHat, Zap, PencilRuler } from "lucide-react";
+import { Laptop, HardHat, Zap, PencilRuler } from "lucide-react";
+import React from "react";
 
-interface Faculty {
+export interface Faculty {
   id: number;
   title: string;
   slug: string;
@@ -14,28 +14,28 @@ export const faculty: Faculty[] = [
     id: 1,
     title: "Computer Engineering",
     slug: "computer-engineering",
-    icon: <Laptop />,
-    desc: "Includes topics like DSA, OS, CN, DBMS, and Software Engineering.",
+    icon: <Laptop className="w-6 h-6" />,
+    desc: "Includes topics like Data Structures, Operating Systems, Computer Networks, DBMS, Software Engineering, and AI.",
   },
   {
     id: 2,
     title: "Civil Engineering",
     slug: "civil-engineering",
-    icon: <HardHat />,
-    desc: "Includes topics like Structural Analysis, Surveying, Geotechnical Engineering, and Hydrology.",
+    icon: <HardHat className="w-6 h-6" />,
+    desc: "Includes Structural Mechanics, Geotechnical Engineering, Water Resources, Hydropower, Transportation, and Surveying.",
   },
-  // {
-  //   id: 3,
-  //   title: "Electrical Engineering",
-  //   slug: "electrical-engineering",
-  //   icon: <Zap />,
-  //   desc: "Includes topics like Circuit Theory, Power Systems, Control Systems, and Electrical Machines.",
-  // },
-  // {
-  //   id: 4,
-  //   title: "Architectural Engineering",
-  //   slug: "architectural-engineering",
-  //   icon: <PencilRuler />,
-  //   desc: "Includes topics like Building Design, Urban Planning, Construction Materials, and CAD.",
-  // },
+  {
+    id: 3,
+    title: "Electrical Engineering",
+    slug: "electrical-engineering",
+    icon: <Zap className="w-6 h-6" />,
+    desc: "Includes Circuit Analysis, Power Systems, Electrical Machines, Control Systems, and Transmission Grid Operations.",
+  },
+  {
+    id: 4,
+    title: "Architecture",
+    slug: "architecture",
+    icon: <PencilRuler className="w-6 h-6" />,
+    desc: "Includes Building Technology, Architectural History of Nepal, Settlement Planning, Building Codes, and Services.",
+  },
 ];

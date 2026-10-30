@@ -1,12 +1,20 @@
 "use client";
 
+import { useState } from "react";
 import {
   EnvelopeIcon,
   ChatBubbleLeftRightIcon,
   MapPinIcon,
+  CheckCircleIcon,
 } from "@heroicons/react/24/outline";
 
 export default function Contact() {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
   return (
     <div className="bg-white min-h-screen relative overflow-hidden">
       {/* Background ambient radial glow to blend with your other pages */}
@@ -82,44 +90,64 @@ export default function Contact() {
                 <p className="text-xs text-gray-400 font-poppins mt-0.5">We typically respond to technical error tickets within 24 hours.</p>
               </div>
 
-              <form onSubmit={(e) => e.preventDefault()} className="grid grid-cols-1 gap-y-6 font-poppins">
-                <div>
-                  <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider">Full Name</label>
-                  <input
-                    type="text"
-                    className="mt-2 block w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 text-sm text-gray-900 shadow-2xs placeholder:text-gray-400 focus:border-orange-500 focus:bg-white focus:ring-0 outline-none transition"
-                    placeholder="John Doe"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider">Subject Classification</label>
-                  <select className="mt-2 block w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 text-sm text-gray-900 shadow-2xs focus:border-orange-500 focus:bg-white focus:ring-0 outline-none transition appearance-none">
-                    <option>General Inquiry</option>
-                    <option>Question Error Report</option>
-                    <option>Feature Recommendation</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider">Message Description</label>
-                  <textarea
-                    rows={4}
-                    className="mt-2 block w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 text-sm text-gray-900 shadow-2xs placeholder:text-gray-400 focus:border-orange-500 focus:bg-white focus:ring-0 outline-none transition"
-                    placeholder="Provide specific details here..."
-                  />
-                </div>
-
-                <div className="pt-2">
+              {submitted ? (
+                <div className="py-12 text-center space-y-4">
+                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600">
+                    <CheckCircleIcon className="w-8 h-8" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 font-inter">Message Sent Successfully!</h3>
+                  <p className="text-sm text-gray-500 font-poppins max-w-sm mx-auto leading-relaxed">
+                    Thank you for contacting the NEC Exam Preparation team. We review technical inquiries and error reports within 24 hours.
+                  </p>
                   <button
-                    type="submit"
-                    className="group/btn relative w-full inline-flex items-center justify-center gap-2 rounded-xl bg-orange-600 px-4 py-3.5 text-sm font-bold text-white shadow-md hover:bg-orange-500 transition-all duration-200 hover:scale-[1.01] active:scale-[0.99]"
+                    onClick={() => setSubmitted(false)}
+                    className="mt-4 inline-flex text-xs font-bold text-orange-600 hover:text-orange-700 uppercase tracking-wider"
                   >
-                    Send Message
-                    <span className="inline-block transition-transform duration-200 group-hover/btn:translate-x-1" aria-hidden="true">→</span>
+                    Send another message →
                   </button>
                 </div>
-              </form>
+              ) : (
+                <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-y-6 font-poppins">
+                  <div>
+                    <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider">Full Name</label>
+                    <input
+                      type="text"
+                      required
+                      className="mt-2 block w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 text-sm text-gray-900 shadow-2xs placeholder:text-gray-400 focus:border-orange-500 focus:bg-white focus:ring-0 outline-none transition"
+                      placeholder="John Doe"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider">Subject Classification</label>
+                    <select className="mt-2 block w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 text-sm text-gray-900 shadow-2xs focus:border-orange-500 focus:bg-white focus:ring-0 outline-none transition appearance-none">
+                      <option>General Inquiry</option>
+                      <option>Question Error Report</option>
+                      <option>Feature Recommendation</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider">Message Description</label>
+                    <textarea
+                      rows={4}
+                      required
+                      className="mt-2 block w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 text-sm text-gray-900 shadow-2xs placeholder:text-gray-400 focus:border-orange-500 focus:bg-white focus:ring-0 outline-none transition"
+                      placeholder="Provide specific details here..."
+                    />
+                  </div>
+
+                  <div className="pt-2">
+                    <button
+                      type="submit"
+                      className="group/btn relative w-full inline-flex items-center justify-center gap-2 rounded-xl bg-orange-600 px-4 py-3.5 text-sm font-bold text-white shadow-md hover:bg-orange-500 transition-all duration-200 hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
+                    >
+                      Send Message
+                      <span className="inline-block transition-transform duration-200 group-hover/btn:translate-x-1" aria-hidden="true">→</span>
+                    </button>
+                  </div>
+                </form>
+              )}
             </div>
           </div>
 

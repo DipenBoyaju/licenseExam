@@ -19,13 +19,16 @@ const poppins = Poppins({
   display: "swap",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://neclicenseexam.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "NEC License Exam Preparation | Nepal Engineering Council MCQs | nec mcq practice | nec ",
+    default: "NEC License Exam Preparation | Nepal Engineering Council CBT Mock Tests",
     template: "%s | NEC License Exam Preparation",
   },
   description:
-    "Prepare for the Nepal Engineering Council License nec exam with targeted MCQ practice & question set tests for Civil, Computer,Software, Architecture, Electrical, Mechanical, and other engineering disciplines. Access chapter-wise quizzes, model questions, and detailed solutions to boost your success.",
+    "Prepare for the Nepal Engineering Council (NEC) License Exam with timed CBT mock tests, chapter-wise question sets, and official syllabi for Computer, Civil, Electrical, and Architecture disciplines.",
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -34,8 +37,46 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
-  keywords:
-    "nec mcq practice,nec question set,nec routine, nec syllabus, nec exam date, NEC License MCQ, NEC exam preparation, Nepal Engineering Council questions, license exam practice, engineering MCQs Nepal, NEC registration test,NEC License MCQ, NEC exam practice, Civil Engineering MCQs, Computer Engineering questions, Architecture license exam, Electrical Engineering NEC, Mechanical Engineering test, Engineering licensing Nepal, NEC model questions, engineering chapter quizzes, engineering exam solutions, Nepal engineering license preparation",
+  keywords: [
+    "NEC license exam",
+    "Nepal Engineering Council mock test",
+    "NEC question sets",
+    "Computer engineering NEC MCQs",
+    "Civil engineering NEC license",
+    "Electrical engineering NEC practice",
+    "Architecture NEC license exam",
+    "NEC exam syllabus Nepal",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "NEC License Exam Preparation",
+    title: "NEC License Exam Preparation | Free Engineering CBT Mock Tests",
+    description:
+      "Practice targeted MCQs, timed mock exams, and official syllabi for Nepal Engineering Council license exams. Free preparation for Computer, Civil, Electrical, and Architecture graduates.",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1024,
+        height: 1024,
+        alt: "NEC License Exam Preparation Portal",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NEC License Exam Preparation | Free CBT Mock Tests",
+    description:
+      "Practice targeted MCQs, timed mock exams, and official syllabi for Nepal Engineering Council license exams.",
+    images: ["/logo.png"],
+  },
+  alternates: {
+    canonical: siteUrl,
+    types: {
+      "application/rss+xml": `${siteUrl}/feed.xml`,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -46,6 +87,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <head>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="NEC License Exam Preparation RSS Feed"
+          href="/feed.xml"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -57,36 +104,25 @@ export default function RootLayout({
                   "@type": "ListItem",
                   position: 1,
                   name: "Take Test",
-                  item: process.env.NEXT_PUBLIC_SITE_URL + "/take-test",
+                  item: (process.env.NEXT_PUBLIC_SITE_URL || "https://neclicenseexam.vercel.app") + "/take-test",
                 },
                 {
                   "@type": "ListItem",
                   position: 2,
-                  name: "Faculty",
-                  item: [
-                    process.env.NEXT_PUBLIC_SITE_URL +
-                    "/faculty/computer-engineering",
-                    process.env.NEXT_PUBLIC_SITE_URL +
-                    "/faculty/civil-engineering",
-                    process.env.NEXT_PUBLIC_SITE_URL +
-                    "/faculty/electrical-engineering",
-                    process.env.NEXT_PUBLIC_SITE_URL +
-                    "/faculty/software-engineering",
-                    process.env.NEXT_PUBLIC_SITE_URL +
-                    "/faculty/architecture",
-                  ],
+                  name: "Syllabus",
+                  item: (process.env.NEXT_PUBLIC_SITE_URL || "https://neclicenseexam.vercel.app") + "/syllabus",
                 },
                 {
                   "@type": "ListItem",
                   position: 3,
                   name: "Blog",
-                  item: process.env.NEXT_PUBLIC_SITE_URL + "/blog",
+                  item: (process.env.NEXT_PUBLIC_SITE_URL || "https://neclicenseexam.vercel.app") + "/blog",
                 },
                 {
                   "@type": "ListItem",
                   position: 4,
-                  name: "Reviews",
-                  item: process.env.NEXT_PUBLIC_SITE_URL + "/review",
+                  name: "About Us",
+                  item: (process.env.NEXT_PUBLIC_SITE_URL || "https://neclicenseexam.vercel.app") + "/about-us",
                 },
               ],
             }),

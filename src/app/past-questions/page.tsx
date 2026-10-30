@@ -1,93 +1,222 @@
-"use client";
+import Link from "next/link";
+import {
+  DocumentArrowDownIcon,
+  BookOpenIcon,
+  CheckBadgeIcon,
+  AcademicCapIcon,
+  ClipboardDocumentCheckIcon,
+  ArrowRightIcon,
+} from "@heroicons/react/24/outline";
 
-import { motion } from "framer-motion";
-import { DocumentArrowDownIcon, LockClosedIcon, BeakerIcon, FunnelIcon } from "@heroicons/react/24/outline";
+export const metadata = {
+  title: "Past Question Format & Model Question Guidelines | NEC License Exam",
+  description:
+    "Explore the Nepal Engineering Council (NEC) examination pattern, past question formats, chapter weightages, and download official syllabus blueprints for all disciplines.",
+};
 
-export default function PastQuestionsComingSoon() {
+const syllabusDownloads = [
+  {
+    discipline: "Computer Engineering",
+    filename: "NEC_Computer_Engineering_Syllabus.pdf",
+    path: "/syllabus/NEC_Computer_Engineering_Syllabus.pdf",
+    testUrl: "/take-test/computer-engineering",
+    active: true,
+  },
+  {
+    discipline: "Civil Engineering",
+    filename: "NEC_Civil_Engineering_Syllabus.pdf",
+    path: "/syllabus/NEC_Civil_Engineering_Syllabus.pdf",
+    testUrl: "/take-test/civil-engineering",
+    active: true,
+  },
+  {
+    discipline: "Electrical & Electronics Engineering",
+    filename: "NEC_Electrical&Electronics_Engineering_Syllabus.pdf",
+    path: "/syllabus/NEC_Electrical&Electronics_Engineering_Syllabus.pdf",
+    testUrl: "/take-test",
+    active: false,
+  },
+  {
+    discipline: "Architecture Engineering",
+    filename: "NEC_Architecture_Engineering_Syllabus.pdf",
+    path: "/syllabus/NEC_Architecture_Engineering_Syllabus.pdf",
+    testUrl: "/take-test",
+    active: false,
+  },
+];
+
+const examStructure = [
+  {
+    section: "Section A: Core Engineering & Sciences",
+    weight: "60 Questions (60 Marks)",
+    type: "1 Mark Each",
+    description:
+      "Assesses fundamental concepts, mathematical reasoning, foundational engineering sciences, and core discipline knowledge.",
+  },
+  {
+    section: "Section B: Analytical & Professional Practice",
+    weight: "20 Questions (40 Marks)",
+    type: "2 Marks Each",
+    description:
+      "Deep problem-solving, numerical analysis, engineering ethics, standard codes of Nepal, safety bylaws, and project management.",
+  },
+];
+
+export default function PastQuestionsPage() {
   return (
-    <section className="relative isolate overflow-hidden bg-white py-24 sm:py-32">
-      {/* Decorative background grid */}
-      <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+    <div className="bg-white min-h-screen relative overflow-hidden font-poppins pt-24 pb-20">
+      {/* Background radial glows */}
+      <div className="absolute top-0 right-0 -translate-y-12 translate-x-12 w-96 h-96 bg-orange-100/30 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 left-0 -translate-x-12 w-72 h-72 bg-amber-100/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2 rounded-full bg-orange-50 px-4 py-1.5 text-sm font-semibold text-orange-600 ring-1 ring-inset ring-orange-600/20 mb-8"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
-            </span>
-            Coming Q2 2082
-          </motion.div>
-
-          <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl font-inter">
-            Past Question <span className="text-orange-600">Archive</span>
-          </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600 font-poppins">
-            We are currently digitizing and verifying solutions for the last 10 years of NEC exams.
-            Get access to authentic question papers with expert-verified answer keys.
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
+        {/* Header */}
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <span className="inline-flex items-center rounded-full bg-orange-50 px-3 py-1 text-sm font-medium text-orange-700 ring-1 ring-inset ring-orange-600/20 mb-4">
+            Exam Architecture & Archives
+          </span>
+          <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl font-inter leading-tight">
+            NEC Exam <span className="text-orange-600 font-medium">Question Format</span> & Resources
+          </h1>
+          <p className="mt-4 text-base sm:text-lg text-gray-500 leading-relaxed">
+            Understand the official Nepal Engineering Council licensing test framework, question distribution, and download verified syllabus blueprints to prepare systematically.
           </p>
         </div>
 
-        {/* Feature Preview Grid */}
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-            {[
-              {
-                name: "Year-Wise Archive",
-                description: "Filter questions by year and faculty (Civil, Computer, Electrical) to track exam trends.",
-                icon: FunnelIcon,
-              },
-              {
-                name: "Verified Solutions",
-                description: "Not just questions. Every set comes with step-by-step solutions mapped to the NEC syllabus.",
-                icon: BeakerIcon,
-              },
-              {
-                name: "Printable PDFs",
-                description: "Download high-quality question sets for offline practice and group study.",
-                icon: DocumentArrowDownIcon,
-              },
-            ].map((feature) => (
-              <div key={feature.name} className="flex flex-col items-center text-center">
-                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gray-50 ring-1 ring-gray-200">
-                  <feature.icon className="h-8 w-8 text-gray-400" aria-hidden="true" />
+        {/* Exam Structure Matrix */}
+        <div className="mb-20">
+          <h2 className="text-2xl font-bold text-gray-900 font-inter mb-6">
+            Official Exam Pattern Breakdown
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {examStructure.map((item, index) => (
+              <div
+                key={index}
+                className="p-6 rounded-2xl border border-gray-100 bg-gray-50/60 hover:bg-white hover:shadow-md transition-all"
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-full">
+                    {item.type}
+                  </span>
+                  <span className="text-sm font-semibold text-gray-700 font-inter">
+                    {item.weight}
+                  </span>
                 </div>
-                <dt className="text-xl font-bold leading-7 text-gray-900">
-                  {feature.name}
-                </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto">{feature.description}</p>
-                </dd>
+                <h3 className="text-lg font-bold text-gray-900 font-inter mb-2">
+                  {item.section}
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {item.description}
+                </p>
               </div>
             ))}
-          </dl>
+          </div>
+
+          <div className="mt-6 rounded-2xl bg-orange-50/50 border border-orange-200/50 p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <ClipboardDocumentCheckIcon className="w-6 h-6 text-orange-600 shrink-0" />
+              <p className="text-sm text-orange-950 font-medium">
+                <strong>Total Marks:</strong> 100 Marks | <strong>Pass Threshold:</strong> 50 Marks | <strong>Duration:</strong> 120 Minutes | <strong>Format:</strong> Computer Based Test (CBT)
+              </p>
+            </div>
+            <Link
+              href="/take-test"
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-700 hover:text-orange-800 uppercase tracking-wider shrink-0"
+            >
+              Start Practice Test <ArrowRightIcon className="w-3.5 h-3.5" />
+            </Link>
+          </div>
         </div>
 
-        {/* Notify Me Form */}
-        <div className="mt-20 flex flex-col items-center">
-          <div className="relative w-full max-w-md">
-            <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 to-orange-400 rounded-lg blur opacity-25" />
-            <div className="relative bg-white p-2 rounded-lg shadow-sm border border-gray-100 flex flex-col sm:flex-row gap-2">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-grow px-4 py-2 text-gray-900 border-none focus:ring-0 rounded-md outline-none"
-              />
-              <button className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-md font-semibold transition-all whitespace-nowrap">
-                Notify Me
-              </button>
+        {/* Official Blueprints and Syllabus Downloads */}
+        <div className="mb-20">
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 font-inter">
+              Official Discipline Blueprints & Syllabi
+            </h2>
+            <p className="text-sm text-gray-500 mt-1">
+              Download the official curriculum documents issued for the Nepal Engineering Council licensing examination.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {syllabusDownloads.map((doc) => (
+              <div
+                key={doc.discipline}
+                className="group flex flex-col justify-between p-6 rounded-2xl border border-gray-100 bg-white shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-b-4 hover:border-b-orange-600"
+              >
+                <div>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-50 text-orange-600 mb-4 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                    <BookOpenIcon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-base font-bold text-gray-900 font-inter mb-1">
+                    {doc.discipline}
+                  </h3>
+                  <p className="text-xs text-gray-400 font-poppins mb-6">
+                    Official NEC Syllabus Guide
+                  </p>
+                </div>
+
+                <div className="space-y-2 pt-4 border-t border-gray-50">
+                  <a
+                    href={doc.path}
+                    download
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gray-50 hover:bg-orange-50 hover:text-orange-600 py-2.5 px-3 text-xs font-bold text-gray-700 transition"
+                  >
+                    <DocumentArrowDownIcon className="w-4 h-4" /> Download PDF
+                  </a>
+                  {doc.active && (
+                    <Link
+                      href={doc.testUrl}
+                      className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-orange-600 hover:bg-orange-500 py-2.5 px-3 text-xs font-bold text-white transition"
+                    >
+                      Take Mock Test <ArrowRightIcon className="w-3.5 h-3.5" />
+                    </Link>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Preparation Guidelines */}
+        <div className="rounded-3xl border border-gray-100 bg-gray-50/50 p-8 sm:p-10">
+          <h2 className="text-xl font-bold text-gray-900 font-inter mb-6 flex items-center gap-2.5">
+            <AcademicCapIcon className="w-6 h-6 text-orange-600" />
+            Strategic Preparation Guidelines for Previous-Year & Model Questions
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-600 leading-relaxed">
+            <div className="bg-white p-5 rounded-2xl border border-gray-100">
+              <h3 className="font-bold text-gray-900 font-inter mb-2 flex items-center gap-2">
+                <CheckBadgeIcon className="w-4 h-4 text-emerald-600" />
+                Focus on 2-Mark Numerical Concepts
+              </h3>
+              <p>
+                Section B questions carry 2 marks each and comprise 40% of your total score. Prioritize standard formula derivations, structural checks, and algorithm complexities.
+              </p>
+            </div>
+            <div className="bg-white p-5 rounded-2xl border border-gray-100">
+              <h3 className="font-bold text-gray-900 font-inter mb-2 flex items-center gap-2">
+                <CheckBadgeIcon className="w-4 h-4 text-emerald-600" />
+                Pace Your Time Per Question
+              </h3>
+              <p>
+                With 80 total questions to complete in 120 minutes, allocate roughly 60 seconds per 1-mark question to preserve ample time for analytical multi-step calculations.
+              </p>
+            </div>
+            <div className="bg-white p-5 rounded-2xl border border-gray-100">
+              <h3 className="font-bold text-gray-900 font-inter mb-2 flex items-center gap-2">
+                <CheckBadgeIcon className="w-4 h-4 text-emerald-600" />
+                Review Engineering Ethics & Bylaws
+              </h3>
+              <p>
+                Every engineering stream includes questions on the Nepal Engineering Council Act 2055, professional liability, public safety, and professional codes of conduct.
+              </p>
             </div>
           </div>
-          <p className="mt-4 text-sm text-gray-500 flex items-center gap-2">
-            <LockClosedIcon className="h-4 w-4" />
-            No spam. Only a one-time launch notification.
-          </p>
         </div>
+
       </div>
-    </section>
+    </div>
   );
 }

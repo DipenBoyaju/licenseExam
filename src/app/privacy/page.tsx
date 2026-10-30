@@ -49,7 +49,7 @@ export default function PrivacyPolicy() {
                   <EyeIcon className="w-4 h-4 shrink-0" /> 2. Information Usage
                 </a>
                 <a href="#cookies" className="flex items-center gap-2.5 px-3 py-2 rounded-xl hover:bg-white hover:text-orange-600 hover:shadow-xs transition">
-                  <CookieIcon className="w-4 h-4 shrink-0" /> 3. Cookies & Tracking
+                  <CookieIcon className="w-4 h-4 shrink-0" /> 3. Cookies & Advertising
                 </a>
                 <a href="#security" className="flex items-center gap-2.5 px-3 py-2 rounded-xl hover:bg-white hover:text-orange-600 hover:shadow-xs transition">
                   <LockClosedIcon className="w-4 h-4 shrink-0" /> 4. Data Security
@@ -116,11 +116,27 @@ export default function PrivacyPolicy() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-orange-50 text-orange-600 shadow-2xs">
                   <CookieIcon className="w-5 h-5" />
                 </div>
-                <h2 className="text-xl font-bold text-gray-900 font-inter tracking-tight">3. Cookies and Tracking</h2>
+                <h2 className="text-xl font-bold text-gray-900 font-inter tracking-tight">3. Cookies & Advertising Partners</h2>
               </div>
               <p>
-                Our core systems deploy cookies to retain session settings and compile traffic metrics.
-                You can completely isolate, block, or delete cookies via your browser settings panel at your discretion.
+                Our platform uses cookies and similar local storage technologies to maintain interface preferences, track quiz session state, and deliver targeted advertising.
+              </p>
+
+              <div className="mt-4 p-5 rounded-2xl bg-orange-50/40 border border-orange-100 text-sm space-y-3">
+                <h3 className="font-bold text-orange-950 font-inter">Google AdSense & Third-Party Cookies Disclosure</h3>
+                <p>
+                  Third-party vendors, including <strong>Google</strong>, use cookies to serve ads based on a user&apos;s prior visits to this website or other websites on the Internet.
+                </p>
+                <p>
+                  Google&apos;s use of advertising cookies enables it and its partners to serve ads to our users based on their visit to our site and/or other sites on the Internet.
+                </p>
+                <p>
+                  Users may opt out of personalized advertising at any time by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="text-orange-600 underline font-semibold">Google Ads Settings</a>. Alternatively, you can opt out of third-party vendor cookies for personalized advertising by visiting <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" className="text-orange-600 underline font-semibold">www.aboutads.info</a>.
+                </p>
+              </div>
+
+              <p className="mt-4">
+                You can configure your browser to block or alert you about cookies. Please note that disabling cookies may affect certain functionality such as test progress persistence.
               </p>
             </section>
 
@@ -133,9 +149,10 @@ export default function PrivacyPolicy() {
                 <h2 className="text-xl font-bold text-gray-900 font-inter tracking-tight">4. Data Sharing & Security</h2>
               </div>
               <p>
-                We do not share your structural information profiles with third-party advertising brokers.
-                All data packets are processed using cloud infrastructure nodes (Vercel) over secure HTTPS channels.
-                While we enforce structural safety controls, no web transaction is 100% airtight.
+                We do not sell, rent, or trade your personally identifiable information (such as your name or email address) to third parties. Non-personally identifiable telemetry and aggregated visitor metrics may be processed by authorized analytics and advertising partners (including Google AdSense) to deliver and evaluate digital advertisements.
+              </p>
+              <p className="mt-3">
+                All communications and test state transactions are transmitted over secure, encrypted HTTPS channels. While industry-standard safeguards are implemented, no Internet transmission is ever completely guaranteed against vulnerability.
               </p>
             </section>
 

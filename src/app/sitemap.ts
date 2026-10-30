@@ -35,7 +35,39 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
     },
     {
+      url: `${siteUrl}/faculty/electrical-engineering`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${siteUrl}/faculty/architecture`,
+      lastModified: new Date(),
+    },
+    {
       url: `${siteUrl}/review`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${siteUrl}/about-us`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${siteUrl}/contact-us`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${siteUrl}/privacy`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${siteUrl}/terms`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${siteUrl}/syllabus`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${siteUrl}/past-questions`,
       lastModified: new Date(),
     },
     {

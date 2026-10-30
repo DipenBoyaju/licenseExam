@@ -32,10 +32,14 @@ export default function Footer() {
               <ul className="space-y-3 text-sm font-medium">
                 {[
                   { label: "Home", path: "/" },
+                  { label: "About Us", path: "/about-us" },
                   { label: "Take Test", path: "/take-test" },
+                  { label: "Syllabus", path: "/syllabus" },
                   { label: "Blog", path: "/blog" },
+                  { label: "Contact Us", path: "/contact-us" },
                   { label: "Review Us", path: "/review" },
                   { label: "Privacy Policy", path: "/privacy" },
+                  { label: "Terms of Service", path: "/terms" },
                 ].map((link) => (
                   <li key={link.path}>
                     <Link
@@ -59,6 +63,7 @@ export default function Footer() {
                 {[
                   { label: "Computer Engineering", path: "/faculty/computer-engineering" },
                   { label: "Civil Engineering", path: "/faculty/civil-engineering" },
+                  { label: "Electrical Engineering", path: "/faculty/electrical-engineering" },
                   { label: "Architecture", path: "/faculty/architecture" },
                 ].map((link) => (
                   <li key={link.path}>
@@ -75,6 +80,13 @@ export default function Footer() {
             </div>
 
           </div>
+        </div>
+
+        {/* Educational Disclaimer Banner */}
+        <div className="py-6 border-t border-neutral-900/80">
+          <p className="text-xs text-neutral-400/80 leading-relaxed font-poppins">
+            <span className="font-semibold text-neutral-300">Disclaimer:</span> NEC License Exam Preparation is an independent educational platform created to assist engineering candidates in Nepal. This site is <span className="text-neutral-300">not affiliated with, endorsed by, or officially connected with the Nepal Engineering Council (NEC)</span> or any government body. The official Nepal Engineering Council portal can be reached at <a href="https://nec.gov.np" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">nec.gov.np</a>. All trademarks and council exam names belong to their respective holders.
+          </p>
         </div>
 
         {/* Bottom Credits Ledger Segment */}

@@ -190,6 +190,16 @@ export default function About() {
             </div>
           </div>
 
+          {/* 5. Independent Disclaimer Box */}
+          <div className="mt-12 max-w-5xl mx-auto rounded-2xl bg-amber-50/50 border border-amber-200/60 p-6 text-sm text-amber-900 font-poppins leading-relaxed">
+            <h4 className="font-bold text-amber-950 font-inter mb-1">Independent Educational Resource Disclaimer</h4>
+            <p>
+              NEC License Exam Preparation is an independently developed academic practice resource and revision portal. 
+              We are <strong>not affiliated with, authorized by, endorsed by, or associated in any official capacity with the Nepal Engineering Council (NEC)</strong> or any statutory government council in Nepal. 
+              All exam references, test syllabi, and related marks are provided solely for educational preparation and personal study. For formal registration, licensing exam schedules, and official notices, visit the Council&apos;s verified website at <a href="https://nec.gov.np" target="_blank" rel="noopener noreferrer" className="underline font-semibold hover:text-orange-700">nec.gov.np</a>.
+            </p>
+          </div>
+
         </div>
       </section>
 

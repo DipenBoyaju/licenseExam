@@ -8,7 +8,7 @@ import blog7 from "./blog/blog7.webp";
 import blog8 from "./blog/blog8.webp";
 
 
-export const baseUrl = "https://www.rpayantra.com";
+export const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://neclicenseexam.vercel.app";
 
 export const blogData = [
 
