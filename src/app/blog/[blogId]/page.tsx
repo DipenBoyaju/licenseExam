@@ -21,21 +21,43 @@ export async function generateMetadata({
     };
   }
 
+  const defaultKeywords = [
+    "nec license moke test",
+    "nec license mock test",
+    "nec set",
+    "nec question set pratice",
+    "NEC License Exam",
+    "Nepal Engineering Council",
+    "NEC Blog",
+    "Engineering Nepal",
+    "Engineering Blog Nepal",
+    "NEC Preparation",
+    "NEC Preparation Blog",
+  ];
+
+  const keywords = (blog as { keywords?: string[] }).keywords || defaultKeywords;
+
   return {
     title: blog.title,
     description: blog.description1,
     metadataBase: new URL(baseUrl),
-    keywords: [
-      "nec set",
-      "nec question set pratice",
-      "NEC License Exam",
-      "Nepal Engineering Council",
-      "NEC Blog",
-      "Engineering Nepal",
-      "Engineering Blog Nepal",
-      "NEC Preparation",
-      "NEC Preparation Blog",
-    ],
+    keywords,
+    openGraph: {
+      title: blog.title,
+      description: blog.description1,
+      url: `${baseUrl}/blog/${blog.id}`,
+      type: "article",
+      publishedTime: blog.date,
+      authors: blog.author ? [blog.author] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: blog.title,
+      description: blog.description1,
+    },
+    alternates: {
+      canonical: `${baseUrl}/blog/${blog.id}`,
+    },
   };
 }
 

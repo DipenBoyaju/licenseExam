@@ -6,6 +6,7 @@ import blog5 from "./blog/blog5.webp";
 import blog6 from "./blog/blog6.webp";
 import blog7 from "./blog/blog7.webp";
 import blog8 from "./blog/blog8.webp";
+import blogMockTest from "./blog/blog-nec-mock-test.webp";
 
 
 export const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://neclicenseexam.vercel.app";
@@ -860,5 +861,155 @@ export const blogData = [
   photo: blog2,
   author: "Eliza",
   date: "22/10/26",
+},
+{
+  id: "NEC-License-Mock-Test-Nepal-Online-Preparation",
+  title:
+    "NEC License Mock Test Nepal: Online CBT Practice, Exam Pattern & Complete Preparation Guide",
+  description1:
+    "Preparing for the Nepal Engineering Council (NEC) Licensure Examination? Whether you are searching for an authentic \"NEC license mock test\" or looking up the commonly searched phrase \"nec license moke test\", this complete guide provides the definitive roadmap for your exam preparation. Passing the NEC examination is now mandatory for every engineering graduate in Nepal to obtain an official professional license, practice engineering legally, and certify government or private projects.\n\nUnder the latest 2026 examination format, the NEC exam is conducted strictly as a Computer-Based Test (CBT) consisting of 100 Multiple-Choice Questions (MCQs) for a total of 100 Marks (1 mark per question) to be completed within 120 Minutes (2 Hours). With a passing threshold of 50 Marks (50%) and zero negative marking, mastering time management, question navigation, and subject-wise accuracy through realistic online mock tests is the proven path to qualifying on your very first attempt.\n\nThis comprehensive guide breaks down everything you need to know about taking NEC license mock tests online: the latest exam pattern, chapter weightage, CBT interface simulation tips, faculty-wise preparation strategies (Civil, Computer, Electrical, Electronics, Architecture, Software), and a battle-tested 4-week study plan to maximize your score.",
+  description2: [
+    {
+      title:
+        "What is the NEC License Mock Test? (Understanding 'Moke Test' vs 'Mock Test')",
+      subtitle:
+        "Discover why full-length CBT simulation is the single most decisive factor between passing and failing the Nepal Engineering Council exam.",
+      descriptionList: [
+        "Search Intent & Clarification: Many engineering aspirants in Nepal phonetically search for 'nec license moke test' or 'nec moke exam'. In educational terminology, a 'mock test' is an exact simulation of the actual licensure examination designed to replicate identical interface behavior, question difficulty, time constraints, and scoring rubrics.",
+        "Beyond Textbook Rote Learning: While reviewing university textbooks and lecture notes builds theoretical clarity, only timed mock tests train your brain to filter through distractors and make split-second analytical choices under ticking clock pressure.",
+        "Full CBT Interface Familiarization: Taking digital mock tests familiarizes you with onscreen question palettes, option toggles, 'Mark for Review' buttons, and remaining time countdowns—eliminating exam-hall panic.",
+        "Accurate Baseline Benchmark: A preliminary mock test gives you an honest, data-backed assessment of your current score before investing weeks in undirected study.",
+      ],
+    },
+    {
+      title:
+        "Updated 2026 NEC Exam Pattern: 100 Questions, 100 Marks & 120 Minutes",
+      subtitle:
+        "Familiarize yourself with the council's standardized examination structure and updated single-mark format.",
+      descriptionList: [
+        "Total Questions & Mark Distribution: Exactly 100 multiple-choice questions (MCQs), each carrying 1 mark (Total: 100 Marks). The old format with 2-mark analytical questions has been completely replaced with a uniform 1-mark-per-question structure.",
+        "Examination Duration: 120 minutes (2 continuous hours) with no scheduled breaks. This translates to roughly 72 seconds per question, requiring prompt calculation and decisiveness.",
+        "Pass Threshold (50%): Candidates must secure a minimum of 50 marks out of 100 to pass. There is no relative percentile grading; achieving 50 marks or higher guarantees your license qualification.",
+        "Zero Negative Marking: The Nepal Engineering Council enforces no penalty or negative deduction for incorrect answers. Leaving any question unanswered is a critical strategic blunder.",
+        "Delivery Medium: 100% Computer-Based Test (CBT) hosted at designated authorized testing centers (such as Pulchowk Campus, IOE ICT Center, and partner digital labs in Nepal).",
+      ],
+    },
+    {
+      title: "Syllabus Architecture & 10-Chapter Weightage Breakdown",
+      subtitle:
+        "How the Nepal Engineering Council balances questions across core engineering foundations and professional practice.",
+      descriptionList: [
+        "Uniform 10-Chapter Model: Across almost all disciplines, the NEC syllabus is structured into 10 distinct subject chapters, with each chapter contributing approximately 10 questions (10 marks) to the 100-mark paper.",
+        "Section A: Core Engineering & Sciences (Chapters 1 to 6 - 60 Marks): Covers fundamental discipline sciences, mathematics, design mechanics, computing theory, or structural principles foundational to your degree.",
+        "Section B: Analytical & Professional Practice (Chapters 7 to 10 - 40 Marks): Focuses on project planning, engineering economics, standard building codes (Nepal National Building Code - NBC), safety bylaws, public procurement (PPA/PPR), and NEC professional ethics.",
+        "The Non-Negotiable 40 Marks: Many technical candidates over-index on complex mathematical derivations while ignoring Section B. Scoring 30+ marks in ethics, procurement, and project management is the fastest way to lock in a passing score.",
+      ],
+    },
+    {
+      title: "Mastering CBT Time Management: The 70-Second Golden Rule",
+      subtitle:
+        "Pacing strategies to ensure you comfortably answer all 100 questions with time remaining for review.",
+      descriptionList: [
+        "The 70-Second Calculation: 120 minutes equals 7,200 seconds. Across 100 questions, you have an average of 72 seconds per item. Direct conceptual questions should be answered in under 30 seconds to reserve surplus time for numerical problems.",
+        "The Three-Pass Examination Strategy: Approach the test in three distinct sweeps rather than getting stuck in linear chronological order.",
+        "Pass 1 (First 45 Minutes - Easy Wins): Answer all straightforward factual, code-based, and definition MCQs immediately. If an answer is obvious, select it and move on without second-guessing.",
+        "Pass 2 (Next 45 Minutes - Numerical & Analytical): Tackle moderate calculations, circuit analyses, structural stress checks, or code trace problems that require 1–2 minutes of scratchpad work.",
+        "Pass 3 (Final 30 Minutes - Review & Intelligent Guessing): Revisit questions flagged with 'Mark for Review'. Eliminate implausible distractors and select the most probable option for all remaining questions—never submit with blanks!",
+      ],
+    },
+    {
+      title:
+        "Faculty-Wise Mock Test Breakdown (Civil, Computer, Electrical & More)",
+      subtitle:
+        "Tailored preparation focal points for the most popular engineering disciplines in Nepal.",
+      descriptionList: [
+        "Civil Engineering Mock Tests: High focus on Structural Analysis, RCC Design, Hydraulics & Hydrology, Soil Mechanics & Foundation Engineering, Surveying, Transportation, and the Nepal National Building Code (NBC 105:2020 seismic provisions).",
+        "Computer Engineering Mock Tests: Core concentrations include Data Structures & Algorithms, Operating Systems, Computer Architecture, Object-Oriented Programming (C++/Java), DBMS (SQL & normalization), Computer Networks, and Software Engineering lifecycles.",
+        "Software Engineering Mock Tests: Heavy weightage on Agile & Scrum methodologies, System Design, Software Testing & Quality Assurance, Cloud Computing, Requirements Engineering, DevOps pipelines, and API architecture.",
+        "Electrical Engineering Mock Tests: Priority topics include Power System Protection, Electrical Machines (Transformers & Induction Motors), Transmission & Distribution lines, Control Systems, Power Electronics, and NEA substation standards.",
+        "Electronics & Communication Engineering Mock Tests: Focus on Analog & Digital Communications, Signal Processing (DSP), Microprocessors & Microcontrollers, Electromagnetic Theory, and Cellular/Optical networks.",
+        "Architecture Mock Tests: Emphasis on Architectural Design Theory, History of Nepalese & Western Architecture, Urban Planning, Building Climatology, Structural Systems for Architects, and municipal building bylaws.",
+      ],
+    },
+    {
+      title:
+        "Why Online Mock Tests are Better than Traditional Paper Question Banks",
+      subtitle:
+        "How modern digital exam simulators deliver measurable performance improvements over static PDFs.",
+      descriptionList: [
+        "Dynamic Question Rotation: Static PDF books lead to answer memorization rather than concept mastery. Online platforms rotate questions from randomized council-aligned pools so every mock test feels brand new.",
+        "Realistic Onscreen Countdown Timer: Training with a live digital timer builds neurological resilience against exam-day time panic.",
+        "Instant Scorecard & Granular Performance Analytics: Immediately inspect your overall mark, chapter-wise accuracy percentage, and time spent per question upon submission.",
+        "Accurate Answer Keys with Explanations: Understand why incorrect alternatives were wrong and absorb the underlying engineering principle before sitting for the real exam.",
+        "Multi-Device Accessibility: Take short 20-question sectional quizzes on your smartphone during daily commutes or attempt full 100-question timed simulations on your laptop.",
+      ],
+    },
+    {
+      title:
+        "The Error-Log Strategy: How to Turn Wrong Answers into 10+ Bonus Marks",
+      subtitle:
+        "A systematic post-test review methodology used by top-scoring licensed engineers.",
+      descriptionList: [
+        "Never Finish at Submission: The real learning begins after you click 'Submit'. Dedicate at least 45 minutes to reviewing every wrong answer and every lucky guess.",
+        "Categorize Errors into 3 Buckets: Classify missed questions into Conceptual Gaps (didn't know the theory), Calculation/Formula Slips (arithmetic or sign mistake), or Reading Blunders (misread 'NOT', 'EXCEPT', or units).",
+        "Maintain an NEC Formula & Code Notebook: Record every forgotten equation, standard code coefficient, or regulatory clause into a dedicated one-subject notebook for quick daily morning reviews.",
+        "Targeted Topic Re-Drills: If your mock test analytics reveal sub-50% accuracy in Soil Mechanics or Operating Systems, dedicate the next 48 hours exclusively to revising those specific lecture notes.",
+      ],
+    },
+    {
+      title: "4-Week Strategic Study Plan for the NEC Licensure Exam",
+      subtitle:
+        "A structured roadmap balancing theoretical review, sectional practice, and full-length mock examinations.",
+      descriptionList: [
+        "Week 1 (Diagnostic Baseline & Foundation): Take 1 un-timed full-length mock test to diagnose weak areas. Revise high-weightage foundation concepts from Chapters 1 through 4.",
+        "Week 2 (Deep Dive & Sectional Quizzes): Cover Chapters 5 through 10. Solve subject-wise practice sets daily and master NEC Professional Ethics, Nepal Engineering Council Act 2055, and Public Procurement rules.",
+        "Week 3 (Full-Length CBT Simulations): Take a full 100-question timed mock test every alternate day (Monday, Wednesday, Friday) under strict examination conditions. Review the error log thoroughly between test days.",
+        "Week 4 (Tapering, Formulas & Mental Readiness): Take 2 final full mock tests early in the week. Spend the remaining days reviewing short notes, NBC standards, formula sheets, and building positive exam confidence.",
+      ],
+    },
+    {
+      title: "Exam Day CBT Tips: What to Expect at the Examination Hall",
+      subtitle:
+        "Essential logistical advice and psychological pointers for a smooth test day experience.",
+      descriptionList: [
+        "Mandatory Documents: Bring your printed NEC Examination Admit Card, original Nepali Citizenship Card (or valid Passport), and passport-size photographs as specified in your notice.",
+        "Arrive 45 Minutes Early: Give yourself ample time for biometric verification, photo verification, and seat allocation at the testing center.",
+        "Rough Work Protocol: The center provides authorized physical scratch paper and ballpoint pens. Use structured numbering on scratch sheets so you can easily reference your rough calculations during review.",
+        "Handling Computer Glitches: In the rare event of a monitor freeze, power blip, or mouse malfunction, remain calm and raise your hand immediately for an invigilator. All answered questions are stored securely on the local exam server.",
+        "Physical & Cognitive Energy: Ensure 7–8 hours of restful sleep the night before. Stay hydrated and have a light, nutritious meal 90 minutes before your test slot.",
+      ],
+    },
+    {
+      title:
+        "Frequently Asked Questions (FAQ) About NEC License Mock Tests",
+      subtitle:
+        "Authoritative answers to the most common queries from engineering candidates across Nepal.",
+      descriptionList: [
+        "Is there negative marking in the NEC license exam? No, there is zero negative marking. You should always select an answer for every single one of the 100 questions.",
+        "Why do people search for 'NEC license moke test'? 'Moke test' is a common phonetic spelling of 'mock test'. Both terms refer to the simulated practice examinations that replicate the official NEC test.",
+        "What are the passing marks for the NEC license exam? You must score at least 50 marks out of 100 (50%) to be declared successful and receive your NEC registration number.",
+        "Can I practice NEC mock tests on my mobile phone? Yes, our online platform is fully responsive and supports smartphone, tablet, and desktop browser practice with live countdown timers.",
+        "How many mock tests should I take before the final exam? We strongly recommend completing at least 5 to 8 full-length 100-question timed mock tests to build optimal speed and stamina.",
+        "Are the questions in the mock test updated with the latest syllabus? Yes, all questions are curated according to the latest official Nepal Engineering Council syllabus and recent exam trends.",
+      ],
+    },
+  ],
+  photo: blogMockTest,
+  author: "Ashish",
+  date: "2026-10-30",
+  keywords: [
+    "nec license moke test",
+    "nec license mock test",
+    "nec license exam mock test nepal",
+    "nec mock test free",
+    "nepal engineering council mock test",
+    "nec cbt practice test",
+    "nec license model questions",
+    "nec license exam pattern 2026",
+    "nec question set",
+    "civil engineering nec mock test",
+    "computer engineering nec mock test",
+    "electrical engineering nec mock test",
+  ],
 },
 ];

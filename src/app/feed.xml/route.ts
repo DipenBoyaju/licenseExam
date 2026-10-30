@@ -14,7 +14,13 @@ export async function GET() {
   const itemsXml = blogData
     .map((blog) => {
       const url = `${siteUrl}/blog/${blog.id}`;
-      const pubDate = blog.date ? new Date(blog.date).toUTCString() : new Date().toUTCString();
+      let pubDate: string;
+      try {
+        const parsedDate = blog.date ? new Date(blog.date) : new Date();
+        pubDate = isNaN(parsedDate.getTime()) ? new Date().toUTCString() : parsedDate.toUTCString();
+      } catch {
+        pubDate = new Date().toUTCString();
+      }
 
       return `
     <item>
